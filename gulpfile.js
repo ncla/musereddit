@@ -16,6 +16,10 @@ gulp.task('build', function() {
     return stream;
 });
 
-//gulp.watch('stylesheet.css', ['build'], function(event) {
-//    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-//});
+gulp.task('watch', function() {
+    var watcher = gulp.watch('stylesheet.css', ['build']);
+
+    watcher.on('change', function(event) {
+        console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+    });
+});
