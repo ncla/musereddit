@@ -13,6 +13,8 @@
 (function() {
     'use strict';
 
-    $('link[rel="stylesheet"][title="applied_subreddit_stylesheet"]').remove();
-    $('head').append('<link rel="stylesheet" type="text/css" href="https://localhost:4443/build/stylesheet.css" media="all">');
+    var jQ = jQuery.noConflict();
+
+    jQ('link[rel="stylesheet"][title="applied_subreddit_stylesheet"]').remove();
+    jQ('head').append('<link rel="stylesheet" type="text/css" href="https://localhost:4443/build/stylesheet.css" media="all">');
 })();
