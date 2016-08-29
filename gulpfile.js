@@ -4,12 +4,12 @@ var cleanCSS = require('gulp-clean-css');
 
 gulp.task('build', function() {
     var stream = gulp.src('stylesheet.css')
-        .pipe(replace('url(%%body%%)', 'url("http://i.imgur.com/Wk6WoG0.jpg")'))
-        .pipe(replace('url(%%overlay%%)', 'url("http://i.imgur.com/mbLJ5Ty.png")'))
-        .pipe(replace('url(%%header%%)', 'url("http://i.imgur.com/V9NpXIk.jpg")'))
-        .pipe(replace('url(%%crosshatch%%)', 'url("http://i.imgur.com/i0KVyEX.png")'))
-        .pipe(replace('url(%%editbuttons%%)', 'url("http://i.imgur.com/7pjTCyq.png")'))
-        .pipe(replace('url(%%spritesheet%%)', 'url("http://i.imgur.com/u7T4Kgy.png")'))
+        .pipe(replace('url(%%body%%)', 'url("https://localhost:4443/images/body.png")'))
+        .pipe(replace('url(%%overlay%%)', 'url("https://localhost:4443/images/overlay.png")'))
+        .pipe(replace('url(%%header%%)', 'url("https://localhost:4443/images/header.png")'))
+        .pipe(replace('url(%%crosshatch%%)', 'url("https://localhost:4443/images/crosshatch.png")'))
+        .pipe(replace('url(%%editbuttons%%)', 'url("https://localhost:4443/images/editbuttons.png")'))
+        .pipe(replace('url(%%spritesheet%%)', 'url("https://localhost:4443/images/spritesheet.png")'))
         .pipe(cleanCSS({debug: true}))
         .pipe(gulp.dest('build/'));
 
