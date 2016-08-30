@@ -136,7 +136,7 @@ body > .content .link.even.thing .midcol {
     }
 
     #header:target + .side .md > blockquote:nth-of-type(1) {
-        top: 235px
+        top: 185px
     }
 
     body>.content {
