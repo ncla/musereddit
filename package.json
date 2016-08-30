@@ -19,6 +19,8 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.12",
-    "gulp-replace": "^0.5.4"
+    "gulp-if": "^2.0.1",
+    "gulp-replace": "^0.5.4",
+    "yargs": "^5.0.0"
   }
 }
