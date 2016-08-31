@@ -37,12 +37,12 @@ body > .content .link.even.thing .midcol {
     border-bottom: 1px solid #FFFFFF;
     border-top: 1px solid #FFFFFF;
     padding: 10px 0 10px 10px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 #header:before {
     padding: 0 20px;
     background: url(%%overlay%%),linear-gradient(45deg,#6093c4 20%, #46a6b5 80%);
-    /*background: rgba(76, 255, 44, 0.5);*/
     display: block;
     overflow: hidden;
     position: relative;
@@ -273,4 +273,219 @@ body > .content .link.even.thing .midcol {
 -----------------*/
 #header {
     background-image: url(%%header%%)
+}
+
+/* COLORIZATION
+---------------*/
+
+/* PINK BORDERS
+---------------*/
+input[type=text]:focus,
+textarea:focus,
+input#url:focus { border-color: #6093c4 !important }
+
+/* PINK BACKGROUNDS
+-------------------*/
+#header-bottom-right a.message-count,
+.res .moduleToggle:not(.enabled) .toggleOff,
+.res .toggleButton:not(.enabled) .toggleOff,
+.side .fancy-toggle-button a.option.active,
+#authorInfoToolTip .fancy-toggle-button a.option.active,
+.fancy-toggle-button .add.active,
+.res #RESHoverInfoSubscriptionButton,
+#NERFail .nextprev a,
+.next-suggestions a,
+.res .RESSubscriptionButton,
+.res .RESSubscriptionButton:hover,
+button.search-submit-button.c-btn.c-btn-primary { background: #6093c4 !important; }
+
+/* PINK TEXT
+------------*/
+body #header #sr-header-area .srdrop+.drop-choices.srdrop a.choice:hover,
+.res #srList tbody tr:hover a,
+.res #RESSubredditGroupDropdown li a:hover,
+.res #RESSubredditGroupDropdown .RESShortcutsEditButtons .res-icon:hover,
+.res #RESSubredditGroupDropdown .RESShortcutsCurrentSub a,
+.md a:hover,
+.flair-settings+.tabmenu li.selected a,
+.error,
+.morechildren .entry a.button[style*="color: red"],
+.thing a.title:hover,
+.link .entry .buttons li a:hover,
+.link .redditSingleClick:hover,
+.link .entry .buttons li a.comments,
+.tabmenu.formtab .selected a,
+.flat-list li.selected a { color: #6093c4 !important }
+
+/* FLAIR WIDTH LENGTH FIX IN SIDEBAR
+---------------*/
+
+.side .flair {
+    max-width: 175px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.side .flairselector .flair {
+    max-width: none;
+}
+
+/* HIDDING SUB AGE AND CREATOR
+---------------*/
+
+.side .bottom {
+    display: none;
+}
+
+/* MINOR DETAIL CHANGE FOR VOTE BUTTONS
+-----------------*/
+body>.content .link.thing .midcol {
+    margin-top: 12px;
+}
+
+.arrow {
+    width: 15px;
+    height: 15px;
+    background: url(%%spritesheet%%) !important;
+    margin: 3px auto;
+}
+
+.arrow.up {
+    background-position: -67px -247px !important;
+}
+
+.arrow.upmod {
+    background-position: -83px -247px !important;
+}
+
+.arrow.down {
+    background-position: -33px -247px !important;
+}
+
+.arrow.downmod {
+    background-position: -50px -247px !important;
+}
+
+/* USER FLAIRS
+-----------------*/
+
+.flair {
+    background: url(%%flairsheet%%) no-repeat -9999px;
+    font-weight: normal;
+    border: none;
+
+    overflow: inherit;
+    line-height: 26px;
+    vertical-align: middle;
+    margin-left: 5px;
+    font-size: 100%;
+}
+
+.flair-ChrisFlair {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 0;
+
+}
+
+.flair-DomFlair {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -30px;
+}
+
+.flair-MattFlair {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -60px;
+}
+
+.flair-absflair {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -90px;
+}
+
+.flair-bharflair {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -120px;
+}
+
+.flair-dronesflair {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+
+    background-position: 0 -150px;
+}
+
+.flair-oosflair {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -180px;
+}
+
+.flair-resflair {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -210px;
+}
+
+.flair-showbizflair {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -240px;
+
+}
+
+.flair-t2lflair {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -270px;
+}
+
+.flair-haarp {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -300px;
+}
+
+.flair-hullabaloo {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -330px;
+}
+
+.flair-pedro {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -360px;
+}
+
+.flair-creepydom {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -390px;
+}
+
+.flair-bluematt {
+    min-width: 58px;
+    text-indent: 62px;
+    height: 28px;
+    background-position: 0 -420px;
 }
