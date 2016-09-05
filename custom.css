@@ -433,11 +433,16 @@ select {
     color: #f3f3f3;
     text-transform: uppercase;
     padding: 2px 5px;
+    font-size: 10px;
 }
 
 span.nsfw-stamp.stamp {
     background: #c4918a;
     padding: 2px 6px;
+}
+
+.tagline .stickied-tagline {
+    margin-left: 3px;
 }
 
 /* STICKIED POST TEXT WHEN VISITED
@@ -537,6 +542,7 @@ body>.content .link.thing .midcol {
     height: 15px;
     background: url(%%spritesheet%%) !important;
     margin: 3px auto;
+    opacity: 0.7;
 }
 
 .arrow.up {
@@ -544,15 +550,29 @@ body>.content .link.thing .midcol {
 }
 
 .arrow.upmod {
-    background-position: -83px -247px !important;
+    background-position: -84px -247px !important;
 }
 
 .arrow.down {
     background-position: -33px -247px !important;
 }
 
+.arrow.upmod, .arrow.downmod {
+    opacity: 1;
+}
+
+.arrow.down {
+    opacity: 0.5;
+}
+
+.arrow.down:hover, .arrow.up:hover {
+    opacity: 1;
+    transition: opacity 0.15s;
+}
+
 .arrow.downmod {
     background-position: -50px -247px !important;
+    opacity: 1;
 }
 
 /* USER FLAIRS
@@ -568,6 +588,7 @@ body>.content .link.thing .midcol {
     vertical-align: middle;
     margin-left: 5px;
     font-size: 100%;
+    color: #999;
 }
 
 .flair-ChrisFlair {
