@@ -275,6 +275,194 @@ body > .content .link.even.thing .midcol {
     background-image: url(%%header%%)
 }
 
+/* SEARCH LINE PADDING
+--------------------*/
+
+#searchexpando label:first-child {
+    margin-bottom: 6px;
+}
+
+/* POST ENTRY ICONS / THUMBNAIL
+--------------------*/
+
+.thumbnail {
+    position: relative
+}
+
+.thumbnail,
+.thumbnail.self,
+.search-result.has-thumbnail > .thumbnail,
+.link .entry:before {
+    -webkit-flex: none;
+    flex: none;
+    margin: 0;
+    width: 80px;
+    height: 80px !important
+}
+
+.thumbnail:after {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, .4);
+    pointer-events: none
+}
+
+/* NO THUMBNAIL ELEMENT */
+body:not(.comments-page) .link :not(.thumbnail) + .entry:before {
+    position: absolute;
+    top: 9px;
+    left: -81px;
+    line-height: 64px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, .4);
+    pointer-events: none;
+    content: "•••";
+    border-radius: 31px;
+}
+
+.link .thumbnail img {
+    width: auto !important;
+    height: 80px !important
+}
+
+.search-result.has-thumbnail > .thumbnail {
+    margin-right: 10px
+}
+
+.search-result.has-thumbnail > .thumbnail.self,
+.search-result.has-thumbnail > .thumbnail.default {
+    margin-right: 28px; /* Default margin + compensating for narrower width (18px / 9px = 2x) */
+}
+
+.self .thumbnail img,
+.thing.stickied .thumbnail img,
+.comments-page .thing.stickied .thumbnail,
+.comments-page .thumbnail.self,
+.comments-page .over18 .thumbnail,
+a.thumbnail[href*="reddit.com"] img {
+    display: none
+}
+
+/* 62PX OVERWRITE START */
+a.thumbnail[href*="reddit.com"],
+
+.thing.stickied .thumbnail,
+.link.stickied :not(.thumbnail) + .entry:before,
+
+.thumbnail.self,
+.link :not(.thumbnail) + .entry:before,
+.thumbnail.default,
+
+.over18 .thumbnail.nsfw,
+
+.search-result.has-thumbnail > .thumbnail.self,
+.search-result.has-thumbnail > .thumbnail.default {
+    width: 62px;
+    height: 62px !important;
+    position: relative;
+    top: 9px;
+    left: 9px;
+}
+
+.link a.thumbnail[href*="reddit.com"] {
+    background: url(%%spritesheet%%) -2px -367px;
+}
+
+.link a.thumbnail[href*="reddit.com"]:after, .over18.link .thumbnail:after {
+    content: "";
+}
+
+.thumbnail.default {
+    background: url(%%spritesheet%%) -133px -302px !important; /* remove important cuz testing */
+}
+
+.thumbnail.self {
+    background: url(%%spritesheet%%) -68px -302px !important; /* remove important cuz testing */
+}
+
+.over18.link .thumbnail {
+    background: url(%%spritesheet%%) -2px -302px !important; /* remove important cuz testing */
+}
+
+/* 62PX OVERWRITE END */
+
+/* RES NSFW EXPANDO STYLE (THIS SHOULD BE IN CORE CSS FILE), CAUSED BY DIFFERENT RES CLASS?
+--------------------*/
+
+.res-showImages-highlightNSFWButton .thing.over18 .expando-button::before {
+    position: absolute;
+    left: 8px;
+    top: 13.5px;
+    width: 12px;
+    height: 1px;
+    background: #fff;
+    content: "";
+    transition: .3s;
+}
+
+/* CHECKBOX BACKGROUND-SIZE FIX
+--------------------*/
+#rem-login-main, .side .titlebox h1.redditname+div:before, input[type=checkbox], input[type=radio] {
+    background: url(%%spritesheet%%) -2px -200px no-repeat #383F47;
+}
+
+select {
+    background: url(%%spritesheet%%) right -188px top -248px no-repeat #383F47;
+}
+
+.res .RESUserTagImage::after {
+    background: url(%%spritesheet%%) -4px -30px no-repeat;
+}
+
+/* CUSTOMIZED NSFW / STICKIED TAG
+--------------------*/
+
+.tagline .stickied-tagline, span.nsfw-stamp.stamp {
+    background: #4f9c79;
+    color: #f3f3f3;
+    text-transform: uppercase;
+    padding: 2px 5px;
+}
+
+span.nsfw-stamp.stamp {
+    background: #c4918a;
+    padding: 2px 6px;
+}
+
+/* STICKIED POST TEXT WHEN VISITED
+--------------------*/
+.thing.stickied.link a.title:visited {
+    color: #61c095 !important;
+}
+
+/* HIDING FLAIR AND UPVOTE COUNT WHEN STICKIED POST
+--------------------*/
+.link.stickied .tagline .flair {
+    display: none;
+}
+
+.link.stickied .tagline .voteWeight {
+    display: none !important;
+}
+
+/* HIDING RES ANNOUNCEMENT UPDATE IN NAV BAR
+--------------------*/
+
+#RESAnnouncementAlert {
+    display: none;
+}
+
 /* COLORIZATION
 ---------------*/
 

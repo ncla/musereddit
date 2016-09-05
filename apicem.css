@@ -1829,97 +1829,97 @@ body > .content .link.even.thing .midcol {
     color: #6093c4
 }
 
-.thumbnail {
-    position: relative
-}
+/*.thumbnail {*/
+    /*position: relative*/
+/*}*/
 
-.thumbnail, .thumbnail.self, .search-result.has-thumbnail > .thumbnail, .link .entry:before {
-    -webkit-flex: none;
-    flex: none;
-    margin: 0;
-    width: 80px;
-    height: 80px !important
-}
+/*.thumbnail, .thumbnail.self, .search-result.has-thumbnail > .thumbnail, .link .entry:before {*/
+    /*-webkit-flex: none;*/
+    /*flex: none;*/
+    /*margin: 0;*/
+    /*width: 80px;*/
+    /*height: 80px !important*/
+/*}*/
 
-.search-result.has-thumbnail > .thumbnail {
-    margin-right: 10px
-}
+/*.search-result.has-thumbnail > .thumbnail {*/
+    /*margin-right: 10px*/
+/*}*/
 
-.link .thumbnail img {
-    width: auto !important;
-    height: 80px !important
-}
+/*.link .thumbnail img {*/
+    /*width: auto !important;*/
+    /*height: 80px !important*/
+/*}*/
 
-.thumbnail:after {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 80px;
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 700;
-    color: rgba(0, 0, 0, .4);
-    pointer-events: none
-}
+/*.thumbnail:after {*/
+    /*position: absolute;*/
+    /*top: 30px;*/
+    /*left: 0;*/
+    /*width: 80px;*/
+    /*height: 20px;*/
+    /*line-height: 20px;*/
+    /*text-align: center;*/
+    /*text-transform: uppercase;*/
+    /*font-size: 11px;*/
+    /*font-weight: 700;*/
+    /*color: rgba(0, 0, 0, .4);*/
+    /*pointer-events: none*/
+/*}*/
 
-a.thumbnail[href*="reddit.com"] {
-    background: #6093c4
-}
+/*a.thumbnail[href*="reddit.com"] {*/
+    /*background: #6093c4*/
+/*}*/
 
-.thing.stickied .thumbnail, .link.stickied :not(.thumbnail) + .entry:before {
-    background: #61c095
-}
+/*.thing.stickied .thumbnail, .link.stickied :not(.thumbnail) + .entry:before {*/
+    /*background: #61c095*/
+/*}*/
 
-.thumbnail.self, .link :not(.thumbnail) + .entry:before, .thumbnail.default {
-    background: #434b55
-}
+/*.thumbnail.self, .link :not(.thumbnail) + .entry:before, .thumbnail.default {*/
+    /*background: #434b55*/
+/*}*/
 
-.over18 .thumbnail.nsfw {
-    background: #c4918a
-}
+/*.over18 .thumbnail.nsfw {*/
+    /*background: #c4918a*/
+/*}*/
 
-body:not(.comments-page) .link :not(.thumbnail) + .entry:before {
-    position: absolute;
-    top: 0;
-    left: -90px;
-    line-height: 80px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 25px;
-    font-weight: 700;
-    color: rgba(0, 0, 0, .4);
-    pointer-events: none;
-    content: "•••"
-}
+/*body:not(.comments-page) .link :not(.thumbnail) + .entry:before {*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: -90px;*/
+    /*line-height: 80px;*/
+    /*text-align: center;*/
+    /*text-transform: uppercase;*/
+    /*font-size: 25px;*/
+    /*font-weight: 700;*/
+    /*color: rgba(0, 0, 0, .4);*/
+    /*pointer-events: none;*/
+    /*content: "•••"*/
+/*}*/
 
-.thumbnail.default:after {
-    font-size: 25px;
-    content: "•••"
-}
+/*.thumbnail.default:after {*/
+    /*font-size: 25px;*/
+    /*content: "•••"*/
+/*}*/
 
-.link a.thumbnail[href*="reddit.com"]:after {
-    font-size: 11px;
-    content: "reddit"
-}
+/*.link a.thumbnail[href*="reddit.com"]:after {*/
+    /*font-size: 11px;*/
+    /*content: "reddit"*/
+/*}*/
 
-body .self.thumbnail:after {
-    content: "self" !important
-}
+/*body .self.thumbnail:after {*/
+    /*content: "self" !important*/
+/*}*/
 
-.link.over18 a.thumbnail:after {
-    content: "nsfw" !important
-}
+/*.link.over18 a.thumbnail:after {*/
+    /*content: "nsfw" !important*/
+/*}*/
 
-.link.thing.stickied .thumbnail:after {
-    content: "stickied" !important
-}
+/*.link.thing.stickied .thumbnail:after {*/
+    /*content: "stickied" !important*/
+/*}*/
 
-.self .thumbnail img, .thing.stickied .thumbnail img, .comments-page .thing.stickied .thumbnail, .comments-page .thumbnail.self, .comments-page .over18 .thumbnail, a.thumbnail[href*="reddit.com"] img {
-    display: none
-}
+/*.self .thumbnail img, .thing.stickied .thumbnail img, .comments-page .thing.stickied .thumbnail, .comments-page .thumbnail.self, .comments-page .over18 .thumbnail, a.thumbnail[href*="reddit.com"] img {*/
+    /*display: none*/
+/*}*/
 
 .link .entry {
     position: relative;
