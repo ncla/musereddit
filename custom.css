@@ -510,18 +510,96 @@ body #header #sr-header-area .srdrop+.drop-choices.srdrop a.choice:hover,
 .tabmenu.formtab .selected a,
 .flat-list li.selected a { color: #6093c4 !important }
 
-/* FLAIR WIDTH LENGTH FIX IN SIDEBAR
+/* FLAIR SELECTION AND FLAIR IMPROVEMENTS
 ---------------*/
 
-.side .flair {
-    max-width: 175px;
+/* Elements you want to cut off text for */
+.flairoptionpane ul li .flair,
+.side a.author.flairselectable + span.flair {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.side .flairselector .flair {
-    max-width: none;
+.flairoptionpane ul li .flair {
+    max-width: 270px;
+    margin-left: 0;
+}
+
+.flairoptionpane ul {
+    width: 270px !important;
+    max-width: 270px;
+}
+
+.side a.author.flairselectable + span.flair {
+    max-width: 160px;
+}
+
+.flairselector.drop-choices {
+    padding: 4px 0 !important;
+}
+
+.flairselector form {
+    padding: 5px 0 5px 0;
+    overflow-x: auto;
+}
+
+.flairselector form input {
+    padding: 0 8px;
+    height: 23px;
+    font-size: 11px;
+}
+
+.flairselector form span.status {
+    font-size: 11px;
+}
+
+/* Custom WebKit scrollbar for few elements */
+
+.flairselector form::-webkit-scrollbar, .flairoptionpane::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+.flairselector form::-webkit-scrollbar-button, .flairoptionpane::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+.flairselector form::-webkit-scrollbar-thumb, .flairoptionpane::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+.flairselector form::-webkit-scrollbar-thumb:hover, .flairoptionpane::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+.flairselector form::-webkit-scrollbar-thumb:active, .flairoptionpane::-webkit-scrollbar-thumb:active {
+    background: #b2b2b2;
+}
+
+.flairselector form::-webkit-scrollbar-track, .flairoptionpane::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+.flairselector form::-webkit-scrollbar-track:hover, .flairoptionpane::-webkit-scrollbar-track:hover {
+    background: #666666;
+}
+
+.flairselector form::-webkit-scrollbar-track:active, .flairoptionpane::-webkit-scrollbar-track:active {
+    background: #333333;
+}
+
+.flairselector form::-webkit-scrollbar-corner, .flairoptionpane::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+a.helplink.access-required + div.title + ul.content > li .flair {
+    display: none;
 }
 
 /* HIDDING SUB AGE AND CREATOR
