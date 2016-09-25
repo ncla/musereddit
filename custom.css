@@ -282,6 +282,17 @@ body > .content .link.even.thing .midcol {
     margin-bottom: 6px;
 }
 
+/* SEARCH EXPANDO SELECT AND LABEL MARGIN
+--------------------*/
+
+#searchexpando label select[name='sort'], #searchexpando label select[name='t'] {
+    margin-left: 5px;
+}
+
+#searchexpando label + br + label, #searchexpando label + br + label + label {
+    padding: 0 5px;
+}
+
 /* POST ENTRY ICONS / THUMBNAIL
 --------------------*/
 
