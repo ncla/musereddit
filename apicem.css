@@ -7,7 +7,7 @@ Icons via icons8.com
 
 ==============================================================================*/
 
-*, :before, :after, #search input[type="text"], textarea {
+*, :before, :after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -118,6 +118,10 @@ body {
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
     background: url(%%body%%) fixed center top/cover
+}
+
+body, #search input[type="text"], textarea {
+    font-family: "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif
 }
 
 #header {
@@ -301,7 +305,6 @@ body #editShortcutDialog {
 }
 
 .res #srList {
-    display: block !important;
     position: fixed;
     left: calc(50% - 250px);
     width: 500px;
@@ -319,11 +322,15 @@ body #editShortcutDialog {
     transition: .2s
 }
 
-.res #RESSubredditGroupDropdown[style*="display: none"] {
+body.res:not(.res-v5) #RESSubredditGroupDropdown[style*="display: none"] {
     display: block !important
 }
 
-.res #srList:not([style*="display: block"]), .res #srList:not([style*="display: block"]):before, .res #srList:not([style*="display: block"]):after, .res #RESSubredditGroupDropdown[style*="display: none"] {
+body.res:not(.res-v5) #srList {
+    display: block !important;
+}
+
+body.res:not(.res-v5) #srList:not([style*="display: block"]), body.res:not(.res-v5) #srList:not([style*="display: block"]):before, body.res:not(.res-v5) #srList:not([style*="display: block"]):after, body.res:not(.res-v5) #RESSubredditGroupDropdown[style*="display: none"] {
     opacity: 0;
     pointer-events: none
 }
@@ -872,7 +879,12 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
     padding: 0
 }
 
-.RESDropdownList #DashboardLink a, #RESAnnouncementMenuItem a {
+.RESDropdownList #DashboardLink a {
+    background: none;
+    color: #32383f
+}
+
+.RESDropdownList #SettingsConsole, #RESAnnouncementMenuItem a {
     padding-left: 10px;
     background: none;
     color: #32383f
@@ -904,6 +916,10 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
 
 .res .moduleToggle.enabled .toggleOn, .res .toggleButton.enabled .toggleOn {
     background: #6093c4
+}
+
+.RESDropdownList .toggleButton {
+    margin-right: 10px
 }
 
 .res .moduleToggle span, .res .toggleButton span {
@@ -982,7 +998,7 @@ label + #moresearchinfo {
     border: 0
 }
 
-.sponsorshipbox {
+.ad300x250 {
     margin-bottom: 10px
 }
 
@@ -1538,11 +1554,6 @@ div.linkinfo .downvotes {
     display: block;
     margin-top: 5px;
     float: none
-}
-
-#ad_main {
-    position: relative;
-    margin-bottom: 10px
 }
 
 .sidecontentbox .collapse-button, .icon-menu a:before, img.tb-moderation-tools-icons {
@@ -3011,9 +3022,8 @@ body .viewSource textarea[readonly] {
 #subreddit_stylesheet > .sheets:before {
     display: block;
     margin-bottom: 20px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 12px;
+    color: #999;
     content: "Thanks for choosing Apicem! Visit /r/Apicem to leave feedback and check for updates."
 }
 
@@ -3247,6 +3257,14 @@ body .blueButton, a.guider_button {
     border: 0;
     border-radius: 0;
     background: #6093c4
+}
+
+.pageNavigator[href="#header"] {
+    display: none
+}
+
+.res-voteEnhancements-highlightScores span.score {
+    color: #fff
 }
 
 .side .md > blockquote:nth-of-type(1) {
