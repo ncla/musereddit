@@ -144,7 +144,11 @@ body > .content .link.even.thing .midcol {
 #header-bottom-right .user > a {
     width: 18px !important;
     height: 18px !important;
-    margin: 30px 35px 0 0!important;
+    margin: 30px 35px 0 0 !important;
+}
+
+#header-bottom-right .logout a {
+    margin: 30px 24px 0 0 !important;
 }
 
 #header-bottom-right .user>a {
@@ -770,6 +774,43 @@ a.helplink.access-required + div.title + ul.content > li .flair {
 
 .side:after {
     content: "theme by /u/Cereal_Addict, modified by /u/iamncla"
+}
+
+/* TELEGRAM AND DISCORD BUTTONS
+---------------*/
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"],
+.side .md a[href="#button"] + a[href*="://discord.gg/"] {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-indent: 1px;
+}
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:after,
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:after {
+    background: url(%%spritesheet%%) no-repeat -3px -3px;
+    position: absolute;
+    top: 6px;
+    right: -25px;
+    width: 25px;
+    height: 25px;
+    content: "";
+    transition: .4s
+}
+
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:after {
+    background: url(%%spritesheet%%) no-repeat -35px -3px;
+}
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:hover,
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:hover {
+    text-indent: -10px;
+}
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:hover:after,
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:hover:after {
+    right: 6px;
 }
 
 /* MINOR DETAIL CHANGE FOR VOTE BUTTONS
