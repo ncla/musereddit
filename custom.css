@@ -426,6 +426,21 @@ body > .content .link.even.thing .midcol {
     padding: 0 5px;
 }
 
+/* SEARCH REFINE STYLING ON SEARCH PAGES
+--------------------*/
+
+#previoussearch ul.res-search-tabs li {
+    background: #434b55;
+}
+
+#previoussearch ul.res-search-tabs li a {
+    border-color: #4c5561;
+}
+
+.res-searchHelper-searchPageTabs .combined-search-page #previoussearch .res-search-pane {
+    background: #3e4248;
+}
+
 /* POST ENTRY ICONS / THUMBNAIL
 --------------------*/
 
@@ -751,6 +766,10 @@ a.helplink.access-required + div.title + ul.content > li .flair {
 
 .side .bottom {
     display: none;
+}
+
+.side:after {
+    content: "theme by /u/Cereal_Addict, modified by /u/iamncla"
 }
 
 /* MINOR DETAIL CHANGE FOR VOTE BUTTONS
