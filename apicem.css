@@ -559,103 +559,6 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
     opacity: .8
 }
 
-#header .tabmenu {
-    position: absolute;
-    left: 70px;
-    top: 90px;
-    margin: 0;
-    min-width: 210px;
-    padding-top: 50px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 11px;
-    transition: box-shadow .5s
-}
-
-#header .tabmenu:hover, #header:target .tabmenu {
-    box-shadow: 0 0 10px rgba(0, 0, 0, .5)
-}
-
-#header .tabmenu li {
-    display: block;
-    margin: 0;
-    padding: 0 10px;
-    background: #fff;
-    font-weight: 400;
-    opacity: 0;
-    transition: .3s
-}
-
-#header .tabmenu li:last-of-type {
-    padding-bottom: 10px
-}
-
-#header .tabmenu:hover li, #header:target .tabmenu li, #header .tabmenu li.selected {
-    opacity: 1
-}
-
-#header .tabmenu li a {
-    display: block;
-    overflow: hidden;
-    height: 0;
-    border: 0;
-    padding: 0 10px;
-    line-height: 0;
-    background: #fff;
-    color: transparent;
-    -webkit-transition: .3s;
-    transition: .3s;
-    -webkit-transition-property: height, line-height, color;
-    transition-property: height, line-height, color
-}
-
-#header .tabmenu:hover li a, #header:target .tabmenu li a {
-    height: 40px;
-    border-top: 1px solid rgba(0, 0, 0, .1);
-    line-height: 40px;
-    color: #32383f
-}
-
-#header .tabmenu li a:hover, #header .tabmenu:hover li.selected a:hover, #header:target .tabmenu li.selected a:hover {
-    background: rgba(50, 58, 71, .1)
-}
-
-#header .tabmenu li.selected {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-top: 10px;
-    background: none
-}
-
-#header .tabmenu li.selected a {
-    width: 100%;
-    height: 40px;
-    border: 0;
-    background: none;
-    line-height: 40px;
-    color: #fff;
-    opacity: 1;
-    transition: .3s color
-}
-
-#header .tabmenu:hover li.selected, #header:target .tabmenu li.selected {
-    background: #fff
-}
-
-#header .tabmenu:hover li.selected a, #header:target .tabmenu li.selected a {
-    color: #32383f
-}
-
-#header .tabmenu li.selected a:after {
-    content: " ▾"
-}
-
-#header .tabmenu:hover li.selected a:after, #header:target .tabmenu li.selected a:after {
-    color: transparent
-}
-
 .side .md a[href="#headerbutton"] + a {
     position: absolute;
     z-index: 100;
@@ -2550,27 +2453,6 @@ body .comment .md p > a:visited, body h2 a:visited {
 
 .wiki-page .wiki-page-content .wiki > .toc > ul {
     border: 1px solid #434b55
-}
-
-.search-page #header .tabmenu {
-    box-shadow: none;
-    min-width: 0;
-    padding-top: 0;
-    background: none
-}
-
-.search-page #header .tabmenu li {
-    padding-bottom: 0;
-    background: none;
-    opacity: 1
-}
-
-.search-page #header .tabmenu li a {
-    height: 60px;
-    border: 0;
-    background: none;
-    line-height: 60px;
-    color: #fff
 }
 
 .searchpane {
