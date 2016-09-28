@@ -430,7 +430,7 @@ body > .content .link.even.thing .midcol {
     padding: 0 5px;
 }
 
-/* SEARCH REFINE STYLING ON SEARCH PAGES
+/* UNSTYLED SEARCH PAGE ELEMENTS
 --------------------*/
 
 #previoussearch ul.res-search-tabs li {
@@ -442,7 +442,121 @@ body > .content .link.even.thing .midcol {
 }
 
 .res-searchHelper-searchPageTabs .combined-search-page #previoussearch .res-search-pane {
-    background: #3e4248;
+    background: #434b55;
+    border-top: 1px solid #4c5561;
+}
+
+.search-result-meta span.search-subscribe-button a.active.option,
+.search-result-meta span.search-subscribe-button a.active.option.remove,
+.search-result-meta span.private-stamp {
+    height: 18px;
+    line-height: 18px;
+    font-weight: normal;
+    padding: 0 8px;
+    border: 0;
+    border-radius: 0;
+    text-transform: uppercase;
+}
+
+.search-result-meta span.private-stamp {
+    border: 1px solid;
+}
+
+
+.search-result-subreddit .search-result-header  {
+    text-transform: uppercase;
+}
+
+.search-result-subreddit .search-result-meta {
+    margin: 4px 0;
+}
+
+.search-result-subreddit .search-result-meta a.search-subreddit-link {
+    margin-left: 4px;
+}
+
+.search-result-group footer .nextprev .separator {
+    display: none;
+}
+
+.search-result-group footer .nextprev {
+    font-size: 0;
+}
+
+.search-result-body, .search-result-body .md, .search-result-body .md p {
+    color: #fff;
+    font-size: 12px;
+}
+
+.search-result-subreddit .search-result-footer span.search-result-icon {
+    display: none;
+}
+
+/* Because apparently Reddit has .search-result-footer set to overflow: hidden */
+.search-result-subreddit .search-result-footer {
+    overflow: visible;
+}
+
+.search-result-subreddit .search-result-footer span.search-result-icon + a {
+    padding: 3px 10px !important;
+    margin-left: 0;
+}
+
+
+.search-result-subreddit .search-result-footer span.search-result-icon + a mark {
+    color: inherit;
+}
+
+.search-result-header a.search-title > mark {
+    line-height: inherit;
+}
+
+.combined-search-page .searchfacets {
+    margin-bottom: 20px;
+}
+
+/* APICEM SMALL LIGHT BUTTONS
+--------------------*/
+
+button, .usertext .help-toggle a, .usertext a.reddiquette, .flair-jump button, body #userTaggerToolTip input[type=submit],
+body #editShortcutDialog [name=shortcut-save], .wiki-page .wiki-page-content .wiki_button,
+div.nav-buttons .nextprev a[rel="nofollow prev"], div.nav-buttons .nextprev a[rel="nofollow next"],
+.search-result-subreddit .search-result-footer span.search-result-icon + a {
+    border: 1px solid #fff;
+    border-radius: 0;
+    padding: 5px 10px;
+    background: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+    color: #32383f;
+    transition: .2s
+}
+
+button:hover, .flair-jump button:hover {
+    border: 1px solid transparent;
+    background-color: rgba(255, 255, 255, 0.8)
+}
+
+button.cancel, button[name="preview"], .usertext .help-toggle a, .usertext a.reddiquette,
+div.nav-buttons .nextprev a[rel="nofollow prev"], div.nav-buttons .nextprev a[rel="nofollow next"],
+.search-result-subreddit .search-result-footer span.search-result-icon + a {
+    color: #fff;
+    background: none;
+    transition: .2s
+}
+
+button.cancel:hover, button[name="preview"]:hover, .usertext .help-toggle a:hover, .usertext a.reddiquette:hover, .content button.RESBigEditorPop:hover,
+div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextprev a[rel="nofollow next"]:hover {
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, .1)
+}
+
+/* Slightly less eye-catching colors */
+.search-result-subreddit .search-result-footer span.search-result-icon + a {
+    color: #c3c3c3;
+    border: 1px solid #afafaf;
 }
 
 /* POST ENTRY ICONS / THUMBNAIL

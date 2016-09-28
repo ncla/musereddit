@@ -81,35 +81,6 @@ select {
     color: #fff
 }
 
-button, .usertext .help-toggle a, .usertext a.reddiquette, .flair-jump button, body #userTaggerToolTip input[type=submit], body #editShortcutDialog [name=shortcut-save], .wiki-page .wiki-page-content .wiki_button {
-    border: 1px solid #fff;
-    border-radius: 0;
-    padding: 5px 10px;
-    background: #fff;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 10px;
-    font-weight: 700;
-    color: #32383f;
-    transition: .2s
-}
-
-button:hover, .flair-jump button:hover {
-    border: 1px solid transparent;
-    background-color: rgba(255, 255, 255, 0.8)
-}
-
-button.cancel, button[name="preview"], .usertext .help-toggle a, .usertext a.reddiquette {
-    color: #fff;
-    background: none;
-    transition: .2s
-}
-
-button.cancel:hover, button[name="preview"]:hover, .usertext .help-toggle a:hover, .usertext a.reddiquette:hover, .content button.RESBigEditorPop:hover {
-    border: 1px solid #fff;
-    background-color: rgba(255, 255, 255, .1)
-}
-
 body {
     display: -webkit-flex;
     display: -ms-flexbox;
