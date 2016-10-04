@@ -717,6 +717,13 @@ a.thumbnail[href*="reddit.com"],
     transition: .3s;
 }
 
+/* TITLE PADDING FIX ON /COMMENTS
+--------------------*/
+.listing-page .comment p.parent {
+    margin-left: 12px;
+}
+
+
 /* CHECKBOX BACKGROUND-SIZE FIX
 --------------------*/
 #rem-login-main, .side .titlebox h1.redditname+div:before, input[type=checkbox], input[type=radio] {
