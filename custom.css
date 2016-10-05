@@ -791,6 +791,12 @@ span#RESSettingsButton:hover {
     cursor: pointer;
 }
 
+/* NEW POST PAGE FIXES AND STYLING
+--------------------*/
+#newlink-with-image-upload #image-name {
+    background: none;
+}
+
 /* COLORIZATION
 ---------------*/
 
