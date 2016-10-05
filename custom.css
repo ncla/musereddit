@@ -979,6 +979,26 @@ a.helplink.access-required + div.title + ul.content > li .flair {
     right: 6px;
 }
 
+/* RECENTLY VIEWED LINKS
+   .gadget seems to be correct class to target it, according to Reddits source code
+-----------------*/
+
+.gadget .thing .midcol {
+    display: none;
+}
+
+.gadget .thing .entry {
+    margin-left: 0;
+}
+
+.gadget .score {
+    margin-left: 0;
+}
+
+.gadget .thing .entry small, .gadget .thing .entry span.score, .gadget .thing .entry .reddit-comment-link {
+    color: #999;
+}
+
 /* MINOR DETAIL CHANGE FOR VOTE BUTTONS
 -----------------*/
 body>.content .link.thing .midcol {
