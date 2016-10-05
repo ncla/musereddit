@@ -721,6 +721,14 @@ a.thumbnail[href*="reddit.com"],
     transition: .3s;
 }
 
+/* RES SHOW IMAGES RESPONSIVE
+--------------------*/
+.res-image .res-image-media {
+    max-width: 100% !important;
+    height: auto;
+    display: block;
+}
+
 /* TITLE PADDING FIX ON /COMMENTS
 --------------------*/
 .listing-page .comment p.parent {
