@@ -797,6 +797,10 @@ span#RESSettingsButton:hover {
     background: none;
 }
 
+.content button.RESBigEditorPop span.res-icon {
+    display: none;
+}
+
 /* COLORIZATION
 ---------------*/
 
