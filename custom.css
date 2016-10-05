@@ -121,6 +121,10 @@ body > .content .link.even.thing .midcol {
     /*
         This mobile-friend click button to toggle show navigation buttons
     */
+    body.res .side .md > blockquote:nth-of-type(1) {
+        display: none;
+    }
+
     .side .md > blockquote:nth-of-type(1) {
         top: 160px;
         left: 70px;
@@ -779,6 +783,12 @@ span.nsfw-stamp.stamp {
 
 #RESAnnouncementAlert {
     display: none;
+}
+
+/* RES SETTINGS BUTTON SHOULD ACT LIKE A LINK
+--------------------*/
+span#RESSettingsButton:hover {
+    cursor: pointer;
 }
 
 /* COLORIZATION
