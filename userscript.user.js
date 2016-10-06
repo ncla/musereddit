@@ -16,12 +16,15 @@
     var jQ = jQuery.noConflict();
     var originalLink = 'https://localhost:4443/build/stylesheet.css';
 
-    jQ('link[rel="stylesheet"][title="applied_subreddit_stylesheet"]').remove();
-    jQ('head').append('<link rel="stylesheet" type="text/css" href=' + originalLink + ' media="all" id="devstylesheet">');
+    var originalSubredditStyle = jQ('link[rel="stylesheet"][title="applied_subreddit_stylesheet"]');
 
-    Mousetrap.bind('alt+s', function() {
-        console.log('Reloading style-sheet');
-        jQ('#devstylesheet').attr('href', originalLink + '?' + (+new Date()));
-    });
+    if (originalSubredditStyle.length) {
+        jQ(originalSubredditStyle).remove();
+        jQ('head').append('<link rel="stylesheet" type="text/css" href=' + originalLink + ' media="all" id="devstylesheet">');
 
+        Mousetrap.bind('alt+s', function() {
+            console.log('Reloading style-sheet');
+            jQ('#devstylesheet').attr('href', originalLink + '?' + (+new Date()));
+        });
+    }
 })();
