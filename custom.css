@@ -897,50 +897,61 @@ body #header #sr-header-area .srdrop+.drop-choices.srdrop a.choice:hover,
 
 /* Custom WebKit scrollbar for few elements */
 
-.flairselector form::-webkit-scrollbar, .flairoptionpane::-webkit-scrollbar {
+.flairselector form::-webkit-scrollbar, .flairoptionpane::-webkit-scrollbar, #srList tbody::-webkit-scrollbar {
     width: 3px;
     height: 3px;
 }
 
-.flairselector form::-webkit-scrollbar-button, .flairoptionpane::-webkit-scrollbar-button {
+.flairselector form::-webkit-scrollbar-button, .flairoptionpane::-webkit-scrollbar-button, #srList tbody::-webkit-scrollbar-button {
     width: 0px;
     height: 0px;
 }
 
-.flairselector form::-webkit-scrollbar-thumb, .flairoptionpane::-webkit-scrollbar-thumb {
+.flairselector form::-webkit-scrollbar-thumb, .flairoptionpane::-webkit-scrollbar-thumb, #srList tbody::-webkit-scrollbar-thumb {
     background: #e1e1e1;
     border: 0px none #ffffff;
     border-radius: 50px;
 }
 
-.flairselector form::-webkit-scrollbar-thumb:hover, .flairoptionpane::-webkit-scrollbar-thumb:hover {
+.flairselector form::-webkit-scrollbar-thumb:hover, .flairoptionpane::-webkit-scrollbar-thumb:hover, #srList tbody::-webkit-scrollbar-thumb:hover {
     background: #ffffff;
 }
 
-.flairselector form::-webkit-scrollbar-thumb:active, .flairoptionpane::-webkit-scrollbar-thumb:active {
+.flairselector form::-webkit-scrollbar-thumb:active, .flairoptionpane::-webkit-scrollbar-thumb:active, #srList tbody::-webkit-scrollbar-thumb:active {
     background: #b2b2b2;
 }
 
-.flairselector form::-webkit-scrollbar-track, .flairoptionpane::-webkit-scrollbar-track {
+.flairselector form::-webkit-scrollbar-track, .flairoptionpane::-webkit-scrollbar-track, #srList tbody::-webkit-scrollbar-track {
     background: #666666;
     border: 0px none #ffffff;
     border-radius: 50px;
 }
 
-.flairselector form::-webkit-scrollbar-track:hover, .flairoptionpane::-webkit-scrollbar-track:hover {
+.flairselector form::-webkit-scrollbar-track:hover, .flairoptionpane::-webkit-scrollbar-track:hover, #srList tbody::-webkit-scrollbar-track:hover {
     background: #666666;
 }
 
-.flairselector form::-webkit-scrollbar-track:active, .flairoptionpane::-webkit-scrollbar-track:active {
+.flairselector form::-webkit-scrollbar-track:active, .flairoptionpane::-webkit-scrollbar-track:active, #srList tbody::-webkit-scrollbar-track:active {
     background: #333333;
 }
 
-.flairselector form::-webkit-scrollbar-corner, .flairoptionpane::-webkit-scrollbar-corner {
+.flairselector form::-webkit-scrollbar-corner, .flairoptionpane::-webkit-scrollbar-corner, #srList tbody::-webkit-scrollbar-corner {
     background: transparent;
 }
 
 a.helplink.access-required + div.title + ul.content > li .flair {
     display: none;
+}
+
+
+/* RES SUB-REDDIT LIST
+---------------*/
+.res #srList tbody {
+    overflow: auto;
+}
+
+.res #srList tr td:last-child {
+    padding-right: 10px;
 }
 
 /* HIDDING SUB AGE AND CREATOR
