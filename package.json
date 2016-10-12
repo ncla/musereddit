@@ -17,12 +17,14 @@
   },
   "homepage": "https://github.com/ncla/musereddit#readme",
   "devDependencies": {
+    "finalhandler": "^0.5.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.12",
     "gulp-concat-css": "^2.3.0",
     "gulp-if": "^2.0.1",
     "gulp-replace": "^0.5.4",
     "reddit-oauth-helper": "^0.3.0",
+    "serve-static": "^1.11.1",
     "yargs": "^5.0.0"
   },
   "dependencies": {
