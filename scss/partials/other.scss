@@ -1,0 +1,595 @@
+/*============================================================================
+                          ADD ADDONS/CUSTOMIZATIONS BELOW
+==============================================================================*/
+
+/* 100% WIDTH POST ENTRIES
+---------------------------*/
+.link, .link.last-clicked {
+  width: 100%;
+}
+
+.link.odd {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.link.even {
+  border-left: 0;
+}
+
+body > .content .link.even.thing .midcol {
+  margin-left: -3px;
+}
+
+.link.even .entry {
+  margin-left: 130px;
+}
+
+
+.modtools-page > div.content, .res.res-commentBoxes body > .content, body > .content {
+  margin: 10px 0 0 30px;
+}
+
+/* ALWAYS VISIBLE USERBAR
+-------------------------*/
+#header-bottom-right:after {
+  display: none;
+}
+
+#header-bottom-right .user > a,
+#header-bottom-right #mail,
+#header-bottom-right #modmail,
+.ChatApp__reddit-icon,
+#header-bottom-right .pref-lang,
+#header-bottom-right #openRESPrefs .gearIcon,
+#header-bottom-right .logout a {
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none
+}
+
+/* PAGENAME SUBTITLE
+--------------------*/
+#header .pagename:after {
+  content: ""
+}
+
+/* NO HEADER TINT
+-----------------*/
+#header {
+  background-image: url(%%header%%)
+}
+
+/* SEARCH LINE PADDING
+--------------------*/
+
+#searchexpando label:first-child {
+  margin-bottom: 6px;
+}
+
+/* SEARCH EXPANDO SELECT AND LABEL MARGIN
+--------------------*/
+
+#searchexpando label select[name='sort'], #searchexpando label select[name='t'] {
+  margin-left: 5px;
+}
+
+#searchexpando label + br + label, #searchexpando label + br + label + label {
+  padding: 0 5px;
+}
+
+/* UNSTYLED SEARCH PAGE ELEMENTS
+--------------------*/
+
+#previoussearch ul.res-search-tabs li {
+  background: #434b55;
+}
+
+#previoussearch ul.res-search-tabs li a {
+  border-color: #4c5561;
+}
+
+.res-searchHelper-searchPageTabs .combined-search-page #previoussearch .res-search-pane {
+  background: #434b55;
+  border-top: 1px solid #4c5561;
+}
+
+.search-result-meta span.search-subscribe-button a.active.option,
+.search-result-meta span.search-subscribe-button a.active.option.remove,
+.search-result-meta span.private-stamp {
+  height: 18px;
+  line-height: 18px;
+  font-weight: normal;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.search-result-meta span.private-stamp {
+  border: 1px solid;
+}
+
+
+.search-result-subreddit .search-result-header  {
+  text-transform: uppercase;
+}
+
+.search-result-subreddit .search-result-meta {
+  margin: 4px 0;
+}
+
+.search-result-subreddit .search-result-meta a.search-subreddit-link {
+  margin-left: 4px;
+}
+
+.search-result-group footer .nextprev .separator {
+  display: none;
+}
+
+.search-result-group footer .nextprev {
+  font-size: 0;
+}
+
+.search-result-body, .search-result-body .md, .search-result-body .md p {
+  color: #fff;
+  font-size: 12px;
+}
+
+.search-result-subreddit .search-result-footer span.search-result-icon {
+  display: none;
+}
+
+/* Because apparently Reddit has .search-result-footer set to overflow: hidden */
+.search-result-subreddit .search-result-footer {
+  overflow: visible;
+}
+
+.search-result-subreddit .search-result-footer span.search-result-icon + a {
+  padding: 3px 10px !important;
+  margin-left: 0;
+}
+
+
+.search-result-subreddit .search-result-footer span.search-result-icon + a mark {
+  color: inherit;
+}
+
+.search-result-header a.search-title > mark {
+  line-height: inherit;
+}
+
+.combined-search-page .searchfacets {
+  margin-bottom: 20px;
+}
+
+/* APICEM SMALL LIGHT BUTTONS
+--------------------*/
+
+button, .usertext .help-toggle a, .usertext a.reddiquette, .flair-jump button, body #userTaggerToolTip input[type=submit],
+body #editShortcutDialog [name=shortcut-save], .wiki-page .wiki-page-content .wiki_button,
+div.nav-buttons .nextprev a[rel="nofollow prev"], div.nav-buttons .nextprev a[rel="nofollow next"],
+.search-result-subreddit .search-result-footer span.search-result-icon + a {
+  border: 1px solid #fff;
+  border-radius: 0;
+  padding: 5px 10px;
+  background: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  color: #32383f;
+  transition: .2s
+}
+
+button:hover, .flair-jump button:hover {
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.8)
+}
+
+button.cancel, button[name="preview"], .usertext .help-toggle a, .usertext a.reddiquette,
+div.nav-buttons .nextprev a[rel="nofollow prev"], div.nav-buttons .nextprev a[rel="nofollow next"],
+.search-result-subreddit .search-result-footer span.search-result-icon + a {
+  color: #fff;
+  background: none;
+  transition: .2s
+}
+
+button.cancel:hover, button[name="preview"]:hover, .usertext .help-toggle a:hover, .usertext a.reddiquette:hover, .content button.RESBigEditorPop:hover,
+div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextprev a[rel="nofollow next"]:hover {
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, .1)
+}
+
+/* Slightly less eye-catching colors */
+.search-result-subreddit .search-result-footer span.search-result-icon + a {
+  color: #c3c3c3;
+  border: 1px solid #afafaf;
+}
+
+/* POST ENTRY ICONS / THUMBNAIL
+--------------------*/
+
+.thumbnail {
+  position: relative
+}
+
+.thumbnail,
+.thumbnail.self,
+.search-result.has-thumbnail > .thumbnail,
+.link .entry:before {
+  -webkit-flex: none;
+  flex: none;
+  margin: 0;
+  width: 80px;
+  height: 80px !important
+}
+
+.thumbnail:after {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 80px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, .4);
+  pointer-events: none
+}
+
+/* NO THUMBNAIL ELEMENT */
+body:not(.comments-page) .link :not(.thumbnail) + .entry:before {
+  position: absolute;
+  top: 9px;
+  left: -81px;
+  line-height: 64px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, .4);
+  pointer-events: none;
+  content: "•••";
+  border-radius: 31px;
+}
+
+.link .thumbnail img {
+  width: auto !important;
+  height: 80px !important
+}
+
+.search-result.has-thumbnail > .thumbnail {
+  margin-right: 10px
+}
+
+.search-result.has-thumbnail > .thumbnail.self,
+.search-result.has-thumbnail > .thumbnail.default {
+  margin-right: 28px; /* Default margin + compensating for narrower width (18px / 9px = 2x) */
+}
+
+.self .thumbnail img,
+.thing.stickied .thumbnail img,
+.comments-page .thing.stickied .thumbnail,
+.comments-page .thumbnail.self,
+.comments-page .over18 .thumbnail,
+a.thumbnail[href*="reddit.com"] img {
+  display: none
+}
+
+/* 62PX OVERWRITE START */
+a.thumbnail[href*="reddit.com"],
+
+.thing.stickied .thumbnail,
+.link.stickied :not(.thumbnail) + .entry:before,
+
+.thumbnail.self,
+.link :not(.thumbnail) + .entry:before,
+.thumbnail.default,
+
+.over18 .thumbnail.nsfw,
+
+.search-result.has-thumbnail > .thumbnail.self,
+.search-result.has-thumbnail > .thumbnail.default {
+  width: 62px;
+  height: 62px !important;
+  position: relative;
+  top: 9px;
+  left: 9px;
+}
+
+.link a.thumbnail[href*="reddit.com"] {
+  background: url(%%spritesheet%%) -2px -367px;
+}
+
+.link a.thumbnail[href*="reddit.com"]:after, .over18.link .thumbnail:after {
+  content: "";
+}
+
+.thumbnail.default {
+  background: url(%%spritesheet%%) -133px -302px !important; /* remove important cuz testing */
+}
+
+.thumbnail.self {
+  background: url(%%spritesheet%%) -68px -302px !important; /* remove important cuz testing */
+}
+
+.over18.link .thumbnail {
+  background: url(%%spritesheet%%) -2px -302px !important; /* remove important cuz testing */
+}
+
+/* 62PX OVERWRITE END */
+
+/* RES NSFW EXPANDO STYLE (THIS SHOULD BE IN CORE CSS FILE), CAUSED BY DIFFERENT RES CLASS?
+--------------------*/
+
+.res-showImages-highlightNSFWButton .thing.over18 .expando-button::before {
+  position: absolute;
+  left: 8px;
+  top: 13.5px;
+  width: 12px;
+  height: 1px;
+  background: #fff;
+  content: "";
+  transition: .3s;
+}
+
+/* RES SHOW IMAGES RESPONSIVE
+--------------------*/
+.res-image .res-image-media {
+  max-width: 100% !important;
+  height: auto;
+  display: block;
+}
+
+/* TITLE PADDING FIX ON /COMMENTS
+--------------------*/
+.listing-page .comment p.parent {
+  margin-left: 12px;
+}
+
+
+/* CHECKBOX BACKGROUND-SIZE FIX
+--------------------*/
+#rem-login-main, .side .titlebox h1.redditname+div:before, input[type=checkbox], input[type=radio] {
+  background: url(%%spritesheet%%) -2px -200px no-repeat #383F47;
+}
+
+select {
+  background: url(%%spritesheet%%) right -188px top -248px no-repeat #383F47;
+}
+
+.res .RESUserTagImage::after {
+  background: url(%%spritesheet%%) -4px -30px no-repeat;
+}
+
+/* CUSTOMIZED NSFW / STICKIED TAG
+--------------------*/
+
+.tagline .stickied-tagline, span.nsfw-stamp.stamp {
+  background: #4f9c79;
+  color: #f3f3f3;
+  text-transform: uppercase;
+  padding: 2px 5px;
+  font-size: 10px;
+}
+
+span.nsfw-stamp.stamp {
+  background: #c4918a;
+  padding: 2px 6px;
+}
+
+.tagline .stickied-tagline {
+  margin-left: 3px;
+}
+
+/* STICKIED POST TEXT WHEN VISITED
+--------------------*/
+.thing.stickied.link a.title:visited {
+  color: #61c095 !important;
+}
+
+/* HIDING FLAIR AND UPVOTE COUNT WHEN STICKIED POST
+--------------------*/
+.link.stickied .tagline .flair {
+  display: none;
+}
+
+.link.stickied .tagline .voteWeight {
+  display: none !important;
+}
+
+/* HIDING RES ANNOUNCEMENT UPDATE IN NAV BAR
+--------------------*/
+
+#RESAnnouncementAlert {
+  display: none;
+}
+
+/* RES SETTINGS BUTTON SHOULD ACT LIKE A LINK
+--------------------*/
+span#RESSettingsButton:hover {
+  cursor: pointer;
+}
+
+/* NEW POST PAGE FIXES AND STYLING
+--------------------*/
+#newlink-with-image-upload #image-name {
+  background: none;
+}
+
+.content button.RESBigEditorPop span.res-icon {
+  display: none;
+}
+
+/* COLORIZATION
+---------------*/
+
+/* PINK BORDERS
+---------------*/
+input[type=text]:focus,
+textarea:focus,
+input#url:focus { border-color: #6093c4 !important }
+
+/* PINK BACKGROUNDS
+-------------------*/
+#header-bottom-right a.message-count,
+.res .moduleToggle:not(.enabled) .toggleOff,
+.res .toggleButton:not(.enabled) .toggleOff,
+.side .fancy-toggle-button a.option.active,
+#authorInfoToolTip .fancy-toggle-button a.option.active,
+.fancy-toggle-button .add.active,
+.res #RESHoverInfoSubscriptionButton,
+#NERFail .nextprev a,
+.next-suggestions a,
+.res .RESSubscriptionButton,
+.res .RESSubscriptionButton:hover,
+button.search-submit-button.c-btn.c-btn-primary { background: #6093c4 !important; }
+
+/* PINK TEXT
+------------*/
+body #header #sr-header-area .srdrop+.drop-choices.srdrop a.choice:hover,
+.res #srList tbody tr:hover a,
+.res #RESSubredditGroupDropdown li a:hover,
+.res #RESSubredditGroupDropdown .RESShortcutsEditButtons .res-icon:hover,
+.res #RESSubredditGroupDropdown .RESShortcutsCurrentSub a,
+.md a:hover,
+.flair-settings+.tabmenu li.selected a,
+.error,
+.morechildren .entry a.button[style*="color: red"],
+.thing a.title:hover,
+.link .entry .buttons li a:hover,
+.link .redditSingleClick:hover,
+.link .entry .buttons li a.comments,
+.tabmenu.formtab .selected a,
+.flat-list li.selected a { color: #6093c4 !important }
+
+
+/* RES SUB-REDDIT LIST
+---------------*/
+.res #srList tbody {
+  overflow: auto;
+}
+
+.res #srList tr td:last-child {
+  padding-right: 10px;
+}
+
+/* TELEGRAM AND DISCORD BUTTONS
+---------------*/
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"],
+.side .md a[href="#button"] + a[href*="://discord.gg/"] {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 1px;
+}
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:after,
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:after {
+  background: url(%%spritesheet%%) no-repeat -3px -3px;
+  position: absolute;
+  top: 6px;
+  right: -25px;
+  width: 25px;
+  height: 25px;
+  content: "";
+  transition: .4s
+}
+
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:after {
+  background: url(%%spritesheet%%) no-repeat -35px -3px;
+}
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:hover,
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:hover {
+  text-indent: -10px;
+}
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:hover:after,
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:hover:after {
+  right: 6px;
+}
+
+/* Gig list
+-----------------*/
+.side table:nth-of-type(1) {
+  margin: 0 0 10px 0;
+  font-size: 11px;
+}
+
+.side table:nth-of-type(1) > tbody,
+.side table:nth-of-type(1) td {
+  border: 1px solid #434b55;
+}
+
+.side table:nth-of-type(1) > thead {
+  display: none;
+}
+
+/* RECENTLY VIEWED LINKS
+   .gadget seems to be correct class to target it, according to Reddits source code
+-----------------*/
+
+.gadget .thing .midcol {
+  display: none;
+}
+
+.gadget .thing .entry {
+  margin-left: 0;
+}
+
+.gadget .score {
+  margin-left: 0;
+}
+
+.gadget .thing .entry small, .gadget .thing .entry span.score, .gadget .thing .entry .reddit-comment-link {
+  color: #999;
+}
+
+/* MINOR DETAIL CHANGE FOR VOTE BUTTONS
+-----------------*/
+body>.content .link.thing .midcol {
+  margin-top: 12px;
+}
+
+.arrow {
+  width: 15px;
+  height: 15px;
+  background: url(%%spritesheet%%) !important;
+  margin: 3px auto;
+  opacity: 0.7;
+}
+
+.arrow.up {
+  background-position: -67px -247px !important;
+}
+
+.arrow.upmod {
+  background-position: -84px -247px !important;
+}
+
+.arrow.down {
+  background-position: -33px -247px !important;
+}
+
+.arrow.upmod, .arrow.downmod {
+  opacity: 1;
+}
+
+.arrow.down {
+  opacity: 0.5;
+}
+
+.arrow.down:hover, .arrow.up:hover {
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+
+.arrow.downmod {
+  background-position: -50px -247px !important;
+  opacity: 1;
+}

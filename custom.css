@@ -1002,6 +1002,22 @@ a.helplink.access-required + div.title + ul.content > li .flair {
     right: 6px;
 }
 
+/* Gig list
+-----------------*/
+.side table:nth-of-type(1) {
+    margin: 0 0 10px 0;
+    font-size: 11px;
+}
+
+.side table:nth-of-type(1) > tbody,
+.side table:nth-of-type(1) td {
+    border: 1px solid #434b55;
+}
+
+.side table:nth-of-type(1) > thead {
+    display: none;
+}
+
 /* RECENTLY VIEWED LINKS
    .gadget seems to be correct class to target it, according to Reddits source code
 -----------------*/

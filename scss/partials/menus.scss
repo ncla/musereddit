@@ -1,0 +1,278 @@
+// Since you cannot extend nested selectors, we are wrapping duplicate styling.
+// This whole mess is needed because the selector for mobile drop-down menu is different (#header:target .tabmenu)
+// See: https://github.com/sass/sass/issues/1442
+
+%tabmenu-hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+
+  li {
+    opacity: 1;
+
+    &.selected:not(.res-tabmenu-button) {
+      background: #fff;
+
+      a {
+        color: #32383f;
+        border: 0 !important;
+
+        &:after {
+          color: transparent;
+        }
+
+        &:hover {
+          background: rgba(50, 58, 71, .1);
+        }
+      }
+
+    }
+
+    a {
+      border-top: 1px solid rgba(0, 0, 0, .1);
+      color: #32383f;
+      height: 32px;
+      line-height: 32px;
+    }
+
+  }
+}
+
+#header {
+
+  .tabmenu {
+    position: absolute;
+    left: 70px;
+    top: 250px;
+    margin: 0;
+    min-width: 210px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    transition: box-shadow .3s;
+    padding-top: 42px;
+
+    li {
+      display: block;
+      margin: 0;
+      padding: 0 10px;
+      background: #fff;
+      font-weight: 400;
+      opacity: 0;
+      transition: 0.3s;
+
+      a {
+        display: block;
+        overflow: hidden;
+        height: 0px;
+        border: 0;
+        padding: 0 10px;
+        line-height: 0px;
+        background: #fff;
+        color: transparent;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        -webkit-transition-property: height, line-height, color;
+        transition-property: height, line-height, color;
+
+        // Different hover from .tabmenu:hover
+        &:hover {
+          background: rgba(50, 58, 71, .1);
+        }
+
+      }
+
+      &.selected:not(.res-tabmenu-button) {
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 10px;
+        background: none;
+
+        a {
+          width: 100%;
+          border: 0;
+          background: none;
+          color: #fff;
+          opacity: 1;
+          transition: .3s color;
+          height: 32px;
+          line-height: 32px;
+
+          &:after {
+            content: " ▾";
+          }
+
+        }
+
+      }
+
+      // Just make them look like an actual toggles buttons, and not links
+      &.res-tabmenu-button.selected:not(:only-child):not(:first-child) a {
+        font-weight: 600;
+      }
+
+      &:last-of-type {
+        padding-bottom: 10px;
+      }
+
+    }
+
+    // .tabmenu:hover
+    &:hover {
+
+      @extend %tabmenu-hover;
+
+    }
+
+  }
+}
+
+#header {
+  // :target for plebs
+  &:target {
+
+    .tabmenu {
+
+      @extend %tabmenu-hover;
+
+    }
+  }
+}
+
+// Search page specific, because there is only one item in the .tabmenu
+
+.search-page #header {
+
+  .tabmenu {
+    box-shadow: none;
+    padding-top: 0;
+    background: none;
+
+    li {
+      padding-bottom: 0;
+      background: none;
+      opacity: 1;
+
+      a {
+        height: 32px;
+        border: 0;
+        background: none;
+        line-height: 32px;
+        color: #fff;
+      }
+
+      &:only-child {
+        padding: 10px 0;
+
+        a:after {
+          content: '';
+        }
+
+      }
+
+      &.res-tabmenu-button a:hover::after {
+        color: #fff !important;
+      }
+
+    }
+
+    &:hover {
+
+      li:only-child a {
+        color: #fff;
+      }
+
+      li:only-child, li:only-child a {
+        background: none;
+      }
+
+    }
+
+  }
+
+  &:target {
+
+    .tabmenu {
+
+      li:only-child a {
+        color: #fff;
+      }
+
+      li:only-child, li:only-child a {
+        background: none;
+      }
+
+    }
+
+  }
+
+}
+
+// RES menus
+
+.RESDropdownList ul.RESDropdownOptions {
+  min-width: 200px;
+
+  li {
+    height: 32px;
+    line-height: 32px;
+    padding: 0;
+
+    > a {
+      padding: 0 10px;
+      color: #32383f !important;
+    }
+
+    &:hover, a:hover {
+      background: rgba(50,58,71,.1);
+      color: #32383f;
+    }
+
+  }
+
+  li a span.RESMenuItemButton, li span#RESSearchMenuItem {
+    display: none;
+  }
+
+  li > div {
+    padding: 0 10px;
+    height: 32px;
+    line-height: 32px;
+  }
+
+  #DashboardLink a {
+    padding-left: 0;
+  }
+
+  .toggleButton {
+    margin-right: 0;
+    margin-top: -1px;
+  }
+
+  #nsfwSwitchToggleContainer span, #nightSwitchToggleContainer span {
+    padding: 0 1px;
+    width: 30px;
+    font-size: 10px;
+  }
+
+  #nightSwitchToggleContainer, #nsfwSwitchToggleContainer, #nightSwitchToggleContainer, #nsfwSwitchToggleContainer {
+    &.toggleButton .toggleOn, &.toggleButton .toggleOff {
+      border-radius: 0;
+    }
+  }
+
+  // Dirty hack to get rid of the stupid up-arrow for donate button
+  .RES-donate {
+    font-size: 0;
+    padding: 0;
+
+    &:before {
+      font-size: 11px;
+      content: 'Donate to RES';
+      padding: 0 10px 0 10px;
+    }
+
+  }
+
+}

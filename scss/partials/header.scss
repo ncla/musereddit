@@ -1,0 +1,124 @@
+#header {
+  height: 250px;
+  background-position: center center;
+  border-bottom: 0;
+
+  .pagename {
+    top: 113px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+    &:after {
+      display: block;
+      margin-top: 40px;
+      margin-left: 0;
+    }
+  }
+
+  .pagename a {
+    border-bottom: 1px solid #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    padding: 10px 0 10px 10px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+
+  &:before {
+    padding: 0 20px;
+    background: url(%%overlay%%), linear-gradient(45deg, #6093c4 20%, #46a6b5 80%);
+    display: block;
+    overflow: hidden;
+    position: relative;
+    bottom: -250px;
+    margin-top: 0;
+    height: 50px;
+    border: 0;
+    line-height: 45px;
+    white-space: nowrap;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    content: "";
+  }
+
+  #header-img {
+    bottom: -37px;
+    width: 22px;
+    height: 22px;
+    background: url(%%spritesheet%%) -146px -148px;
+  }
+
+  #header-bottom-right {
+    bottom: -66px;
+
+    #mail, #modmail, #openRESPrefs .gearIcon, .logout a, .pref-lang, .user > a {
+      width: 18px !important;
+      height: 18px !important;
+      margin: 30px 35px 0 0 !important;
+    }
+    .logout a {
+      margin: 30px 24px 0 0 !important;
+    }
+    .user > a {
+      background-position: -157px -204px;
+    }
+    #mail {
+      &.nohavemail {
+        background-position: -116px -224px;
+      }
+      &.havemail {
+        background-position: -55px -225px;
+      }
+    }
+    #modmail {
+      background-position: -32px -204px;
+    }
+    .pref-lang {
+      background-position: -116px -205px;
+    }
+    #openRESPrefs .gearIcon {
+      background-position: -76px -225px;
+    }
+    .logout a {
+      background-position: -56px -205px;
+    }
+    #mail.havemail:after, #modmail.havemail:after {
+      top: -10px;
+      left: -10px;
+      width: 38px;
+      height: 38px;
+    }
+    a.message-count {
+      top: 0;
+    }
+  }
+
+}
+
+@media (max-width: $break-large) {
+  #header {
+    &:before {
+      bottom: -220px;
+    }
+  }
+
+  // This mobile-friendly click button to toggle show navigation buttons
+  body.res .side .md > blockquote:nth-of-type(1) {
+    display: none;
+  }
+
+  #header:target + .side .md > blockquote:nth-of-type(1) {
+    top: 185px;
+  }
+
+  .side .md > blockquote:nth-of-type(1) {
+    top: 160px;
+    left: 70px;
+  }
+
+  body > .content {
+    margin: 10px 0 0 0 !important;
+    max-width: calc(100vw - 320px) !important;
+  }
+}

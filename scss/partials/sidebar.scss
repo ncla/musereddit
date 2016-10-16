@@ -1,0 +1,36 @@
+.side {
+  margin: 50px 30px 0 0;
+  padding: 15px 10px 10px 10px;
+
+  .bottom {
+    display: none;
+  }
+
+  &:after {
+    content: "theme by /u/Cereal_Addict, modified by /u/iamncla"
+  }
+}
+
+.side .md > h3:first-of-type, body > .content:before {
+  background: none;
+}
+
+.side .md {
+  a[href="#headerbutton"] + a {
+    top: 350px;
+  }
+  > h3:first-of-type {
+    top: 410px;
+  }
+}
+
+@media (max-width: $break-large) {
+  .side {
+    margin: 50px 0 0 0 !important;
+  }
+
+  body > .content {
+    margin: 10px 0 0 0 !important;
+    max-width: calc(100vw - 320px) !important;
+  }
+}

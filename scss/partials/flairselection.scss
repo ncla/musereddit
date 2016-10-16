@@ -1,0 +1,47 @@
+/* FLAIR SELECTION AND FLAIR IMPROVEMENTS
+---------------*/
+
+/* Elements you want to cut off text for */
+.flairoptionpane ul li .flair,
+.side a.author.flairselectable + span.flair {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flairoptionpane ul li .flair {
+  max-width: 270px;
+  margin-left: 0;
+}
+
+.flairoptionpane ul {
+  width: 270px !important;
+  max-width: 270px;
+}
+
+.side a.author.flairselectable + span.flair {
+  max-width: 160px;
+}
+
+.flairselector.drop-choices {
+  padding: 4px 0 !important;
+}
+
+.flairselector form {
+  padding: 5px 0 5px 0;
+  overflow-x: auto;
+}
+
+.flairselector form input {
+  padding: 0 8px;
+  height: 23px;
+  font-size: 11px;
+}
+
+.flairselector form span.status {
+  font-size: 11px;
+}
+
+a.helplink.access-required + div.title + ul.content > li .flair {
+  display: none;
+}
