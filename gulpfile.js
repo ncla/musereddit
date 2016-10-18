@@ -6,6 +6,9 @@ var argv = require('yargs').argv;
 var concatCss = require('gulp-concat-css');
 var sass = require('gulp-sass');
 var size = require('gulp-size');
+// https://github.com/Microsoft/BashOnWindows/issues/216#issuecomment-242501733
+// Remove this implementation when the fs watcher is fixed on Windows 10 in stable branch
+var watch = require('gulp-watch');
 
 gulp.task('build', function() {
     var stream = gulp.src('./scss/main.scss')
@@ -18,7 +21,14 @@ gulp.task('build', function() {
         .pipe(gulpif((argv.production !== true), replace('url(%%spritesheet%%)', 'url("https://localhost:4443/images/spritesheet.png")')))
         .pipe(gulpif((argv.production !== true), replace('url(%%flairsheet%%)', 'url("https://localhost:4443/images/flairsheet.png")')))
         .pipe(concatCss('stylesheet.css'))
-        .pipe(cleanCSS({debug: true}))
+        .pipe(cleanCSS({
+            debug: true,
+            compatibility: {
+                properties: {
+                    zeroUnits: false
+                }
+            }
+        }))
         .pipe(size({
             title: 'Total sub-reddit stylesheet size',
             pretty: true,
@@ -30,9 +40,7 @@ gulp.task('build', function() {
 });
 
 gulp.task('watch', function() {
-    var watcher = gulp.watch(['apicem.css', 'custom.css'], ['build']);
-
-    watcher.on('change', function(event) {
-        console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+    watch("./scss/**/*.scss", {usePolling: true}, function() {
+        gulp.start('build');
     });
 });

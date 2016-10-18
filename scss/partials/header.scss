@@ -2,6 +2,7 @@
   height: 250px;
   background-position: center center;
   border-bottom: 0;
+  background-image: url(%%header%%);
 
   .pagename {
     top: 113px;
@@ -9,11 +10,15 @@
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     transform: translateX(-50%);
+
+    // Page-name sub-title
     &:after {
       display: block;
       margin-top: 40px;
       margin-left: 0;
+      content: '';
     }
+
   }
 
   .pagename a {
@@ -96,25 +101,29 @@
 
 }
 
+/* ALWAYS VISIBLE USERBAR
+-------------------------*/
+#header-bottom-right:after {
+  display: none;
+}
+
+#header-bottom-right .user > a,
+#header-bottom-right #mail,
+#header-bottom-right #modmail,
+.ChatApp__reddit-icon,
+#header-bottom-right .pref-lang,
+#header-bottom-right #openRESPrefs .gearIcon,
+#header-bottom-right .logout a {
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none
+}
+
 @media (max-width: $break-large) {
   #header {
     &:before {
       bottom: -220px;
     }
-  }
-
-  // This mobile-friendly click button to toggle show navigation buttons
-  body.res .side .md > blockquote:nth-of-type(1) {
-    display: none;
-  }
-
-  #header:target + .side .md > blockquote:nth-of-type(1) {
-    top: 185px;
-  }
-
-  .side .md > blockquote:nth-of-type(1) {
-    top: 160px;
-    left: 70px;
   }
 
   body > .content {

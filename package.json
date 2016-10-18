@@ -25,6 +25,7 @@
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.3.2",
     "gulp-size": "^2.1.0",
+    "gulp-watch": "^4.3.10",
     "reddit-oauth-helper": "^0.3.0",
     "serve-static": "^1.11.1",
     "yargs": "^5.0.0"

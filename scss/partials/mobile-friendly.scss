@@ -1,0 +1,20 @@
+// This mobile-friendly click button to toggle show navigation buttons
+body.res,
+body.search-page,
+body.comments-page,
+body.submit-page {
+
+  .side .md > blockquote:nth-of-type(1) {
+    display: none;
+  }
+
+}
+
+#header:target + .side .md > blockquote:nth-of-type(1) {
+  top: 185px;
+}
+
+.side .md > blockquote:nth-of-type(1) {
+  top: 160px;
+  left: 70px;
+}

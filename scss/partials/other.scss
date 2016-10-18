@@ -30,36 +30,6 @@ body > .content .link.even.thing .midcol {
   margin: 10px 0 0 30px;
 }
 
-/* ALWAYS VISIBLE USERBAR
--------------------------*/
-#header-bottom-right:after {
-  display: none;
-}
-
-#header-bottom-right .user > a,
-#header-bottom-right #mail,
-#header-bottom-right #modmail,
-.ChatApp__reddit-icon,
-#header-bottom-right .pref-lang,
-#header-bottom-right #openRESPrefs .gearIcon,
-#header-bottom-right .logout a {
-  -webkit-transform: none;
-  -moz-transform: none;
-  transform: none
-}
-
-/* PAGENAME SUBTITLE
---------------------*/
-#header .pagename:after {
-  content: ""
-}
-
-/* NO HEADER TINT
------------------*/
-#header {
-  background-image: url(%%header%%)
-}
-
 /* SEARCH LINE PADDING
 --------------------*/
 
