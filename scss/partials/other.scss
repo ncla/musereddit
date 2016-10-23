@@ -403,22 +403,6 @@ body #header #sr-header-area .srdrop+.drop-choices.srdrop a.choice:hover,
   padding-right: 10px;
 }
 
-/* Gig list
------------------*/
-.side table:nth-of-type(1) {
-  margin: 0 0 10px 0;
-  font-size: 11px;
-}
-
-.side table:nth-of-type(1) > tbody,
-.side table:nth-of-type(1) td {
-  border: 1px solid #434b55;
-}
-
-.side table:nth-of-type(1) > thead {
-  display: none;
-}
-
 /* RECENTLY VIEWED LINKS
    .gadget seems to be correct class to target it, according to Reddits source code
 -----------------*/
