@@ -1,0 +1,215 @@
+// APICEM small light buttons
+
+button, .usertext .help-toggle a, .usertext a.reddiquette, .flair-jump button, body #userTaggerToolTip input[type=submit],
+body #editShortcutDialog [name=shortcut-save], .wiki-page .wiki-page-content .wiki_button,
+div.nav-buttons .nextprev a[rel="nofollow prev"], div.nav-buttons .nextprev a[rel="nofollow next"],
+.search-result-subreddit .search-result-footer span.search-result-icon + a
+//, .subscribe-button a.active
+{
+  border: 1px solid #fff;
+  border-radius: 0;
+  padding: 5px 10px;
+  background: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  color: #32383f;
+  transition: .2s;
+}
+
+button:hover, .flair-jump button:hover {
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.8)
+}
+
+button.cancel, button[name="preview"], .usertext .help-toggle a, .usertext a.reddiquette,
+div.nav-buttons .nextprev a[rel="nofollow prev"], div.nav-buttons .nextprev a[rel="nofollow next"],
+.search-result-subreddit .search-result-footer span.search-result-icon + a,
+.subscribe-button a.active {
+  color: #fff;
+  background: none;
+  transition: .2s;
+}
+
+button.cancel:hover, button[name="preview"]:hover, .usertext .help-toggle a:hover, .usertext a.reddiquette:hover, .content button.RESBigEditorPop:hover,
+div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextprev a[rel="nofollow next"]:hover {
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, .1)
+}
+
+/* Slightly less eye-catching colors */
+.search-result-subreddit .search-result-footer span.search-result-icon + a {
+  color: #c3c3c3;
+  border: 1px solid #afafaf;
+}
+
+// Telegram and Discord buttons
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"],
+.side .md a[href="#button"] + a[href*="://discord.gg/"] {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 1px;
+}
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:after,
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:after {
+  background: url(%%spritesheet%%) no-repeat -3px -3px;
+  position: absolute;
+  top: 6px;
+  right: -25px;
+  width: 25px;
+  height: 25px;
+  content: "";
+  transition: .4s
+}
+
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:after {
+  background: url(%%spritesheet%%) no-repeat -35px -3px;
+}
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:hover,
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:hover {
+  text-indent: -10px;
+}
+
+.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:hover:after,
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:hover:after {
+  right: 6px;
+}
+
+.submit-link .morelink a:after {
+  background-position: -69px -3px;
+}
+
+.submit-text .morelink a:after {
+  background-position: -98px -4px;
+}
+
+.morelink a:hover {
+  text-indent: -7px;
+}
+
+.morelink a:hover:after {
+  right: 4px;
+}
+
+// Subscribe/unsubscribe, RES user info pop-up buttons
+
+.side .fancy-toggle-button {
+  display: block;
+  margin: 0
+}
+
+.side .fancy-toggle-button a.option.active {
+  position: relative;
+  float: right;
+  margin-top: -50px;
+  font-size: 0;
+  z-index: 1;
+  transition: .2s;
+  background: #434b55 !important;
+}
+
+.side .fancy-toggle-button a.option.active, #authorInfoToolTip .fancy-toggle-button a.option.active, .fancy-toggle-button .add.active, .res #RESHoverInfoSubscriptionButton {
+  display: inline-block;
+  vertical-align: middle;
+  border: 0;
+  border-radius: 0;
+  width: auto;
+  height: 30px;
+  padding: 0 10px;
+  background: #c4918a;
+  line-height: 30px;
+  text-transform: uppercase
+}
+
+#authorInfoToolTip .fancy-toggle-button {
+  margin-bottom: 0
+}
+
+.side .fancy-toggle-button a.option:after {
+  letter-spacing: 1px;
+  font-size: 10px;
+  content: "subscribe"
+}
+
+.side .fancy-toggle-button a.option:before {
+  display: inline-block;
+  letter-spacing: 1px;
+  font-size: 10px;
+  content: "un";
+  margin-right: 0
+}
+
+.side .fancy-toggle-button a.option.add:before {
+  margin-right: -15px;
+  opacity: 0
+}
+
+.side .fancy-toggle-button a.option.add:active:before {
+  -webkit-animation: remove 10s linear;
+  -moz-animation: remove 10s linear;
+  animation: remove 10s linear
+}
+
+@-webkit-keyframes remove {
+  0% {
+    opacity: 0
+  }
+  1% {
+    margin-right: 8px
+  }
+  2% {
+    margin-right: 0;
+    opacity: 1
+  }
+  100% {
+    margin-right: 0;
+    opacity: 1
+  }
+}
+
+@-moz-keyframes remove {
+  0% {
+    opacity: 0
+  }
+  1% {
+    margin-right: 8px
+  }
+  2% {
+    margin-right: 0;
+    opacity: 1
+  }
+  100% {
+    margin-right: 0;
+    opacity: 1
+  }
+}
+
+@keyframes remove {
+  0% {
+    opacity: 0
+  }
+  1% {
+    margin-right: 8px
+  }
+  2% {
+    margin-right: 0;
+    opacity: 1
+  }
+  100% {
+    margin-right: 0;
+    opacity: 1
+  }
+}
+
+.res .side .fancy-toggle-button a.option.active {
+  margin-top: -83px
+}
+
+.fancy-toggle-button a.option.active.remove, .res .res-fancy-toggle-button.remove, .res .RESFilterToggle.remove {
+  background: #434b55 !important
+}
