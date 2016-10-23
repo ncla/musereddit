@@ -60,6 +60,17 @@
   }
 }
 
+// Moderator list
+
+a.helplink.access-required + div.title + ul.content > li {
+  .flair, span.RESUserTag, span.userattrs {
+    display: none;
+  }
+  a.voteWeight {
+    display: none !important;
+  }
+}
+
 .side .md > h3:first-of-type, body > .content:before {
   background: none;
 }
