@@ -1234,7 +1234,7 @@ div.linkinfo .downvotes {
   display: none
 }
 
-.flair, .linkflairlabel {
+.flair {
   vertical-align: middle;
   margin: 0 6px;
   max-width: none;
@@ -1247,11 +1247,6 @@ div.linkinfo .downvotes {
 
 .flair {
   font-size: 11px !important
-}
-
-.linkflairlabel {
-  font-size: 14px;
-  font-weight: 700
 }
 
 .flair-red, .flair-green, .flair-blue {

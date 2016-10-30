@@ -327,6 +327,22 @@ span.nsfw-stamp.stamp {
   display: none !important;
 }
 
+// Post flair label
+.linkflairlabel {
+  vertical-align: middle;
+  margin: 0 6px 0 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0 6px;
+  line-height: 1.6em;
+  background: #383F47;
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-overflow: initial;
+  max-width: none;
+}
+
 /* HIDING RES ANNOUNCEMENT UPDATE IN NAV BAR
 --------------------*/
 
