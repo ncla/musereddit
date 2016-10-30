@@ -133,121 +133,6 @@ body > .content .link.even.thing .midcol {
   margin-bottom: 20px;
 }
 
-/* POST ENTRY ICONS / THUMBNAIL
---------------------*/
-
-.thumbnail {
-  position: relative
-}
-
-.thumbnail,
-.thumbnail.self,
-.search-result.has-thumbnail > .thumbnail,
-.link .entry:before {
-  -webkit-flex: none;
-  flex: none;
-  margin: 0;
-  width: 80px;
-  height: 80px !important
-}
-
-.thumbnail:after {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  width: 80px;
-  height: 20px;
-  line-height: 20px;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 11px;
-  font-weight: 700;
-  color: rgba(0, 0, 0, .4);
-  pointer-events: none
-}
-
-/* NO THUMBNAIL ELEMENT */
-body:not(.comments-page) .link :not(.thumbnail) + .entry:before {
-  position: absolute;
-  top: 9px;
-  left: -81px;
-  line-height: 64px;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 25px;
-  font-weight: 700;
-  color: rgba(0, 0, 0, .4);
-  pointer-events: none;
-  content: "•••";
-  border-radius: 31px;
-}
-
-.link .thumbnail img {
-  width: auto !important;
-  height: 80px !important
-}
-
-.search-result.has-thumbnail > .thumbnail {
-  margin-right: 10px
-}
-
-.search-result.has-thumbnail > .thumbnail.self,
-.search-result.has-thumbnail > .thumbnail.default {
-  margin-right: 28px; /* Default margin + compensating for narrower width (18px / 9px = 2x) */
-}
-
-.self .thumbnail img,
-.thing.stickied .thumbnail img,
-.comments-page .thing.stickied .thumbnail,
-.comments-page .thumbnail.self,
-.comments-page .over18 .thumbnail,
-a.thumbnail[href*="reddit.com"] img {
-  display: none
-}
-
-/* 62PX OVERWRITE START */
-a.thumbnail[href*="reddit.com"],
-
-.thing.stickied .thumbnail,
-.link.stickied :not(.thumbnail) + .entry:before,
-
-.thumbnail.self,
-.link :not(.thumbnail) + .entry:before,
-.thumbnail.default,
-
-.over18 .thumbnail.nsfw,
-
-.search-result.has-thumbnail > .thumbnail.self,
-.search-result.has-thumbnail > .thumbnail.default {
-  width: 62px;
-  height: 62px !important;
-  position: relative;
-  top: 9px;
-  left: 9px;
-}
-
-.link a.thumbnail[href*="reddit.com"] {
-  background: url(%%spritesheet%%) -2px -367px;
-}
-
-.link a.thumbnail[href*="reddit.com"]:after, .over18.link .thumbnail:after {
-  content: "";
-}
-
-.thumbnail.default {
-  background: url(%%spritesheet%%) -133px -302px !important; /* remove important cuz testing */
-}
-
-.thumbnail.self {
-  background: url(%%spritesheet%%) -68px -302px !important; /* remove important cuz testing */
-}
-
-.over18.link .thumbnail {
-  background: url(%%spritesheet%%) -2px -302px !important; /* remove important cuz testing */
-}
-
-/* 62PX OVERWRITE END */
-
 /* RES NSFW EXPANDO STYLE (THIS SHOULD BE IN CORE CSS FILE), CAUSED BY DIFFERENT RES CLASS?
 --------------------*/
 
@@ -341,6 +226,11 @@ span.nsfw-stamp.stamp {
   text-transform: uppercase;
   text-overflow: initial;
   max-width: none;
+}
+
+// Hide post flair in recently visited links
+.side span.linkflairlabel {
+  display: none;
 }
 
 /* HIDING RES ANNOUNCEMENT UPDATE IN NAV BAR
