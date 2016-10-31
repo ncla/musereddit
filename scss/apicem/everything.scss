@@ -92,7 +92,7 @@ body {
 }
 
 body, #search input[type="text"], textarea {
-  font-family: "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif
 }
 
 #header {
@@ -425,7 +425,8 @@ body.res:not(.res-v5) #srList:not([style*="display: block"]), body.res:not(.res-
 }
 
 .res #RESSubredditGroupDropdown ul {
-  padding: 0
+  padding: 0;
+  border: 0;
 }
 
 .res #RESSubredditGroupDropdown li + .RESShortcutsEditButtons, .res #RESSubredditGroupDropdown > .RESShortcutsEditButtons {
@@ -649,7 +650,7 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
   transform: scale(1)
 }
 
-.res #RESAccountSwitcherIcon {
+.res #RESAccountSwitcherIcon, .res.res-accountSwitcher-dropDownStyle-alien #RESAccountSwitcherIcon {
   display: none
 }
 
@@ -2996,7 +2997,7 @@ body .blueButton, a.guider_button {
   display: none
 }
 
-.res-voteEnhancements-highlightScores span.score {
+body.res-voteEnhancements-highlightScores span.score {
   color: #fff
 }
 
