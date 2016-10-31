@@ -61,12 +61,7 @@
   }
 
   .search-result.has-thumbnail > & {
-    margin-right: 10px;
-  }
-
-  .search-result.has-thumbnail > &.self,
-  .search-result.has-thumbnail > &.default {
-    margin-right: 28px; // Default margin + compensating for narrower width (18px / 9px = 2x)
+    margin-right: 28px;
   }
 }
 
