@@ -44,10 +44,68 @@ div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextpre
   border: 1px solid #afafaf;
 }
 
-// Telegram and Discord buttons
+// Telegram and Discord buttons, special buttons
+
+.md a[href="#bigbutton"] + a,
+.md a[href="#button"] + a,
+.md a[href="#specialbutton"] + a,
+.md a[href="#bigspecialbutton"] + a {
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700
+}
+
+.md a[href="#bigbutton"] + a,
+.md a[href="#button"] + a {
+  color: #fff !important
+}
+
+.md a[href="#bigbutton"] + a:hover,
+.md a[href="#button"] + a:hover {
+  background-color: rgba(255, 255, 255, 0.1)
+}
+
+.md a[href="#specialbutton"] + a,
+.md a[href="#bigspecialbutton"] + a {
+  background: #fff;
+  color: #32383f !important
+}
+
+.md a[href="#specialbutton"] + a:hover,
+.md a[href="#bigspecialbutton"] + a:hover {
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.8)
+}
+
+.side .md a[href="#button"] + a,
+.side .md a[href="#specialbutton"] + a {
+  margin: 5px 0;
+  width: 145px;
+  padding: 11.5px 10px
+}
+
+.side .md a[href="#rightalign"] + a[href="#button"] + a,
+.side .md a[href="#rightalign"] + a[href="#specialbutton"] + a {
+  margin-left: 10px
+}
+
+.side .md a[href="#bigbutton"] + a,
+.side .md a[href="#bigspecialbutton"] + a {
+  margin: 5px 0;
+  width: 300px;
+  padding: 11.5px 10px
+}
 
 .side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"],
-.side .md a[href="#button"] + a[href*="://discord.gg/"] {
+.side .md a[href="#button"] + a[href*="://discord.gg/"],
+.side .md a[href="#bigbutton"] + a[href$="#gigthread"],
+.side .md a[href="#bigbutton"] + a[href$="#sotw"] {
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -55,7 +113,9 @@ div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextpre
 }
 
 .side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:after,
-.side .md a[href="#button"] + a[href*="://discord.gg/"]:after {
+.side .md a[href="#button"] + a[href*="://discord.gg/"]:after,
+.side .md a[href="#bigbutton"] + a[href$="#gigthread"]:after,
+.side .md a[href="#bigbutton"] + a[href$="#sotw"]:after {
   background: url(%%spritesheet%%) no-repeat -3px -3px;
   position: absolute;
   top: 6px;
@@ -70,9 +130,42 @@ div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextpre
   background: url(%%spritesheet%%) no-repeat -35px -3px;
 }
 
+.side .md a[href="#bigbutton"] + a[href$="#gigthread"]:after,
+.side .md a[href="#bigbutton"] + a[href$="#sotw"]:after {
+  transition: .4s;
+  right: calc(50% - 20px);
+  top: auto;
+  bottom: -26px;
+}
+
+.side .md a[href="#bigbutton"] + a[href$="#gigthread"]:after {
+  background: url(%%spritesheet%%) no-repeat -151px -3px;
+}
+
+.side .md a[href="#bigbutton"] + a[href$="#sotw"]:after {
+  background: url(%%spritesheet%%) no-repeat -122px -3px;
+}
+
+.side .md a[href="#bigbutton"] + a[href$="#gigthread"] strong,
+.side .md a[href="#bigbutton"] + a[href$="#sotw"] strong {
+  position: relative;
+  transition: 0.4s;
+  bottom: 0px;
+}
+
+.side .md a[href="#bigbutton"] + a[href$="#gigthread"]:hover strong,
+.side .md a[href="#bigbutton"] + a[href$="#sotw"]:hover strong {
+  bottom: 30px;
+}
+
 .side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:hover,
 .side .md a[href="#button"] + a[href*="://discord.gg/"]:hover {
   text-indent: -10px;
+}
+
+.side .md a[href="#bigbutton"] + a[href$="#gigthread"]:hover:after,
+.side .md a[href="#bigbutton"] + a[href$="#sotw"]:hover:after {
+  bottom: 7px;
 }
 
 .side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:hover:after,
