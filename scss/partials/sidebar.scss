@@ -60,6 +60,12 @@
   }
 }
 
+// Rule list
+.side .md ol {
+  padding: 0 20px;
+  margin-bottom: 0.8em;
+}
+
 // Moderator list
 
 a.helplink.access-required + div.title + ul.content > li {
