@@ -11,7 +11,6 @@ Icons via icons8.com
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif;
   -webkit-text-size-adjust: none !important;
   -moz-text-size-adjust: none !important;
   -ms-text-size-adjust: none !important;
@@ -91,7 +90,7 @@ body {
   background: url(%%body%%) fixed center top/cover
 }
 
-body, #search input[type="text"], textarea {
+body, div#RESSubredditGroupDropdown, #search input[type="text"], textarea {
   font-family: -apple-system, BlinkMacSystemFont, "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif
 }
 
@@ -293,19 +292,6 @@ body #editShortcutDialog {
   transition: .2s
 }
 
-body.res:not(.res-v5) #RESSubredditGroupDropdown[style*="display: none"] {
-  display: block !important
-}
-
-body.res:not(.res-v5) #srList {
-  display: block !important;
-}
-
-body.res:not(.res-v5) #srList:not([style*="display: block"]), body.res:not(.res-v5) #srList:not([style*="display: block"]):before, body.res:not(.res-v5) #srList:not([style*="display: block"]):after, body.res:not(.res-v5) #RESSubredditGroupDropdown[style*="display: none"] {
-  opacity: 0;
-  pointer-events: none
-}
-
 .res #srList tbody {
   display: block;
   max-height: calc(100% - 50px);
@@ -468,8 +454,9 @@ body #header #sr-header-area .srdrop + .drop-choices.srdrop a.choice:hover, .res
 }
 
 a#sr-more-link, .res #RESShortcutsEditContainer {
+  display: flex;
   margin-top: 5px;
-  width: 81px;
+  width: auto;
   height: 20px;
   border-left: 1px solid rgba(0, 0, 0, .1);
   padding-left: 12px;
@@ -477,9 +464,18 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
 }
 
 .res #RESShortcutsEditContainer div {
+  position: static;
+  display: inline-block;
+  margin-right: 12px;
+  width: auto;
   background: none;
+  line-height: 18px;
   font-weight: 400;
   color: #32383f
+}
+
+#RESShortcutsRight {
+  order: 2;
 }
 
 #sort-menu p {
@@ -531,34 +527,6 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
   opacity: .8
 }
 
-.side .md a[href="#headerbutton"] + a {
-  position: absolute;
-  z-index: 100;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  transform: translateX(-50%);
-  top: 160px;
-  height: 40px;
-  padding: 0 20px;
-  border: 1px solid #fff;
-  line-height: 40px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 11px;
-  font-weight: 700;
-  color: #fff !important;
-  transition: background .2s
-}
-
-.side .md a[href="#headerbutton"] + a:hover {
-  background-color: rgba(255, 255, 255, .1)
-}
-
-.side .md a[href="#headerbutton"] + a:active {
-  background-color: rgba(255, 255, 255, .2)
-}
-
 #header #header-bottom-right {
   top: auto;
   bottom: -80px;
@@ -584,74 +552,35 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
   transition: 1s
 }
 
-#header #header-bottom-right:hover:after, #header:target #header-bottom-right:after {
+#header:hover #header-bottom-right:after, #header:target #header-bottom-right:after {
   opacity: 0;
   transition: .2s
 }
 
-#header #header-bottom-right .beta-hint {
-  display: none
-}
-
-#header #header-bottom-right .user {
-  font-size: 0
+#header #header-bottom-right .user, #header-bottom-right.res-userbar-toggle > .user {
+  font-size: 0;
+  margin-left: 0;
 }
 
 #header-bottom-right #userbarToggle, #header-bottom-right .separator {
   display: none !important
 }
 
-#header-bottom-right .user, #header-bottom-right .flat-list.hover, #header-bottom-right #openRESPrefs, #header-bottom-right .logout {
-  display: inline-block !important;
-  vertical-align: top
+.res.res-accountSwitcher-dropDownStyle-alien #RESAccountSwitcherIconOverlay {
+  display: none !important;
 }
 
-#header-bottom-right .gearIcon:after {
-  display: none
-}
-
-#header-bottom-right .user > a, #header-bottom-right #mail, #header-bottom-right #modmail, #header-bottom-right .pref-lang, #header-bottom-right #openRESPrefs .gearIcon, #header-bottom-right .logout a {
+#header .beta-hint > a, #header-bottom-right .user > a, .res .res #RESAccountSwitcherIcon, #header-bottom-right #mail, #header-bottom-right #modmail, #header-bottom-right #new_modmail, .ChatApp__reddit-icon, #header-bottom-right .pref-lang, #header-bottom-right #openRESPrefs .gearIcon, #header-bottom-right .logout a, a#RESAnnouncementAlert {
   display: inline-block !important;
   position: relative;
   top: 0 !important;
   overflow: visible;
   vertical-align: top;
-  margin: 0;
-  margin: 25px 35px 0 0 !important;
   width: 25px !important;
   height: 25px;
   background: url(%%spritesheet%%);
-  font-size: 0;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  transform: scale(0);
+  font-size: 0 !important;
   transition: .2s
-}
-
-#header-bottom-right:hover .user > a, #header-bottom-right:hover #mail, #header-bottom-right:hover #modmail, #header-bottom-right:hover .pref-lang, #header-bottom-right:hover #openRESPrefs .gearIcon, #header-bottom-right:hover .logout a, #header:target #header-bottom-right .user > a, #header:target #header-bottom-right #mail, #header:target #header-bottom-right #modmail, #header:target #header-bottom-right .pref-lang, #header:target #header-bottom-right #openRESPrefs .gearIcon, #header:target #header-bottom-right .logout a {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  transform: scale(1)
-}
-
-.ChatApp__reddit-icon {
-  display: inline-block;
-  margin-right: 35px;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  transform: scale(0);
-  transition: .2s;
-  transition-delay: .1s
-}
-
-#header-bottom-right:hover .ChatApp__reddit-icon {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  transform: scale(1)
-}
-
-.res #RESAccountSwitcherIcon, .res.res-accountSwitcher-dropDownStyle-alien #RESAccountSwitcherIcon {
-  display: none
 }
 
 #header-bottom-right .user > a {
@@ -690,15 +619,48 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
   transition-delay: .2s
 }
 
-#header-bottom-right #mail.havemail:after, #header-bottom-right #modmail.havemail:after {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, .1);
-  content: ""
+#header .beta-hint > a:before {
+    content: "/r/Beta"
+}
+
+#header-bottom-right .user > a:before {
+    content: "User Page"
+}
+
+.res .res #RESAccountSwitcherIcon:before {
+    content: "Switch Accounts"
+}
+
+#header-bottom-right #mail:before {
+    content: "Mail"
+}
+
+#header-bottom-right #modmail:before {
+    content: "Mod Mail"
+}
+
+#header-bottom-right #new_modmail:before {
+    content: "New Mod Mail"
+}
+
+.ChatApp__reddit-icon:before {
+    content: "Orange Chat"
+}
+
+#header-bottom-right .pref-lang:before {
+    content: "Preferences"
+}
+
+#header-bottom-right #openRESPrefs .gearIcon:before {
+    content: "RES Settings"
+}
+
+#header-bottom-right .logout a:before {
+    content: "Logout"
+}
+
+a#RESAnnouncementAlert:before {
+    content: "RES Announcement"
 }
 
 #header-bottom-right a.message-count {
@@ -873,7 +835,7 @@ label + #moresearchinfo {
   border: 0
 }
 
-.ad300x250 {
+.sponsor-300-250 {
   margin-bottom: 10px
 }
 
@@ -1094,11 +1056,20 @@ div.linkinfo .downvotes {
 
 .hover-bubble {
   border: 1px solid #434b55;
-  background: #32383f
+  background: #32383f;
+  color: #fff;
 }
 
 .hover-bubble.multi-selector {
   margin-top: -120px
+}
+
+.hover-bubble.anchor-top:before {
+    border-bottom-color: #434b55
+}
+
+.hover-bubble.anchor-top:after {
+    border-bottom-color: #32383f
 }
 
 .hover-bubble.multi-selector strong {
@@ -1418,7 +1389,7 @@ body > .content > .content {
   margin-right: 30px
 }
 
-body > .content:before, .reddit-infobar, .side .md > h3:first-of-type {
+body > .content:before, .reddit-infobar {
   display: block;
   overflow: hidden;
   margin-top: 0;
@@ -1437,41 +1408,14 @@ body > .content > .spacer:nth-of-type(1) {
   display: none
 }
 
-body > .content:before, .side .md > h3:first-of-type {
-  padding: 0 20px;
-  background: url(%%overlay%%), linear-gradient(45deg, #c4918a 20%, #6093c4 80%)
-}
-
 body > .content:before {
+  background: url(%%overlay%%), linear-gradient(45deg, #c4918a 20%, #6093c4 80%);
   margin-left: -10px;
   margin-right: -331px
 }
 
 :not(.side) + a[name=content] + .content:before {
   margin-right: -10px
-}
-
-.side .md > h3:first-of-type:before {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  width: 30px;
-  height: 30px;
-  background: url(%%spritesheet%%) -5px -88px;
-  content: ""
-}
-
-.side .md > h3:first-of-type {
-  position: absolute;
-  top: 220px;
-  left: 30px;
-  right: 30px;
-  font-weight: 400 !important;
-  z-index: 2
-}
-
-.side .md > h3:first-of-type a:hover {
-  color: #eee !important
 }
 
 .reddit-infobar {
@@ -1502,41 +1446,19 @@ body > .content:before {
 }
 
 .link, .link.last-clicked {
-  display: inline-block;
   overflow: visible;
   margin: 0;
-  width: 50%;
   padding: 10px 0;
   border: 0;
   border-top: 1px solid #434b55;
   vertical-align: top
 }
 
-.comments-page .link, .content > .sitetable:nth-of-type(1) > .link:nth-of-type(1), .content > .spacer > .sitetable:nth-of-type(1) > .link:nth-of-type(1), .content > .spacer > .sitetable:nth-of-type(1) > .link:nth-of-type(2) {
+.comments-page .link,
+.content > .sitetable:nth-of-type(1) > .link:nth-of-type(1),
+.content > .spacer > .sitetable:nth-of-type(1) > .link:nth-of-type(1),
+.content > .spacer > .sitetable:nth-of-type(1) > .link:nth-of-type(2) {
   border-top: 0
-}
-
-.comments-page .link.odd {
-  width: 100%;
-  border-right: 0
-}
-
-.link.odd {
-  border-right: 1px solid #434b55;
-  padding-right: 10px
-}
-
-.link.even {
-  margin-left: -1px;
-  border-left: 1px solid #434b55
-}
-
-.link.even .entry {
-  margin-left: 140px
-}
-
-.clearleft {
-  display: none
 }
 
 .link .rank {
@@ -1547,10 +1469,6 @@ body > .content .link.thing .midcol {
   margin-top: 0;
   margin-left: -3px;
   width: 35px
-}
-
-body > .content .link.even.thing .midcol {
-  margin-left: 7px
 }
 
 .comment .midcol {
@@ -1773,7 +1691,7 @@ html body .content .expando-button {
   vertical-align: middle !important
 }
 
-.expando-button:before, .res-highlight-nsfw-expando .thing.over18 .expando-button:before, .expando-button:after {
+.expando-button:before, .res-highlight-nsfw-expando .thing.over18 .expando-button:before, .res.res-showImages-highlightNSFWButton .thing.over18 .expando-button:before, .expando-button:after {
   position: absolute;
   left: 8px;
   top: 13.5px;
@@ -1815,6 +1733,11 @@ html body .expando-button.expanded:after {
 .nsfw-stamp {
   border: 0;
   color: #c4918a
+}
+
+.res a.voteWeight {
+    background: none !important;
+    color: #fff
 }
 
 .link .entry .tagline, .tagline a, .entry .buttons li a, .entry .buttons li a.nonbutton, .link .redditSingleClick {
@@ -1956,32 +1879,6 @@ span.newComments, form.state-button.approve-button {
   background: #32383f
 }
 
-@media ( max-width: 1700px) {
-  .clearleft {
-    display: block
-  }
-
-  .thing.link {
-    width: 100%;
-    margin: 0;
-    border-left: 0;
-    border-right: 0;
-    padding-right: 0
-  }
-
-  .link:nth-of-type(2) {
-    border-top: 1px solid #434b55
-  }
-
-  body > .content[role="main"] .link.thing .midcol {
-    margin-left: -3px
-  }
-
-  body .content .link .entry {
-    margin-left: 130px
-  }
-}
-
 .nav-buttons {
   border-top: 1px solid #434b55;
   padding: 10px 0;
@@ -2020,12 +1917,6 @@ span.newComments, form.state-button.approve-button {
 
 .res #progressIndicator p.NERWidgetText {
   margin: 8px
-}
-
-.res .RESThrobber, .res .RESThrobber:before, .res .RESThrobber:after {
-  box-shadow: none;
-  border: 0;
-  background: #434b55
 }
 
 .res #NERFail {
@@ -2504,7 +2395,7 @@ button.search-submit-button.c-btn.c-btn-primary {
 }
 
 #noresults {
-  padding: 10px
+  padding: 10px 10px 10px 0;
 }
 
 .usertext.grayed .usertext-body {
@@ -2730,8 +2621,13 @@ body .viewSource textarea[readonly] {
 
 .res #RESStyleSheetTipPane-header, .res #RESStyleSheetTipPane-header span.details {
   font-size: 11px;
-  text-transform: uppercase;
   letter-spacing: 1px
+}
+
+.res #RESStyleSheetTipPane .RESCloseButton {
+    position: static;
+    display: inline-block;
+    margin-left: 20px
 }
 
 .res .RESCloseButton {
@@ -2976,16 +2872,6 @@ body.res-voteEnhancements-highlightScores span.score {
     margin-top: 30px
   }
 
-  .side .md a[href="#headerbutton"] + a {
-    margin-top: -30px
-  }
-
-  .side .md > h3:first-of-type {
-    margin-top: -30px;
-    left: 0;
-    right: 0
-  }
-
   body > .content {
     margin: 0 !important;
     max-width: calc(100vw - 320px) !important
@@ -3003,7 +2889,7 @@ body.res-voteEnhancements-highlightScores span.score {
     top: 20px;
     margin: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-    width: 270px;
+    width: 280px;
     border: 0;
     padding: 15px;
     background: #fff;
@@ -3058,10 +2944,10 @@ body.res-voteEnhancements-highlightScores span.score {
   }
 
   .side .md > blockquote:nth-of-type(1) a[href="#header"]:after {
-    content: "Tap here to view the tab menu and userbar."
+    content: "Tap here to view the tab menu."
   }
 
   .side .md > blockquote:nth-of-type(1) a[href="#null"]:after {
-    content: "Tap here to hide the tab menu and userbar."
+    content: "Tap here to hide the tab menu."
   }
 }
