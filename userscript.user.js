@@ -19,12 +19,18 @@
     var originalSubredditStyle = jQ('link[rel="stylesheet"][title="applied_subreddit_stylesheet"]');
 
     if (originalSubredditStyle.length) {
-        jQ(originalSubredditStyle).remove();
+        jQ(originalSubredditStyle).attr('href', originalLink).attr('id', 'devstylesheet');
+    } else {
         jQ('head').append('<link rel="stylesheet" type="text/css" href=' + originalLink + ' media="all" id="devstylesheet">');
-
-        Mousetrap.bind('alt+s', function() {
-            console.log('Reloading style-sheet');
-            jQ('#devstylesheet').attr('href', originalLink + '?' + (+new Date()));
-        });
     }
+
+    Mousetrap.bind('alt+s', function(e) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+
+        console.log('Reloading style-sheet');
+        jQ('#devstylesheet').attr('href', originalLink + '?' + (+new Date()));
+
+    });
 })();
