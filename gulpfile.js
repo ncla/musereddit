@@ -40,7 +40,5 @@ gulp.task('build', function() {
 });
 
 gulp.task('watch', function() {
-    watch("./scss/**/*.scss", {usePolling: true}, function() {
-        gulp.start('build');
-    });
+    gulp.watch("./scss/**/*.scss", ['build']);
 });
