@@ -167,12 +167,8 @@ body > .content .link.even.thing .midcol {
   content: "";
 }
 
-/* CHECKBOX BACKGROUND-SIZE FIX
+/* SPRITESHEET BACKGROUND-SIZE FIX
 --------------------*/
-#rem-login-main, .side .titlebox h1.redditname+div:before, input[type=checkbox], input[type=radio] {
-  background: url(%%spritesheet%%) -2px -200px no-repeat $inputsAndSelectBg;
-}
-
 select {
   background: url(%%spritesheet%%) right -257px top -248px no-repeat $inputsAndSelectBg;
 }
