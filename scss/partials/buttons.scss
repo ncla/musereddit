@@ -20,19 +20,29 @@ body.submit-page #newlink-with-image-upload .file-upload-button,
 .subreddit-rules-page .subreddit-rule-add-form-buttons button {
   border: 1px solid $specialSmallBtnsBorder;
   border-radius: 0;
-  padding: 5px 10px;
   background: $specialSmallBtnsBg;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 10px;
   font-weight: 700;
+  font-family: inherit;
   color: $specialSmallBtnsFont;
   transition: .3s;
+
+  height: 24px;
+  line-height: 24px;
+  padding: 0px 10px;
+  vertical-align: middle;
 
   &:hover {
     background-color: darken($specialSmallBtnsBg, 2);
     color: darken($specialSmallBtnsFont, 13);
     border-color: darken($specialSmallBtnsBorder, 11);
+  }
+
+  // http://stackoverflow.com/q/13466643 =)))
+  &::-moz-focus-inner {
+    border: 0;
   }
 }
 
