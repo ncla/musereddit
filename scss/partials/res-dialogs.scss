@@ -1,0 +1,138 @@
+@import "../partials/core";
+
+// RES Big Editor
+
+.res #BigEditor {
+  div.markdownEditor-wrapper {
+    margin-top: 40px;
+  }
+}
+
+// RES dialog
+
+.res .RESDialogSmall {
+  letter-spacing: normal !important;
+  border: 0;
+
+  .RESHoverTitle {
+    background: url(%%overlay%%),
+                linear-gradient(45deg,#4079a5 0%,#46a6b5 67%);
+    color: $brightColorOnColorBgFont !important;
+    letter-spacing: 1px;
+    text-transform: none;
+    font-weight: normal;
+    border-bottom: 0;
+
+    a {
+      color: #fff;
+    }
+
+  }
+
+  .RESHoverBody {
+    color: $fontColor;
+  }
+
+  .redButton, .blueButton {
+    letter-spacing: 0.5px !important;
+  }
+
+  .blueButton.composeButton img {
+    display: none;
+  }
+
+  &:before, &:after {
+    border-color: transparent #4079a5;
+  }
+  &.right:before, &.right:after {
+    border-color: transparent #46a6b5;
+  }
+}
+
+.res #RESNotifications {
+
+  .RESNotification {
+    border: 0;
+  }
+
+  .RESNotificationHeader {
+    border-bottom: 0;
+
+    h3 {
+      color: $brightColorOnColorBgFont !important;
+    }
+  }
+
+
+}
+
+.res #authorInfoToolTip .redButton {
+  color: $specialSmallBtnsFont !important;
+}
+
+
+.res .res #authorInfoToolTip:before, .res .res #authorInfoToolTip:after {
+  border-color: transparent $borderColor1;
+}
+
+.res .RESDialogSmall .RESDialogContents {
+  padding-top: 12px
+}
+
+//.res .res #RESHoverContainer:before, .res .RESHoverInfoCard:before {
+//  border-color: transparent $borderColor1;
+//}
+//
+//.res .res #RESHoverContainer:after, .res .RESHoverInfoCard:after {
+//  border-color: transparent $borderColor1;
+//}
+
+div.guider .guider_content p, .res .RESNotificationContent {
+  color: $fontColorLessDominant;
+}
+
+.res .RESNotificationContent {
+  border-top: 1px solid $borderColor1;
+  border-bottom: 1px solid $borderColor1;
+}
+
+.drop-choices,
+.res .RESDialogSmall:not(.livePreview),
+//.res #RESNotifications .RESNotification,
+body #editShortcutDialog,
+div.guider {
+  box-shadow: 0 0 10px $popupBoxesShadow;
+  border: 1px solid $borderColor1;
+  border-radius: 0;
+  background: $bgColor2;
+  letter-spacing: .5px
+}
+
+.res .RESNotificationHeader h3 {
+  margin-top: 0;
+  padding-top: 0
+}
+
+.res .RESNotificationHeader h3 .gearIcon {
+  display: inline-block;
+  margin-top: 12.5px;
+  height: 15px;
+  line-height: 15px
+}
+
+.res .RESNotificationHeader h3 + .RESCloseButton {
+  top: 0;
+  margin-top: 10px
+}
+
+.res .RESDialogSmall > h3, .res .RESNotificationHeader, .res #RESConsoleTopBar.RESDialogTopBar {
+  margin-bottom: 0;
+  height: 40px;
+  border-bottom: 1px solid #434b55;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 40px;
+  background: url(%%overlay%%),
+              linear-gradient(45deg,#4079a5 0%,#46a6b5 67%);
+  color: $brightColorOnColorBgFont !important; // :((
+}

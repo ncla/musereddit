@@ -1,0 +1,22 @@
+@import "../partials/core";
+
+#report-action-form {
+  background: $bgColorBrightWhite;
+
+  li.report-reason-item {
+
+    .report-reason-display {
+      font-size: 12px;
+    }
+
+    input[type=text] {
+      font-size: 12px;
+    }
+
+  }
+
+  .report-header {
+    font-size: 12px;
+    color: $fontColor;
+  }
+}

@@ -1,3 +1,5 @@
+@import "../partials/core";
+
 .flairselector form, .flairoptionpane, #srList tbody {
   &::-webkit-scrollbar {
     width: 3px;
@@ -10,31 +12,33 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #e1e1e1;
-    border: 0px none #ffffff;
+    background: #c0c0c0;
+    // border: 0px none #ffffff;
+    border: 0;
     border-radius: 50px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
+    background: #a8a8a8;
   }
 
   &::-webkit-scrollbar-thumb:active {
-    background: #b2b2b2;
+    background: #a8a8a8;
   }
 
   &::-webkit-scrollbar-track {
-    background: #666666;
-    border: 0px none #ffffff;
+    background: #dcdcdc;
+    // border: 0px none #ffffff;
+    border: 0;
     border-radius: 50px;
   }
 
   &::-webkit-scrollbar-track:hover {
-    background: #666666;
+    background: #dcdcdc;
   }
 
   &::-webkit-scrollbar-track:active {
-    background: #333333;
+    background: #dcdcdc;
   }
 
   &::-webkit-scrollbar-corner {

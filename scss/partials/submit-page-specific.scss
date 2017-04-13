@@ -1,0 +1,52 @@
+@import "../partials/core";
+
+body.submit-page > div.content > h1 {
+  font-size: 17px !important;
+}
+
+body.submit-page {
+  #new-link-image-input .file-drop-label-icon {
+    display: none;
+  }
+
+  #new-link-image-input .file-drop-label {
+    color: $fontColorLessDominant;
+    font-size: 13px;
+    padding-right: 10px;
+  }
+
+  #newlink-with-image-upload .image-upload-drop-target {
+    border: 2px dashed $borderColor1;
+  }
+
+  #newlink-with-image-upload #image-name {
+    border: 1px solid $borderColor1;
+    font-size: 12px;
+    padding: 7px 4px;
+  }
+
+  #newlink-with-image-upload .file-upload-button .file-upload-icon {
+    background-image: url(%%spritesheet%%);
+    background-position: -176px -152px;
+    transform: initial;
+  }
+
+  #suggested-reddits li {
+    padding-right: 6px;
+    font-size: 11px;
+  }
+
+  #items-required {
+    padding-left: 15px;
+    font-size: 11px;
+  }
+}
+
+
+
+
+
+
+
+
+

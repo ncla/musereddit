@@ -1,0 +1,47 @@
+@import "../partials/core";
+
+.entry .buttons li.reported-stamp, ul.report-reasons {
+  border: 0 !important;
+  color: $fontColorOpposite;
+}
+
+a.pretty-button {
+  border: 0;
+  border-radius: 0;
+  padding: 0 6px;
+  line-height: 1.6em;
+  color: $fontColor;
+}
+
+a.pretty-button + li {
+  margin-left: 5px;
+}
+
+ul.report-reasons {
+  width: 100%;
+  padding: 5px;
+}
+
+body .content a.pretty-button.pressed {
+  background: $bgButtonFocusedColor1;
+}
+
+.entry .buttons li.reported-stamp {
+  background: rgb(251, 229, 131);
+  color: #404040;
+}
+
+.big-mod-buttons .pretty-button.negative {
+  background: #c46565;
+  color: $brightColorOnColorBgFont;
+}
+
+.big-mod-buttons .pretty-button.positive {
+  background: $modActionButtonPositiveBg;
+  color: $brightColorOnColorBgFont;
+}
+
+.big-mod-buttons .pretty-button.neutral {
+  background: none;
+  border: 1px solid $borderModButtonNeutral;
+}

@@ -1,47 +1,88 @@
+@import "../partials/core";
 // APICEM small light buttons
-
-button, .usertext .help-toggle a, .usertext a.reddiquette, .flair-jump button, body #userTaggerToolTip input[type=submit],
-body #editShortcutDialog [name=shortcut-save], .wiki-page .wiki-page-content .wiki_button,
-div.nav-buttons .nextprev a[rel="nofollow prev"], div.nav-buttons .nextprev a[rel="nofollow next"],
-.search-result-subreddit .search-result-footer span.search-result-icon + a
-//, .subscribe-button a.active
-{
-  border: 1px solid #fff;
+// Core button styling
+button,
+button.cancel,
+.usertext .help-toggle a,
+.usertext a.reddiquette,
+.flair-jump button,
+body #userTaggerToolTip input[type=submit],
+body #editShortcutDialog [name=shortcut-save],
+.wiki-page .wiki-page-content .wiki_button,
+div.nav-buttons .nextprev a[rel="nofollow prev"],
+div.nav-buttons .nextprev a[rel="nofollow next"],
+.search-result-subreddit .search-result-footer span.search-result-icon + a,
+.res #authorInfoToolTip .blueButton,
+.res #authorInfoToolTip .redButton,
+.content button.RESBigEditorPop,
+body.submit-page #newlink-with-image-upload .file-upload-button,
+#report-action-form .c-submit-group button,
+.subreddit-rules-page .subreddit-rule-add-form-buttons button {
+  border: 1px solid $specialSmallBtnsBorder;
   border-radius: 0;
   padding: 5px 10px;
-  background: #fff;
+  background: $specialSmallBtnsBg;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 10px;
   font-weight: 700;
-  color: #32383f;
-  transition: .2s;
+  color: $specialSmallBtnsFont;
+  transition: .3s;
+
+  &:hover {
+    background-color: darken($specialSmallBtnsBg, 2);
+    color: darken($specialSmallBtnsFont, 13);
+    border-color: darken($specialSmallBtnsBorder, 11);
+  }
 }
 
-button:hover, .flair-jump button:hover {
-  border: 1px solid transparent;
-  background-color: rgba(255, 255, 255, 0.8)
-}
-
-button.cancel, button[name="preview"], .usertext .help-toggle a, .usertext a.reddiquette,
-div.nav-buttons .nextprev a[rel="nofollow prev"], div.nav-buttons .nextprev a[rel="nofollow next"],
+// Bit different buttons from the core ones
+button.cancel,
+button[name="preview"],
+.usertext .help-toggle a,
+.usertext a.reddiquette,
+div.nav-buttons .nextprev a[rel="nofollow prev"],
+div.nav-buttons .nextprev a[rel="nofollow next"],
 .search-result-subreddit .search-result-footer span.search-result-icon + a,
-.subscribe-button a.active {
-  color: #fff;
+.subscribe-button a.active,
+.content button.RESBigEditorPop,
+#report-action-form .c-submit-group button {
+  border: 1px solid $specialSmallBtnsBorder;
+  color: $specialBtnsFont2;
   background: none;
   transition: .2s;
+
+  &:hover {
+    background: none;
+  }
 }
 
-button.cancel:hover, button[name="preview"]:hover, .usertext .help-toggle a:hover, .usertext a.reddiquette:hover, .content button.RESBigEditorPop:hover,
-div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextprev a[rel="nofollow next"]:hover {
-  border: 1px solid #fff;
-  background-color: rgba(255, 255, 255, .1)
+// RES Big Editor button + fix
+.content button.RESBigEditorPop {
+  margin-top: 5px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-/* Slightly less eye-catching colors */
+// Fix for the borders
+
+.usertext .help-toggle, .usertext .help-toggle a, .usertext a.reddiquette {
+  margin-left: 0;
+  border-right: 0 !important
+}
+
+body:not(.res) .usertext .help-toggle a, .res .usertext .bottom-area > :first-child  {
+  border-right: 1px solid $specialSmallBtnsBorder !important
+}
+
+// Hide + sign for "Add a rule" button on rules page
+.subreddit-rules-page .subreddit-rule-add-form-buttons button .mod-action-icon-add {
+  display: none;
+}
+
+// Slightly less eye-catching colors on search page
 .search-result-subreddit .search-result-footer span.search-result-icon + a {
-  color: #c3c3c3;
-  border: 1px solid #afafaf;
+  border: 1px solid $specialBtnsLessBorder;
 }
 
 // Telegram and Discord buttons, special buttons
@@ -52,7 +93,7 @@ div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextpre
 .md a[href="#bigspecialbutton"] + a {
   display: inline-block;
   margin: 10px;
-  border: 1px solid #fff;
+  border: 1px solid $specialBtnsBorderColor;
   padding: 10px 20px;
   letter-spacing: 1px;
   text-align: center;
@@ -63,24 +104,25 @@ div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextpre
 
 .md a[href="#bigbutton"] + a,
 .md a[href="#button"] + a {
-  color: #fff !important
+  color: $specialBtnsFont2 !important
 }
 
 .md a[href="#bigbutton"] + a:hover,
 .md a[href="#button"] + a:hover {
-  background-color: rgba(255, 255, 255, 0.1)
+  background-color: $specialBtnsHoverBg3;
 }
 
 .md a[href="#specialbutton"] + a,
 .md a[href="#bigspecialbutton"] + a {
-  background: #fff;
-  color: #32383f !important
+  background: $specialBtnsBgColor;
+  border: 0;
+  color: $specialBtnsFont !important;
 }
 
 .md a[href="#specialbutton"] + a:hover,
 .md a[href="#bigspecialbutton"] + a:hover {
-  border: 1px solid transparent;
-  background-color: rgba(255, 255, 255, 0.8)
+  //border: 1px solid transparent;
+  background-color: $specialBtnsHoverBg;
 }
 
 .side .md a[href="#button"] + a,
@@ -120,6 +162,10 @@ div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextpre
     height: 25px;
     content: "";
     transition: .4s;
+  }
+
+  &:hover {
+    color: $specialBtnsFontHover2 !important; // pls no
   }
 }
 
@@ -169,27 +215,17 @@ div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextpre
   right: 6px;
 }
 
-.submit-link .morelink a:after {
-  background-position: -69px -3px;
-}
-
-.submit-text .morelink a:after {
-  background-position: -98px -4px;
-}
-
-.morelink a:hover {
-  text-indent: -7px;
-}
-
-.morelink a:hover:after {
-  right: 4px;
-}
-
 // Subscribe/unsubscribe, RES user info pop-up buttons
 
 .side .fancy-toggle-button {
   display: block;
   margin: 0
+}
+
+.side .fancy-toggle-button a.option.active.add {
+  color: $brightColorOnColorBgFont;
+  background: url(%%overlay%%),
+              linear-gradient(45deg,#5c9bc0 0%,#46a6b5 67%);
 }
 
 .side .fancy-toggle-button a.option.active {
@@ -199,10 +235,13 @@ div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextpre
   font-size: 0;
   z-index: 1;
   transition: .2s;
-  background: #434b55 !important;
+  background: $bgColor3;
 }
 
-.side .fancy-toggle-button a.option.active, #authorInfoToolTip .fancy-toggle-button a.option.active, .fancy-toggle-button .add.active, .res #RESHoverInfoSubscriptionButton {
+.side .fancy-toggle-button a.option.active,
+#authorInfoToolTip .fancy-toggle-button a.option.active,
+.fancy-toggle-button .add.active,
+.res #RESHoverInfoSubscriptionButton {
   display: inline-block;
   vertical-align: middle;
   border: 0;
@@ -210,7 +249,7 @@ div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextpre
   width: auto;
   height: 30px;
   padding: 0 10px;
-  background: #c4918a;
+  background: $bgThemeColor1;
   line-height: 30px;
   text-transform: uppercase
 }
@@ -300,5 +339,216 @@ div.nav-buttons .nextprev a[rel="nofollow prev"]:hover, div.nav-buttons .nextpre
 }
 
 .fancy-toggle-button a.option.active.remove, .res .res-fancy-toggle-button.remove, .res .RESFilterToggle.remove {
-  background: #434b55 !important
+  background: $bgColor3 !important
+}
+
+// SUBMIT BUTTONS
+// Fancy gradient buttons for submit buttons
+// TODO: Refactor the button stuff from everything.scss perhaps?
+.side {
+  .submit {
+    .morelink a {
+      background: url(%%overlay%%), linear-gradient(45deg, #4079a5 0%,#46a6b5 67%);
+      border: 0;
+      color: #f0f7ff;
+      width: 300px;
+    }
+
+    .morelink a:before {
+      content: '';
+      width: 300px;
+    }
+
+    .morelink a:hover {
+      text-indent: -5px;
+    }
+  }
+
+  .submit-link .morelink a:before {
+    content: 'submit a new link';
+  }
+
+  .submit-text .morelink a:before {
+    content: 'submit a new text post';
+  }
+
+  .submit-text .morelink {
+    float: none;
+  }
+}
+
+// SPECIAL SIDE-BAR BUTTONS
+
+.morelink a,
+.sidecontentbox a.helplink,
+.account-activity-box a {
+  position: relative;
+  width: 300px;
+  height: 40px;
+  border: 1px solid $specialBtnsBorderColor;
+  background: none;
+  text-align: center;
+  line-height: 40px;
+  color: $specialBtnsFont2;
+  transition: color 0.4s, text-indent 0.4s;
+
+  z-index: 1;
+
+  &:hover {
+    text-indent: -15px;
+    color: $specialBtnsFontHover2;
+  }
+
+  &:after {
+      position: absolute;
+      top: 6px;
+      right: -25px;
+      width: 25px;
+      height: 25px;
+      background: url(%%spritesheet%%);
+      content: "";
+      transition: .4s;
+  }
+
+  &:hover:after {
+    right: 8px;
+  }
+
+
+
+}
+
+.morelink,
+.account-activity-box {
+  border: 0;
+}
+
+.morelink,
+.sidecontentbox a.helplink,
+.account-activity-box {
+  height: 40px;
+  background: none !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0;
+  font-weight: 700;
+}
+
+
+
+.sidebox.create .morelink,
+.sidecontentbox a.helplink,
+.account-activity-box {
+  font-size: 10px;
+}
+
+
+
+
+.sidecontentbox a.helplink,
+.account-activity-box {
+  letter-spacing: 1px;
+}
+
+.submit-text .morelink {
+  margin-top: -50px;
+  float: right;
+}
+
+.morelink:hover a,
+.morelink a:hover {
+  //color: $fontColor1;
+}
+
+.sidebox.submit.disabled .morelink a {
+  width: 300px;
+}
+
+.sidebox.submit.disabled .morelink a:hover {
+  text-indent: 0;
+}
+
+.morelink a:before {
+  display: inline-block;
+  width: 145px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.sidebox.submit.disabled .morelink a:before {
+  width: 300px;
+  content: "submissions restricted";
+}
+
+.sidecontentbox a.helplink:after {
+  background-position: -40px -90px;
+}
+
+.sidebox.submit.disabled .morelink a:hover:after {
+  right: -25px;
+}
+
+.morelink .nub {
+  display: none;
+}
+
+.submit .morelink:after {
+  position: absolute;
+  top: 0;
+  width: 144px;
+  height: 40px;
+  background: $bgButtonColor2;
+  line-height: 40px;
+  font-size: 11px;
+  color: $fontColor1;
+  content: "- - -"
+}
+
+.submit-link .morelink:after {
+  left: 155px;
+}
+
+.submit-text .morelink:after {
+  left: -154px;
+}
+
+.sidecontentbox a.helplink {
+  float: none;
+  margin: 0;
+  margin-bottom: 10px;
+  //color: $fontColor;
+}
+
+.sidebox.create .morelink a:after {
+  background-position: -75px -90px;
+}
+
+.sidebox.create .morelink + .spacer {
+  display: none;
+}
+
+.sidecontentbox a.helplink,
+.account-activity-box a {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.account-activity-box a:after {
+  background-position: -5px -160px;
+}
+
+.submit-link .morelink a:after {
+  background-position: -69px -3px;
+}
+
+.submit-text .morelink a:after {
+  background-position: -98px -4px;
+}
+
+.morelink a:hover {
+  text-indent: -15px;
+}
+
+.morelink a:hover:after {
+  right: 4px;
 }

@@ -1,3 +1,5 @@
+@import "../partials/core";
+
 .side {
   margin: 50px 30px 0 0;
   padding: 15px 10px 10px 10px;
@@ -7,8 +9,40 @@
   }
 
   &:after {
-    content: "theme by /u/Cereal_Addict, modified by /u/iamncla"
+    content: "theme: /r/apicem, modified by /u/iamncla"
   }
+
+  .md a {
+    border-bottom: 0;
+  }
+}
+
+// Login form in side-bar
+
+.login-form-side {
+
+  font-size: 12px;
+  padding: 10px 0;
+
+  input[type=text], input[type=password] {
+    margin: 0;
+    width: 145px;
+  }
+
+  input[type=text] {
+    margin-right: 10px;
+  }
+
+  #remember-me {
+    margin-left: 0;
+  }
+
+}
+
+
+// Hide RES multi-list counter subreddit subscriber thing
+.side span.multi-count {
+  display: none;
 }
 
 // Gig list
@@ -16,7 +50,7 @@
 
 .side blockquote:nth-of-type(2) {
   margin: 0;
-  border: 1px solid #434b55;
+  border: 1px solid $sideBarGigListBorderColor;
   padding: 0;
   font-size: 11px;
   text-decoration: none;
@@ -29,14 +63,14 @@
     min-height: 32px;
     clear: both;
     align-items: center;
-    border-bottom: 1px solid #434b55;
+    border-bottom: 1px solid $sideBarGigListBorderColor;
 
     &:last-child {
       border-bottom: none;
     }
 
     &:nth-of-type(2n+1) {
-      background: #383F47
+      background: $sideBarGigListOddRowBgColor;
     }
 
     em, strong {
@@ -53,7 +87,7 @@
 
     strong {
       font-style: normal;
-      border-left: 1px solid #434b55;
+      border-left: 1px solid $sideBarGigListBorderColor;
       float: right;
       flex: 1 75%;
     }
@@ -91,12 +125,12 @@ a.helplink.access-required + div.title + ul.content > li {
 }
 
 @media (max-width: $break-large) {
-  .side {
-    margin: 50px 0 0 0 !important;
-  }
+  //.side {
+  //  margin: 50px 0 0 0 !important;
+  //}
 
-  body > .content {
-    margin: 10px 0 0 0 !important;
-    max-width: calc(100vw - 320px) !important;
-  }
+  //body > .content {
+  //  margin: 10px 0 0 0 !important;
+  //  max-width: calc(100vw - 320px) !important;
+  //}
 }

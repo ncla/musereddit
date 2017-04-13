@@ -1,3 +1,4 @@
+@import "../partials/core";
 /*============================================================================
                           ADD ADDONS/CUSTOMIZATIONS BELOW
 ==============================================================================*/
@@ -48,20 +49,20 @@ body > .content .link.even.thing .midcol {
   padding: 0 5px;
 }
 
-/* UNSTYLED SEARCH PAGE ELEMENTS
+/* SEARCH PAGE ELEMENTS
 --------------------*/
 
 #previoussearch ul.res-search-tabs li {
-  background: #434b55;
+  background: darken($bgColor1, 2);
 }
 
 #previoussearch ul.res-search-tabs li a {
-  border-color: #4c5561;
+  border-color: $borderColor1;
 }
 
 .res-searchHelper-searchPageTabs .combined-search-page #previoussearch .res-search-pane {
-  background: #434b55;
-  border-top: 1px solid #4c5561;
+  background: $bgColor1;
+  border-top: 1px solid $borderColor1;
 }
 
 .search-result-meta span.search-subscribe-button a.active.option,
@@ -102,7 +103,7 @@ body > .content .link.even.thing .midcol {
 }
 
 .search-result-body, .search-result-body .md, .search-result-body .md p {
-  color: #fff;
+  color: $fontColor;
   font-size: 12px;
 }
 
@@ -161,15 +162,19 @@ body > .content .link.even.thing .midcol {
   margin-left: 12px;
 }
 
+// Removing the Reddit dash in "Stickied comment" label
+.comment .tagline .stickied-tagline:before, .comment .search-result-meta .stickied-tagline:before {
+  content: "";
+}
 
 /* CHECKBOX BACKGROUND-SIZE FIX
 --------------------*/
 #rem-login-main, .side .titlebox h1.redditname+div:before, input[type=checkbox], input[type=radio] {
-  background: url(%%spritesheet%%) -2px -200px no-repeat #383F47;
+  background: url(%%spritesheet%%) -2px -200px no-repeat $inputsAndSelectBg;
 }
 
 select {
-  background: url(%%spritesheet%%) right -257px top -248px no-repeat #383F47;
+  background: url(%%spritesheet%%) right -257px top -248px no-repeat $inputsAndSelectBg;
 }
 
 .res .RESUserTagImage::after {
@@ -202,8 +207,12 @@ span.nsfw-stamp.stamp {
   color: #61c095 !important;
 }
 
-/* HIDING FLAIR AND UPVOTE COUNT WHEN STICKIED POST
+/* HIDING FLAIR AND UPVOTE COUNT WHEN STICKIED POST, AND ON POSTS
 --------------------*/
+div.link .tagline .flair {
+  display: none;
+}
+
 .link.stickied .tagline .flair {
   display: none;
 }
@@ -220,8 +229,8 @@ span.nsfw-stamp.stamp {
   border-radius: 0;
   padding: 0 6px;
   line-height: 1.6em;
-  background: #383F47;
-  color: #fff;
+  background: $bgColor1;
+  color: $fontColor;
   font-size: 10px;
   text-transform: uppercase;
   text-overflow: initial;
@@ -230,13 +239,6 @@ span.nsfw-stamp.stamp {
 
 // Hide post flair in recently visited links
 .side span.linkflairlabel {
-  display: none;
-}
-
-/* HIDING RES ANNOUNCEMENT UPDATE IN NAV BAR
---------------------*/
-
-#RESAnnouncementAlert {
   display: none;
 }
 
@@ -255,48 +257,6 @@ span#RESSettingsButton:hover {
 .content button.RESBigEditorPop span.res-icon {
   display: none;
 }
-
-/* COLORIZATION
----------------*/
-
-/* PINK BORDERS
----------------*/
-input[type=text]:focus,
-textarea:focus,
-input#url:focus { border-color: #6093c4 !important }
-
-/* PINK BACKGROUNDS
--------------------*/
-#header-bottom-right a.message-count,
-.res .moduleToggle:not(.enabled) .toggleOff,
-.res .toggleButton:not(.enabled) .toggleOff,
-//.side .fancy-toggle-button a.option.active,
-#authorInfoToolTip .fancy-toggle-button a.option.active,
-.fancy-toggle-button .add.active,
-.res #RESHoverInfoSubscriptionButton,
-#NERFail .nextprev a,
-.next-suggestions a,
-.res .RESSubscriptionButton,
-.res .RESSubscriptionButton:hover,
-button.search-submit-button.c-btn.c-btn-primary { background: #6093c4 !important; }
-
-/* PINK TEXT
-------------*/
-body #header #sr-header-area .srdrop+.drop-choices.srdrop a.choice:hover,
-.res #srList tbody tr:hover a,
-.res #RESSubredditGroupDropdown li a:hover,
-.res #RESSubredditGroupDropdown .RESShortcutsEditButtons .res-icon:hover,
-.res #RESSubredditGroupDropdown .RESShortcutsCurrentSub a,
-.md a:hover,
-.flair-settings+.tabmenu li.selected a,
-.error,
-.morechildren .entry a.button[style*="color: red"],
-.thing a.title:hover,
-.link .entry .buttons li a:hover,
-.link .redditSingleClick:hover,
-.link .entry .buttons li a.comments,
-.tabmenu.formtab .selected a,
-.flat-list li.selected a { color: #6093c4 !important }
 
 
 /* RES SUB-REDDIT LIST
@@ -335,7 +295,7 @@ body #header #sr-header-area .srdrop+.drop-choices.srdrop a.choice:hover,
 
 /* MINOR DETAIL CHANGE FOR VOTE BUTTONS
 -----------------*/
-body>.content .link.thing .midcol {
+body > .content .link.thing .midcol {
   margin-top: 12px;
 }
 
@@ -345,34 +305,42 @@ body>.content .link.thing .midcol {
   background: url(%%spritesheet%%) !important;
   margin: 3px auto;
   opacity: 0.7;
+
+  &.up {
+    background-position: -67px -247px !important;
+  }
+  &.upmod {
+    background-position: -84px -247px !important;
+  }
+  &.down {
+    background-position: -33px -247px !important;
+  }
+  &.downmod {
+    background-position: -50px -247px !important;
+  }
+
+  &.up:hover, &.down:hover, &.upmod, &.downmod {
+    opacity: 1;
+    transition: opacity 0.15s;
+  }
 }
 
-.arrow.up {
-  background-position: -67px -247px !important;
+// Compose page specific
+
+body.messages-page #compose-message #send {
+  margin-left: 10px;
 }
 
-.arrow.upmod {
-  background-position: -84px -247px !important;
+body.messages-page #compose-message {
+  padding-bottom: 10px;
 }
 
-.arrow.down {
-  background-position: -33px -247px !important;
+body.messages-page .content > h1 {
+  margin-left: 10px;
 }
 
-.arrow.upmod, .arrow.downmod {
-  opacity: 1;
-}
+// Error pages IMG hiding
 
-.arrow.down {
-  opacity: 0.5;
-}
-
-.arrow.down:hover, .arrow.up:hover {
-  opacity: 1;
-  transition: opacity 0.15s;
-}
-
-.arrow.downmod {
-  background-position: -50px -247px !important;
-  opacity: 1;
+body > .content #classy-error img {
+  display: none;
 }

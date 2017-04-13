@@ -1,1 +1,162 @@
 $break-large: 1100px;
+
+// COLORIZATION CATEGORIZED
+// BORDERS
+$borderColor1: #d4d4d4;
+$borderColor2: rgba(255, 255, 255, 0.05);
+$borderColor3: rgba(0, 0, 0, .1);
+$borderColor4: #32383f;
+$borderColor5: #c4918a;
+
+$borderModButtonNeutral: rgba(0, 0, 0, 0.25);
+
+
+$borderGeneral: #fff;
+
+$borderFocus: #94b2d6;
+
+// TEXT
+$fontColor: #878787;
+$fontColorEvenMoreDominant: #636363;
+$fontColorMoreDominant: #6e6e6e;
+$fontColorLessDominant: #949494;
+$fontColorOpposite: #000; // Mainly seen used in report-reasons on light background
+$fontColor1: #32383f;
+$spoilerFontColor: #262b31;
+$postEntryNotVisitedLink: $fontColorMoreDominant;
+$inputElementsFont: #878787;
+$brightColorOnColorBgFont: #f0f7ff;
+
+$fontThemeColor: #449fca;
+$fontThemeColor2: #83a8c4;
+$fontError: #c4918a;
+$nsfwFont: #c4918a;
+$fontUpvote: #FF8A52;
+$fontDownvote: #6093c4;
+$mobileFriendlyLinkFont: #6093c4;
+$fontGreenColor: #61c095;
+
+$goldFontColor: #cd9930;
+
+$specialBtnsFontHover2: #696969;
+
+// BACKGROUND
+$bgColor1: #e4e4e4;
+$bgColor2: #efefef;
+$bgColor3: #e0e0e0; // RES post hover
+$bgColor4: rgba(0, 0, 0, .4);
+$bgColor5: #fff;
+$bgColor6: #cbd5e7;
+$bgFooterColor1: rgba(255, 255, 255, 0.70);
+
+$bgColorBrightWhite: #f7f7f7; // report reasons
+
+$sidebarBgColor: #efefef;
+$hoverBubbleBgArrow: #e9e9e9;
+
+$bgThemeColor1: #65b4c4;
+$bgThemeColor2: #6093c4;
+
+$bgButtonColor1: #c5cbd0;
+$bgButtonColor2: rgba(172, 204, 233, 0.5);
+$bgButtonColor3: rgba(133, 198, 234, 0.8);
+$bgButtonFocusedColor1: #21252a;
+
+$srListBg: #fff;
+$RESDropdownBg1: #fff;
+$RESDropdownMenuItemBg1: rgba(50, 58, 71, .1);
+$bgHoverColor1: rgba(50, 58, 71, .1);
+
+$tableRowOddBg: #e5e5e5;
+
+$inputsAndSelectBg: #e2e2e2; // blue-ish #b5c5ce;
+
+$bodyLivePreviewStripesBg1: #e8e8e8;
+$bodyLivePreviewStripesBg2: #eeeeee;
+
+$RESCommentOrPostSelectedBg: #f4f4f4;
+$postContentBg: #f4f4f4;
+
+$expandoButtonLinesColor: #919191;
+
+// BUTTONS SPECIAL, SIDEBAR SPECIALS
+$specialBtnsBgColor: #cecece;
+$specialBtnsBorderColor: #828282;
+$specialBtnsFont: #5a6269;
+$specialBtnsFont2: #828282;
+$specialBtnsHoverBg: #e1e1e1;
+$specialBtnsHoverBg2: rgba(255, 255, 255, .1);
+$specialBtnsHoverBg3: rgba(255, 255, 255, .1);
+
+$specialBtnsLessFont: #c3c3c3;
+$specialBtnsLessBorder: #afafaf;
+
+$specialSmallBtnsBg: #e7e7e7;
+$specialSmallBtnsBorder: #d2d2d2;
+$specialSmallBtnsFont: #828282;
+$specialSmallBtnsHoverBg: rgba(255, 255, 255, 0.15);
+
+$sideBarGigListOddRowBgColor: #e4e4e4;
+$sideBarGigListBorderColor: #d4d4d4;
+
+// Specific elements stylings
+
+// #header
+$headerBg: #323a47;
+$headerBgGradient: rgba(50, 58, 71, .65);
+
+// #sr-header-area
+$srListTopAreaBg: #fff; // LEAVE
+
+// #sr-header-area ul.flat-list.sr-bar:nth-of-type(1), #sr-header-area #srLeftContainer
+$srListTopAreaSeperator: 1px solid $borderColor3;
+
+$popupBoxesShadow: rgba(0, 0, 0, .15);
+
+// Pop-up boxes
+$popupBoxesShadow2: rgba(0, 0, 0, .5);
+
+// .res #srList:after
+$popupBoxesSRBodyGradient1: rgba(101, 180, 196, 0.35); // #65b4c4
+$popupBoxesSRBodyGradient2: rgba(96, 147, 196, 0.82);
+
+// .res .RESDropdownList
+$RESDRopdownListShadow: rgba(0, 0, 0, .5);
+
+//.res #RESSearchMenuItem:hover {
+$RESDropdownListSearchIconHoverBg: rgba(50, 58, 71, .2);
+
+// .flair-red, .linkflair-red .title > .linkflairlabel, .flairselector .linkflair-red > .linkflairlabel
+$flairRedBg: #c4918a;
+
+// .flair-green, .linkflair-green .title > .linkflairlabel, .flairselector .linkflair-green > .linkflairlabel
+$flairGreenBg: #61c095;
+
+// .flair-blue, .linkflair-blue .title > .linkflairlabel, .flairselector .linkflair-blue > .linkflairlabel
+$flairBlueBg: #6093c4;
+
+//html body .content .expando-button
+$expandoButtonBg: rgba(0, 0, 0, .1);
+
+// .pretty-button.positive
+$modActionButtonPositiveBg: #61c095;
+
+
+// body .thing .tagline .author.submitter, body .thing .tagline .author.submitter:hover, .tagline .userattrs a.submitter {
+$authorTagSubmitterBg: #6093c4;
+
+// body .thing .tagline .author.moderator, body .thing .tagline .author.moderator:hover, .tagline .userattrs a.moderator
+$authorTagModeratorBg: #61c095;
+
+// body .thing .tagline .author.admin, body .thing .tagline .author.admin:hover, .tagline .userattrs a.admin
+$authorTagAdminBg: #c4918a;
+
+// .md a[href$="/spoiler"], .md a[href$="#spoiler"], .md a[href$="/s"], .md a[href$="#s"]
+$spoilerBg: #262b31;
+
+// .res #RESShortcutsAddFormContainer
+$RESShortcutAddFormContainerShadow: rgba(0, 0, 0, .5);
+
+// .side .md > blockquote:nth-of-type(1) AKA mobile friendly
+$mobileFriendlyBoxShadow: rgba(0, 0, 0, .3);
+$mobileFriendlyBoxBg: #fff;

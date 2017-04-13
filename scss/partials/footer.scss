@@ -1,0 +1,42 @@
+@import "../partials/core";
+
+.footer-parent {
+  margin-top: 30px;
+  padding-top: 0 !important; // Cuz sometimes randomly Reddit balloon appears in the footer
+}
+
+body .footer-parent, body .footer-parent ~ .debuginfo {
+  width: 100%;
+  background: $bgFooterColor1;
+}
+
+.footer-parent p.bottommenu {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
+  opacity: 1;
+  color: $fontColorLessDominant;
+}
+
+.footer-parent p.bottommenu:nth-of-type(1) {
+  border-top: solid 1px $borderColor1;
+  padding-top: 25px;
+  padding-bottom: 25px
+}
+
+.bottommenu a, .bottommenu .updated {
+  border-bottom: dotted 1px rgba(0, 0, 0, .25);
+  color: $fontColor;
+}
+
+.footer-parent + img#hsts_pixel {
+  display: none
+}
+
+@media ( max-width: 1100px) {
+
+  .footer-parent {
+    margin-top: 30px;
+  }
+
+}

@@ -1,3 +1,4 @@
+@import "../partials/core";
 /*
 
 Apicem CSS Theme
@@ -19,24 +20,24 @@ Icons via icons8.com
 }
 
 a, body .generic-table, .res #srList a, #searchexpando a {
-  color: #fff
+  color: $fontColor;
 }
 
 label, .search-expando-button {
-  color: #999
+  color: $fontColorLessDominant;
 }
 
-input[type=text], textarea, .hover-bubble.multi-selector .create-multi input[type="text"], input#url {
+input[type=text], textarea, .hover-bubble.multi-selector .create-multi input[type="text"], input#url, input[type=password] {
   box-shadow: none !important;
   border: 1px solid transparent !important;
   border-radius: 0 !important;
-  background: #383F47;
-  color: #fff;
-  transition: 0 !important
+  background: $bgColor1;
+  color: $inputElementsFont;
+  transition: 0 !important;
 }
 
-input[type=text]:focus, textarea:focus, input#url:focus {
-  border-color: #ffb6af !important
+input[type=text]:focus, textarea:focus, input#url:focus, input[type=password]:focus {
+  border-color: $borderFocus !important;
 }
 
 input[type="checkbox"], input[type=radio], #rem-login-main, .side .titlebox h1.redditname + div:before {
@@ -50,7 +51,7 @@ input[type="checkbox"], input[type=radio], #rem-login-main, .side .titlebox h1.r
   height: 20px;
   border: 0;
   border-radius: 0;
-  background: #383F47 url(%%spritesheet%%) no-repeat 4px -106px/105px 150px;
+  background: $bgColor1 url(%%spritesheet%%) no-repeat 4px -106px/105px 150px;
   content: ""
 }
 
@@ -59,7 +60,7 @@ input[type="checkbox"], input[type=radio], #rem-login-main, .side .titlebox h1.r
 }
 
 input[type="checkbox"]:not(:checked), input[type=radio]:not(:checked), #rem-login-main:not(:checked) {
-  background: #383F47
+  background: $bgColor1;
 }
 
 input[type=radio] {
@@ -74,10 +75,10 @@ select {
   border: 0;
   border-radius: 0;
   padding: 5px 22px 5px 8px;
-  background: #383F47 url(%%spritesheet%%) no-repeat 0/105px 150px;
+  background: $bgColor1 url(%%spritesheet%%) no-repeat 0/105px 150px;
   background-position: right -88px top -130px;
   font-size: 13px;
-  color: #fff
+  color: $fontColor;
 }
 
 body {
@@ -90,7 +91,11 @@ body {
   background: url(%%body%%) fixed center top/cover
 }
 
-body, div#RESSubredditGroupDropdown, #search input[type="text"], textarea {
+body,
+div#RESSubredditGroupDropdown,
+#search input[type="text"],
+textarea,
+.login-form-side input[type=text], .login-form-side input[type=password] {
   font-family: -apple-system, BlinkMacSystemFont, "Roboto", Helvetica, Arial, "Lucida Grande", sans-serif
 }
 
@@ -101,9 +106,9 @@ body, div#RESSubredditGroupDropdown, #search input[type="text"], textarea {
   margin: 60px 30px 0;
   width: 100%;
   height: 160px;
-  border-bottom: 80px solid rgba(255, 255, 255, 0.05);
-  background-color: #323a47;
-  background-image: linear-gradient(rgba(50, 58, 71, .65), rgba(50, 58, 71, .65)), url(%%header%%);
+  border-bottom: 80px solid $borderColor2;
+  background-color: $headerBg;
+  background-image: linear-gradient($headerBgGradient, $headerBgGradient), url(%%header%%);
   background-position: center top;
   background-size: cover
 }
@@ -115,10 +120,10 @@ body, div#RESSubredditGroupDropdown, #search input[type="text"], textarea {
   width: calc(100% - -60px);
   height: 30px;
   border: 0;
-  background: #fff;
+  background: $srListTopAreaBg;
   white-space: nowrap;
   font-size: 9px;
-  color: #32383f
+  color: $fontColor1;
 }
 
 #sr-header-area #srLeftContainer {
@@ -153,7 +158,7 @@ body, div#RESSubredditGroupDropdown, #search input[type="text"], textarea {
 
 #sr-header-area ul.flat-list.sr-bar:nth-of-type(1), #sr-header-area #srLeftContainer {
   margin-right: 12px;
-  border-right: 1px solid rgba(0, 0, 0, .1);
+  border-right: $srListTopAreaSeperator;
   padding-right: 12px
 }
 
@@ -206,13 +211,13 @@ body, div#RESSubredditGroupDropdown, #search input[type="text"], textarea {
   padding: 0 6px;
   line-height: 20px;
   letter-spacing: .5px;
-  color: #32383f
+  color: $fontColor1;
 }
 
 #sr-header-area a:not(#sr-more-link):hover, #sr-header-area .dropdown.srdrop .selected:hover, #header #sr-header-area .selected a, .res #sr-header-area a.RESShortcutsCurrentSub {
-  background: rgba(50, 58, 71, .1);
+  background: $bgHoverColor1;
   font-weight: 400;
-  color: #32383f !important
+  color: $fontColor1 !important
 }
 
 #header #sr-header-area .sr-bar a.gold:hover {
@@ -223,13 +228,7 @@ body, div#RESSubredditGroupDropdown, #search input[type="text"], textarea {
   display: none
 }
 
-.drop-choices, .res .RESDialogSmall:not(.livePreview), .res #RESNotifications .RESNotification, body #editShortcutDialog, div.guider {
-  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-  border: 1px solid #434b55;
-  border-radius: 0;
-  background: #32383F;
-  letter-spacing: .5px
-}
+
 
 body #editShortcutDialog {
   top: 30px
@@ -261,10 +260,10 @@ body #editShortcutDialog {
 #sr-header-area .drop-choices.srdrop, .res #srList, .res #RESSubredditGroupDropdown {
   top: 30px !important;
   margin-left: 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 10px $popupBoxesShadow2;
   border: 0;
   padding: 10px !important;
-  background: #32383F;
+  background: $bgColor2;
   text-transform: uppercase;
   letter-spacing: .5px;
   font-size: 9px
@@ -305,7 +304,7 @@ body #editShortcutDialog {
   top: 30px;
   width: 500px;
   height: calc(100vh - 60px);
-  background: #32383F;
+  background: $bgColor2;
   content: "";
   z-index: -1;
   transition: .2s opacity
@@ -318,15 +317,15 @@ body #editShortcutDialog {
   width: 100vw;
   height: 100vh;
   padding: 50px 70px 0 0;
-  background-image: url(%%crosshatch%%), url(%%overlay%%), linear-gradient(45deg, rgba(196, 145, 138, 0.75) 20%, rgba(96, 147, 196, 0.985) 80%);
-  background-size: auto 100%, 100px 100px, cover;
+  background-image: url(%%overlay%%), linear-gradient(45deg, $popupBoxesSRBodyGradient1 20%, $popupBoxesSRBodyGradient2 80%);
+  background-size: 100px 100px, cover;
   background-position: center, center, center;
-  content: "✕";
+  content: " ";
   text-align: right;
   text-transform: lowercase;
   font-size: 40px;
   font-weight: 100;
-  color: #fff;
+  color: $fontColor;
   z-index: -2;
   transition: .2s opacity;
   pointer-events: none
@@ -342,10 +341,10 @@ body #editShortcutDialog {
 #sr-header-area .drop-choices.srdrop a, .res #srList tr, .res #RESSubredditGroupDropdown li a {
   height: 30px;
   padding: 0 10px;
-  border-top: solid 1px #434b55;
+  border-top: solid 1px $borderColor1;
   border-bottom: 0;
   line-height: 30px;
-  color: #fff
+  color: $fontColor;
 }
 
 .res #srList thead {
@@ -358,7 +357,7 @@ body #editShortcutDialog {
   line-height: 50px;
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: $fontColor;
   content: "YOUR SUBREDDITS"
 }
 
@@ -417,7 +416,7 @@ body #editShortcutDialog {
 
 .res #RESSubredditGroupDropdown li + .RESShortcutsEditButtons, .res #RESSubredditGroupDropdown > .RESShortcutsEditButtons {
   margin: 0;
-  border-top: solid 1px #434b55;
+  border-top: solid 1px $borderColor1;
   padding: 0
 }
 
@@ -428,7 +427,7 @@ body #editShortcutDialog {
 .res #RESSubredditGroupDropdown .RESShortcutsEditButtons .res-icon {
   display: inline-block;
   margin: 0;
-  color: #fff
+  color: $fontColor;
 }
 
 .res #RESSubredditGroupDropdown li + .RESShortcutsEditButtons a.delete {
@@ -444,9 +443,20 @@ body #editShortcutDialog {
   background: none
 }
 
-body #header #sr-header-area .srdrop + .drop-choices.srdrop a.choice:hover, .res #srList tbody tr:hover a, .res #RESSubredditGroupDropdown li a:hover, .res #RESSubredditGroupDropdown .RESShortcutsEditButtons .res-icon:hover, .res #RESSubredditGroupDropdown .RESShortcutsCurrentSub a, #autocomplete_dropdown .selectedItem {
+body #header #sr-header-area .srdrop + .drop-choices.srdrop a.choice:hover,
+.res #srList tbody tr:hover a,
+.res #RESSubredditGroupDropdown li a:hover,
+.res #RESSubredditGroupDropdown .RESShortcutsEditButtons .res-icon:hover,
+.res #RESSubredditGroupDropdown .RESShortcutsCurrentSub a,
+#autocomplete_dropdown .selectedItem,
+#suggested-reddits li a:hover {
   font-weight: 400;
-  color: #ffb6af !important
+  color: $fontThemeColor !important
+}
+
+// Without font-weight modification
+.content.submit .info-notice a:hover {
+  color: $fontThemeColor !important
 }
 
 .res #RESSubredditGroupDropdown li a:hover, #autocomplete_dropdown .selectedItem {
@@ -458,9 +468,9 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
   margin-top: 5px;
   width: auto;
   height: 20px;
-  border-left: 1px solid rgba(0, 0, 0, .1);
+  border-left: 1px solid $borderColor3;
   padding-left: 12px;
-  background: #fff
+  background: $bgColor5;
 }
 
 .res #RESShortcutsEditContainer div {
@@ -471,7 +481,7 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
   background: none;
   line-height: 18px;
   font-weight: 400;
-  color: #32383f
+  color: $fontColor1;
 }
 
 #RESShortcutsRight {
@@ -480,7 +490,7 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
 
 #sort-menu p {
   margin-bottom: 5px;
-  color: #fff
+  color: $fontColor;
 }
 
 #header .pagename {
@@ -501,7 +511,6 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
 #header .pagename a {
   font-size: 24px;
   letter-spacing: 10px;
-  color: #fff
 }
 
 #header .pagename:after {
@@ -511,8 +520,8 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
   font-size: 12px;
   font-weight: 400;
   vertical-align: top;
-  color: #fff;
-  content: "subtitle goes here"
+  color: $fontColor;
+  content: "subtitle goes here";
 }
 
 #header #header-img {
@@ -527,156 +536,6 @@ a#sr-more-link, .res #RESShortcutsEditContainer {
   opacity: .8
 }
 
-#header #header-bottom-right {
-  top: auto;
-  bottom: -80px;
-  height: 80px;
-  padding: 0;
-  line-height: 80px;
-  background: none;
-  text-transform: uppercase;
-  font-size: 11px;
-  color: #fff
-}
-
-#header #header-bottom-right:after {
-  position: absolute;
-  right: 30px;
-  top: 0;
-  height: 80px;
-  white-space: nowrap;
-  line-height: 80px;
-  letter-spacing: 1px;
-  content: "hover to view userbar";
-  pointer-events: none;
-  transition: 1s
-}
-
-#header:hover #header-bottom-right:after, #header:target #header-bottom-right:after {
-  opacity: 0;
-  transition: .2s
-}
-
-#header #header-bottom-right .user, #header-bottom-right.res-userbar-toggle > .user {
-  font-size: 0;
-  margin-left: 0;
-}
-
-#header-bottom-right #userbarToggle, #header-bottom-right .separator {
-  display: none !important
-}
-
-.res.res-accountSwitcher-dropDownStyle-alien #RESAccountSwitcherIconOverlay {
-  display: none !important;
-}
-
-#header .beta-hint > a, #header-bottom-right .user > a, .res .res #RESAccountSwitcherIcon, #header-bottom-right #mail, #header-bottom-right #modmail, #header-bottom-right #new_modmail, .ChatApp__reddit-icon, #header-bottom-right .pref-lang, #header-bottom-right #openRESPrefs .gearIcon, #header-bottom-right .logout a, a#RESAnnouncementAlert {
-  display: inline-block !important;
-  position: relative;
-  top: 0 !important;
-  overflow: visible;
-  vertical-align: top;
-  width: 25px !important;
-  height: 25px;
-  background: url(%%spritesheet%%);
-  font-size: 0 !important;
-  transition: .2s
-}
-
-#header-bottom-right .user > a {
-  background-position: -40px -160px;
-  transition-delay: .25s
-}
-
-#header-bottom-right #mail.nohavemail {
-  background-position: -40px -90px
-}
-
-#header-bottom-right #mail.havemail {
-  background-position: -40px -125px
-}
-
-#header-bottom-right #modmail {
-  background-position: -5px -55px;
-  transition-delay: .15s
-}
-
-#header-bottom-right .pref-lang {
-  background-position: -110px -55px;
-  transition-delay: .1s
-}
-
-#header-bottom-right #openRESPrefs .gearIcon {
-  background-position: -110px -125px;
-  transition-delay: .05s
-}
-
-#header-bottom-right .logout a {
-  background-position: -40px -55px
-}
-
-#header-bottom-right #mail {
-  transition-delay: .2s
-}
-
-#header .beta-hint > a:before {
-    content: "/r/Beta"
-}
-
-#header-bottom-right .user > a:before {
-    content: "User Page"
-}
-
-.res .res #RESAccountSwitcherIcon:before {
-    content: "Switch Accounts"
-}
-
-#header-bottom-right #mail:before {
-    content: "Mail"
-}
-
-#header-bottom-right #modmail:before {
-    content: "Mod Mail"
-}
-
-#header-bottom-right #new_modmail:before {
-    content: "New Mod Mail"
-}
-
-.ChatApp__reddit-icon:before {
-    content: "Orange Chat"
-}
-
-#header-bottom-right .pref-lang:before {
-    content: "Preferences"
-}
-
-#header-bottom-right #openRESPrefs .gearIcon:before {
-    content: "RES Settings"
-}
-
-#header-bottom-right .logout a:before {
-    content: "Logout"
-}
-
-a#RESAnnouncementAlert:before {
-    content: "RES Announcement"
-}
-
-#header-bottom-right a.message-count {
-  position: absolute;
-  right: 10px;
-  top: -12.5px;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 25px;
-  font-size: 11px;
-  font-weight: 400;
-  background: #c4918a
-}
-
 #RESMainGearOverlay.RESGearOverlay {
   display: none !important
 }
@@ -685,11 +544,11 @@ a#RESAnnouncementAlert:before {
   margin-top: 10px !important;
   right: 45px !important;
   width: auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 10px $RESDRopdownListShadow;
   border: 0;
   border-radius: 0;
   padding: 10px;
-  background: #fff;
+  background: $RESDropdownBg1;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 11px
@@ -697,10 +556,10 @@ a#RESAnnouncementAlert:before {
 
 .res .RESDropdownList li {
   height: 40px;
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  border-bottom: 1px solid $borderColor3;
   line-height: 39px;
   font-weight: 400;
-  color: #32383f
+  color: $fontColor1;
 }
 
 .RESDropdownList li:last-of-type {
@@ -708,8 +567,8 @@ a#RESAnnouncementAlert:before {
 }
 
 .res .RESDropdownList li:hover {
-  background: rgba(50, 58, 71, .1);
-  color: #32383f
+  background: $RESDropdownMenuItemBg1;
+  color: $fontColor1;
 }
 
 .RESDropdownList li:first-of-type, #RESAnnouncementMenuItem {
@@ -718,7 +577,7 @@ a#RESAnnouncementAlert:before {
 
 .RESDropdownList #DashboardLink a {
   background: none;
-  color: #32383f
+  color: $fontColor1;
 }
 
 .RESDropdownList #SettingsConsole, #RESAnnouncementMenuItem a {
@@ -732,11 +591,11 @@ a#RESAnnouncementAlert:before {
   margin: 9px;
   border: 0;
   border-radius: 50%;
-  background-color: rgba(50, 58, 71, .1)
+  background-color: $RESDropdownMenuItemBg1;
 }
 
 .res #RESSearchMenuItem:hover {
-  background-color: rgba(50, 58, 71, .2)
+  background-color: $RESDropdownListSearchIconHoverBg;
 }
 
 .moduleToggle::before, .toggleButton::before {
@@ -748,11 +607,11 @@ a#RESAnnouncementAlert:before {
 }
 
 .res .moduleToggle:not(.enabled) .toggleOff, .res .toggleButton:not(.enabled) .toggleOff {
-  background: #c4918a
+  background: $bgThemeColor1;
 }
 
 .res .moduleToggle.enabled .toggleOn, .res .toggleButton.enabled .toggleOn {
-  background: #6093c4
+  background: $bgThemeColor2;
 }
 
 .RESDropdownList .toggleButton {
@@ -769,9 +628,9 @@ a#RESAnnouncementAlert:before {
 .side {
   margin: 45px 30px 0 0;
   width: 321px;
-  border-left: 1px solid #434b55;
+  border-left: 1px solid $borderColor1;
   padding: 10px;
-  background: #32383f
+  background: $sidebarBgColor;
 }
 
 .side .spacer {
@@ -789,12 +648,12 @@ a#RESAnnouncementAlert:before {
   height: 40px;
   padding: 0 38px 0 15px;
   font-size: 14px;
-  color: #fff !important
+  color: $fontColor !important
 }
 
 #search input[type="text"]::-webkit-input-placeholder {
   text-transform: capitalize;
-  color: #fff
+  color: $fontColor;
 }
 
 #search input[type=submit], #search input[type=submit]:hover {
@@ -805,7 +664,7 @@ a#RESAnnouncementAlert:before {
   transition: .2s
 }
 
-#search:hover input[type=submit] {
+#search:hover input[type=submit], #search input[type=text]:focus + input[type=submit] {
   margin-left: -33px
 }
 
@@ -817,7 +676,7 @@ a#RESAnnouncementAlert:before {
   background: none;
   line-height: 25px;
   text-align: center;
-  color: #fff
+  color: $fontColor;
 }
 
 #searchexpando label {
@@ -842,61 +701,25 @@ label + #moresearchinfo {
 .linkinfo, .login-form-side {
   margin-bottom: 10px;
   border: 0;
-  border-top: 1px solid #434b55;
-  border-bottom: 1px solid #434b55;
+  border-top: 1px solid $borderColor1;
+  border-bottom: 1px solid $borderColor1;
   border-radius: 0;
   padding: 10px;
   background: none;
-  color: #fff
+  color: $fontColor;
 }
 
 div.linkinfo .upvotes {
-  color: #ffb6af
+  color: $fontUpvote;
 }
 
 div.linkinfo .downvotes {
-  color: #6093c4
-}
-
-.login-form-side {
-  font-size: 12px
-}
-
-.login-form-side input[type=text], .login-form-side input[type=password] {
-  margin: 0;
-  width: 135px
-}
-
-.login-form-side input[type=text] {
-  margin-right: 9px
-}
-
-.login-form-side #remember-me {
-  margin-left: 0
+  color: $fontDownvote;
 }
 
 .sidebox.submit {
   position: relative;
   margin-bottom: 10px
-}
-
-.morelink, .sidecontentbox a.helplink, .account-activity-box {
-  height: 40px;
-  border: 0;
-  background: none !important;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0;
-  font-weight: 700
-}
-
-.sidecontentbox a.helplink, .account-activity-box {
-  letter-spacing: 1px
-}
-
-.submit-text .morelink {
-  margin-top: -50px;
-  float: right
 }
 
 .sidebox.submit.submit-link {
@@ -911,137 +734,33 @@ div.linkinfo .downvotes {
   margin-bottom: 60px
 }
 
-.morelink a, .sidecontentbox a.helplink, .account-activity-box a {
-  position: relative;
-  width: 145px;
-  height: 40px;
-  border: 1px solid #fff;
-  background: #fff;
-  text-align: center;
-  line-height: 40px;
-  color: #32383f;
-  transition: .4s;
-  z-index: 1
-}
-
 .account-activity-box {
   margin-top: 10px
 }
 
 .account-activity-box a {
   background: none;
-  color: #fff
-}
-
-.morelink:hover a, .morelink a:hover {
-  color: #32383f
-}
-
-.morelink a:hover, .sidecontentbox a.helplink:hover, .account-activity-box a:hover {
-  text-indent: -15px
-}
-
-.sidebox.submit.disabled .morelink a {
-  width: 300px
-}
-
-.sidebox.submit.disabled .morelink a:hover {
-  text-indent: 0
+  color: $fontColor;
 }
 
 .sidebox .subtitle {
   display: none
 }
 
-.morelink a:before {
-  display: inline-block;
-  width: 145px;
-  font-size: 10px;
-  letter-spacing: 1px
-}
-
-.submit-link .morelink a:before {
-  content: "submit a link"
-}
-
-.submit-text .morelink a:before {
-  content: "submit text"
-}
-
-.sidebox.submit.disabled .morelink a:before {
-  width: 300px;
-  content: "submissions restricted"
-}
-
-.morelink a:after, .sidecontentbox a.helplink:after, .account-activity-box a:after {
-  position: absolute;
-  top: 6px;
-  right: -25px;
-  width: 25px;
-  height: 25px;
-  background: url(%%spritesheet%%);
-  content: "";
-  transition: .4s
-}
-
-.submit-link .morelink a:after {
-  background-position: -75px -55px
-}
-
-.submit-text .morelink a:after {
-  background-position: -110px -90px
-}
-
-.sidecontentbox a.helplink:after {
-  background-position: -40px -90px
-}
-
-.morelink a:hover:after, .sidecontentbox a.helplink:hover:after, .account-activity-box a:hover:after {
-  right: 8px
-}
-
-.sidebox.submit.disabled .morelink a:hover:after {
-  right: -25px
-}
-
-.morelink .nub {
-  display: none
-}
-
-.submit .morelink:after {
-  position: absolute;
-  top: 0;
-  width: 144px;
-  height: 40px;
-  background: rgba(255, 255, 255, .5);
-  line-height: 40px;
-  font-size: 11px;
-  color: #32383f;
-  content: "- - -"
-}
-
-.submit-link .morelink:after {
-  left: 155px
-}
-
-.submit-text .morelink:after {
-  left: -154px
-}
-
 .side .titlebox {
-  border-top: 1px solid #434b55;
-  color: #999
+  border-top: 1px solid $borderColor1;
+  color: $fontColorLessDominant;
 }
 
 .side h1.redditname {
   margin-bottom: 10px;
   width: 100%;
   height: 50px;
-  border-bottom: 1px solid #434b55
+  border-bottom: 1px solid $borderColor1;
 }
 
 .titlebox h1 a {
-  color: inherit
+  color: inherit;
 }
 
 .side h1.redditname a {
@@ -1051,13 +770,13 @@ div.linkinfo .downvotes {
   letter-spacing: 1px;
   font-size: 14px;
   font-weight: 700;
-  color: #fff
+  color: $fontColor;
 }
 
 .hover-bubble {
-  border: 1px solid #434b55;
-  background: #32383f;
-  color: #fff;
+  border: 1px solid $borderColor1;
+  background: $bgColor2;
+  color: $fontColor;
 }
 
 .hover-bubble.multi-selector {
@@ -1065,19 +784,19 @@ div.linkinfo .downvotes {
 }
 
 .hover-bubble.anchor-top:before {
-    border-bottom-color: #434b55
+    border-bottom-color: $borderColor1;
 }
 
 .hover-bubble.anchor-top:after {
-    border-bottom-color: #32383f
+    border-bottom-color: $borderColor4;
 }
 
 .hover-bubble.multi-selector strong {
-  color: #fff
+  color: $fontColor;
 }
 
 .hover-bubble.multi-selector label:hover, .drop-choices a.choice:hover {
-  background: #434b55
+  background: $bgColor3;
 }
 
 .hover-bubble.multi-selector label a {
@@ -1087,11 +806,11 @@ div.linkinfo .downvotes {
 }
 
 .hover-bubble.anchor-right:before {
-  border-left-color: #434b55
+  border-left-color: $borderColor1;
 }
 
 .hover-bubble.anchor-right:after {
-  border-left-color: #32383f
+  border-left-color: $hoverBubbleBgArrow;
 }
 
 .side .titlebox h1.redditname + div {
@@ -1112,7 +831,7 @@ div.linkinfo .downvotes {
   text-transform: lowercase;
   font-size: 12px;
   font-weight: 400;
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .side .subscribers {
@@ -1138,16 +857,16 @@ div.linkinfo .downvotes {
   background: none;
   text-transform: lowercase;
   font-size: 12px;
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .titlebox .tagline {
   margin-left: 0;
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .titlebox .tagline a {
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .side .flairselector.drop-choices.active {
@@ -1156,7 +875,7 @@ div.linkinfo .downvotes {
   box-shadow: none;
   width: 300px !important;
   border: 0;
-  border-top: 1px solid #434b55;
+  border-top: 1px solid $borderColor1;
   padding-top: 0 !important;
   padding-bottom: 0 !important
 }
@@ -1199,7 +918,7 @@ div.linkinfo .downvotes {
 }
 
 .flairselector li:hover {
-  background: #434b55
+  background: $bgColor3;
 }
 
 .flairoptionpane a.title, .flairselector li a.author {
@@ -1213,8 +932,6 @@ div.linkinfo .downvotes {
   border: 0;
   border-radius: 0;
   padding: 1px 6px;
-  background: #383F47;
-  color: #fff
 }
 
 .flair {
@@ -1227,22 +944,22 @@ div.linkinfo .downvotes {
 }
 
 .flair-red, .linkflair-red .title > .linkflairlabel, .flairselector .linkflair-red > .linkflairlabel {
-  background: #c4918a
+  background: $flairRedBg;
 }
 
 .flair-green, .linkflair-green .title > .linkflairlabel, .flairselector .linkflair-green > .linkflairlabel {
-  background: #61c095
+  background: $flairGreenBg;
 }
 
 .flair-blue, .linkflair-blue .title > .linkflairlabel, .flairselector .linkflair-blue > .linkflairlabel {
-  background: #6093c4
+  background: $flairBlueBg;
 }
 
 .flair-red:before, .flair-green:before, .flair-blue:before {
   display: inline-block;
   margin-right: 6px;
   padding: 1px 6px;
-  background: rgba(0, 0, 0, .4)
+  background: $bgColor4;
 }
 
 .flair-red:before {
@@ -1258,22 +975,22 @@ div.linkinfo .downvotes {
 }
 
 .flairselector form {
-  border-top: 1px solid #434b55
+  border-top: 1px solid $borderColor1;
 }
 
 .side .usertext {
   margin-top: 10px;
-  border-top: 1px solid #434b55;
+  border-top: 1px solid $borderColor1;
   font-size: 12px;
-  color: #fff
+  color: $fontColor;
 }
 
 .titlebox .bottom {
-  border-top: 1px solid #434b55;
-  border-bottom: 1px solid #434b55;
+  border-top: 1px solid $borderColor1;
+  border-bottom: 1px solid $borderColor1;
   padding: 6px 0;
   font-size: 12px;
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .titlebox .age {
@@ -1291,7 +1008,7 @@ div.linkinfo .downvotes {
 }
 
 .sidecontentbox {
-  border-bottom: 1px solid #434b55
+  border-bottom: 1px solid $borderColor1;
 }
 
 .sidecontentbox .content {
@@ -1305,62 +1022,30 @@ div.linkinfo .downvotes {
 }
 
 body span.score {
-  color: #fff
+  color: $fontColor;
 }
 
 .sidebox.create {
   margin-bottom: 10px
 }
 
-.sidebox.create .morelink, .sidecontentbox a.helplink, .account-activity-box {
-  font-size: 10px
-}
-
-.sidebox.create .morelink a, .sidecontentbox a.helplink, .account-activity-box a {
-  width: 300px
-}
-
-.sidecontentbox a.helplink {
-  float: none;
-  margin: 0;
-  margin-bottom: 10px;
-  color: #fff
-}
-
-.sidebox.create .morelink a:after {
-  background-position: -75px -90px
-}
-
-.sidebox.create .morelink + .spacer {
-  display: none
-}
-
-.sidecontentbox a.helplink, .account-activity-box a {
-  display: inline-block;
-  overflow: hidden
-}
-
-.account-activity-box a:after {
-  background-position: -5px -160px
-}
-
 .side:after {
   display: block;
   margin-top: 10px;
-  border-top: 1px solid #434b55;
+  border-top: 1px solid $borderColor1;
   padding-top: 10px;
   font-size: 12px;
-  color: #999;
+  color: $fontColorLessDominant;
   content: "subreddit theme: /r/Apicem by /u/Cereal_Addict"
 }
 
 .error {
   font-size: 12px !important;
-  color: #c4918a !important
+  color: $fontError !important
 }
 
 .morechildren .entry a.button[style*="color: red"] {
-  color: #c4918a !important
+  color: $fontThemeColor2 !important
 }
 
 .buttons li .error {
@@ -1377,8 +1062,8 @@ body > .content, .res.res-commentBoxes body > .content, .modtools-page > div.con
   margin: 0 0 0 30px;
   width: calc(100% - 381px);
   padding: 0 10px !important;
-  background: #32383f;
-  color: #fff
+  background: $bgColor2;
+  color: $fontColor;
 }
 
 body > .content > .content {
@@ -1400,7 +1085,7 @@ body > .content:before, .reddit-infobar {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #fff;
+  color: $fontColor;
   content: ""
 }
 
@@ -1409,7 +1094,7 @@ body > .content > .spacer:nth-of-type(1) {
 }
 
 body > .content:before {
-  background: url(%%overlay%%), linear-gradient(45deg, #c4918a 20%, #6093c4 80%);
+  background: url(%%overlay%%), linear-gradient(45deg, $bgThemeColor1 20%, $bgThemeColor2 80%);
   margin-left: -10px;
   margin-right: -331px
 }
@@ -1420,7 +1105,7 @@ body > .content:before {
 
 .reddit-infobar {
   margin-bottom: -1px;
-  border-bottom: 1px solid #434b55;
+  border-bottom: 1px solid $borderColor1;
   padding: 0 10px;
   background: none
 }
@@ -1428,7 +1113,7 @@ body > .content:before {
 .reddit-infobar .md {
   display: inline-block;
   margin: auto 0;
-  color: #fff
+  color: $fontColor;
 }
 
 .reddit-infobar.md-container-small .md p {
@@ -1441,7 +1126,7 @@ body > .content:before {
 
 #siteTable_organic.organic-listing {
   border: 0;
-  border-bottom: 1px solid #434b55;
+  border-bottom: 1px solid $borderColor1;
   background: none !important
 }
 
@@ -1450,13 +1135,13 @@ body > .content:before {
   margin: 0;
   padding: 10px 0;
   border: 0;
-  border-top: 1px solid #434b55;
+  border-top: 1px solid $borderColor1;
   vertical-align: top
 }
 
 .comments-page .link,
 .content > .sitetable:nth-of-type(1) > .link:nth-of-type(1),
-.content > .spacer > .sitetable:nth-of-type(1) > .link:nth-of-type(1),
+.content > .spacer > .sitetable > .link:nth-of-type(1),
 .content > .spacer > .sitetable:nth-of-type(1) > .link:nth-of-type(2) {
   border-top: 0
 }
@@ -1506,104 +1191,12 @@ body > .content .link.thing .midcol {
 }
 
 .link .score.likes {
-  color: #c4918a
+  color: $fontUpvote;
 }
 
 .link .score.dislikes {
-  color: #6093c4
+  color: $fontDownvote;
 }
-
-/*.thumbnail {*/
-/*position: relative*/
-/*}*/
-
-/*.thumbnail, .thumbnail.self, .search-result.has-thumbnail > .thumbnail, .link .entry:before {*/
-/*-webkit-flex: none;*/
-/*flex: none;*/
-/*margin: 0;*/
-/*width: 80px;*/
-/*height: 80px !important*/
-/*}*/
-
-/*.search-result.has-thumbnail > .thumbnail {*/
-/*margin-right: 10px*/
-/*}*/
-
-/*.link .thumbnail img {*/
-/*width: auto !important;*/
-/*height: 80px !important*/
-/*}*/
-
-/*.thumbnail:after {*/
-/*position: absolute;*/
-/*top: 30px;*/
-/*left: 0;*/
-/*width: 80px;*/
-/*height: 20px;*/
-/*line-height: 20px;*/
-/*text-align: center;*/
-/*text-transform: uppercase;*/
-/*font-size: 11px;*/
-/*font-weight: 700;*/
-/*color: rgba(0, 0, 0, .4);*/
-/*pointer-events: none*/
-/*}*/
-
-/*a.thumbnail[href*="reddit.com"] {*/
-/*background: #6093c4*/
-/*}*/
-
-/*.thing.stickied .thumbnail, .link.stickied :not(.thumbnail) + .entry:before {*/
-/*background: #61c095*/
-/*}*/
-
-/*.thumbnail.self, .link :not(.thumbnail) + .entry:before, .thumbnail.default {*/
-/*background: #434b55*/
-/*}*/
-
-/*.over18 .thumbnail.nsfw {*/
-/*background: #c4918a*/
-/*}*/
-
-/*body:not(.comments-page) .link :not(.thumbnail) + .entry:before {*/
-/*position: absolute;*/
-/*top: 0;*/
-/*left: -90px;*/
-/*line-height: 80px;*/
-/*text-align: center;*/
-/*text-transform: uppercase;*/
-/*font-size: 25px;*/
-/*font-weight: 700;*/
-/*color: rgba(0, 0, 0, .4);*/
-/*pointer-events: none;*/
-/*content: "•••"*/
-/*}*/
-
-/*.thumbnail.default:after {*/
-/*font-size: 25px;*/
-/*content: "•••"*/
-/*}*/
-
-/*.link a.thumbnail[href*="reddit.com"]:after {*/
-/*font-size: 11px;*/
-/*content: "reddit"*/
-/*}*/
-
-/*body .self.thumbnail:after {*/
-/*content: "self" !important*/
-/*}*/
-
-/*.link.over18 a.thumbnail:after {*/
-/*content: "nsfw" !important*/
-/*}*/
-
-/*.link.thing.stickied .thumbnail:after {*/
-/*content: "stickied" !important*/
-/*}*/
-
-/*.self .thumbnail img, .thing.stickied .thumbnail img, .comments-page .thing.stickied .thumbnail, .comments-page .thumbnail.self, .comments-page .over18 .thumbnail, a.thumbnail[href*="reddit.com"] img {*/
-/*display: none*/
-/*}*/
 
 .link .entry {
   position: relative;
@@ -1614,11 +1207,12 @@ body > .content .link.thing .midcol {
 }
 
 .comments-page .link.self .entry, .comments-page .link.over18 .entry {
-  margin-left: 39px
+  margin-left: 39px;
+  background: $postContentBg;
 }
 
-.res .RES-keyNav-activeElement, .subreddit-rule-item:hover {
-  background-color: #434b55 !important
+.res .RES-keyNav-activeElement {
+  background-color: $RESCommentOrPostSelectedBg !important;
 }
 
 .res .commentarea .RES-keyNav-activeElement .md, .res .RES-keyNav-activeElement .md-container {
@@ -1633,29 +1227,37 @@ body > .content .link.thing .midcol {
   margin: 0;
   font-size: 14px;
   font-weight: 700;
-  color: #fff
+  color: $postEntryNotVisitedLink;
 }
 
 .spam .domain, .spam .domain a {
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .thing a.title:hover {
-  color: #c4918a
+  color: $fontThemeColor2;
 }
 
 .thing.stickied.link a.title, .tagline .stickied-tagline, .stickied.link .entry .buttons li a:hover, .stickied.link .redditSingleClick:hover, .stickied.link .entry .buttons li a.comments {
-  color: #61c095
+  color: $fontGreenColor;
 }
 
-.thing a.title:visited, .thing.visited a.title, .thing .title.visited, .search-result :visited, .search-result :visited > mark, .search-result.visited .search-title, .search-result.visited .search-link, .search-result.visited .search-title > mark, .search-result.visited .search-link > mark {
-  color: #999 !important
+.thing a.title:visited,
+.thing.visited a.title,
+.thing .title.visited,
+.search-result :visited,
+.search-result :visited > mark,
+.search-result.visited .search-title,
+.search-result.visited .search-link,
+.search-result.visited .search-title > mark,
+.search-result.visited .search-link > mark {
+  color: $fontColorLessDominant !important
 }
 
 body.mod-toolbox .tb-general-button, body.mod-toolbox li a.tb-general-button, body.mod-toolbox .tb-bracket-button {
   border: 0;
   padding: 3px;
-  background: #383F47
+  background: $bgColor1;
 }
 
 .md h1:after {
@@ -1663,7 +1265,7 @@ body.mod-toolbox .tb-general-button, body.mod-toolbox li a.tb-general-button, bo
   margin: 7px 0;
   width: 50px;
   height: 1px;
-  background: #fff;
+  background: $borderColor1;
   content: "";
   transition: .2s
 }
@@ -1681,7 +1283,7 @@ html body .content .expando-button {
   max-height: none;
   border: 0;
   border-radius: 20px;
-  background: rgba(0, 0, 0, .3) !important;
+  background: $expandoButtonBg !important;
   transition: .2s
 }
 
@@ -1697,7 +1299,7 @@ html body .content .expando-button {
   top: 13.5px;
   width: 12px;
   height: 1px;
-  background: #fff;
+  background: $expandoButtonLinesColor;
   content: "";
   transition: .3s
 }
@@ -1717,7 +1319,7 @@ html body .expando-button.expanded:after {
 .link.self .entry > .expando-button.collapsed:after {
   top: 10px;
   height: 9px;
-  border: 1px solid #fff;
+  border: 1px solid $expandoButtonLinesColor;
   border-left: 0;
   border-right: 0;
   background: none;
@@ -1732,61 +1334,23 @@ html body .expando-button.expanded:after {
 
 .nsfw-stamp {
   border: 0;
-  color: #c4918a
+  color: $nsfwFont;
 }
 
 .res a.voteWeight {
     background: none !important;
-    color: #fff
+    color: $fontColor;
 }
 
 .link .entry .tagline, .tagline a, .entry .buttons li a, .entry .buttons li a.nonbutton, .link .redditSingleClick {
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0;
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .stamp {
   border-radius: 0
-}
-
-.entry .buttons li.reported-stamp, ul.report-reasons {
-  border: 0 !important;
-  color: #000
-}
-
-a.pretty-button {
-  border: 0;
-  border-radius: 0;
-  padding: 0 6px;
-  line-height: 1.6em;
-  color: #fff
-}
-
-.pretty-button.negative {
-  background: #c4918a
-}
-
-.pretty-button.neutral {
-  background: none;
-  border: 1px solid rgba(255, 255, 255, .1)
-}
-
-.pretty-button.positive {
-  background: #61c095
-}
-
-body .content a.pretty-button.pressed {
-  background: #21252a
-}
-
-a.pretty-button + li {
-  margin-left: 5px
-}
-
-ul.report-reasons {
-  width: 100%
 }
 
 .rounded {
@@ -1799,19 +1363,23 @@ body .thing .tagline .author.moderator, body .thing .tagline .author.submitter, 
   border-radius: 0;
   padding: 1px 6px;
   font-weight: 400;
-  color: #fff !important
+  color: $brightColorOnColorBgFont !important
+}
+
+body > .content a.author {
+  color: $fontColorEvenMoreDominant;
 }
 
 body .thing .tagline .author.submitter, body .thing .tagline .author.submitter:hover, .tagline .userattrs a.submitter {
-  background-color: #6093c4 !important
+  background-color: $authorTagSubmitterBg !important
 }
 
 body .thing .tagline .author.moderator, body .thing .tagline .author.moderator:hover, .tagline .userattrs a.moderator {
-  background-color: #61c095 !important
+  background-color: $authorTagModeratorBg !important
 }
 
 body .thing .tagline .author.admin, body .thing .tagline .author.admin:hover, .tagline .userattrs a.admin {
-  background-color: #c4918a !important
+  background-color: $authorTagAdminBg !important
 }
 
 .res .RESUserTagImage {
@@ -1850,17 +1418,17 @@ body .thing .tagline .author.admin, body .thing .tagline .author.admin:hover, .t
 }
 
 .link .entry .buttons li a:hover, .link .redditSingleClick:hover {
-  color: #c4918a
+  color: $fontThemeColor;
 }
 
 .link .entry .buttons li a.comments {
   font-weight: 700;
-  color: #c4918a
+  color: $fontThemeColor;
 }
 
 span.newComments, form.state-button.approve-button {
   font-size: 11px;
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .expando + ul.flat-list.buttons {
@@ -1876,11 +1444,11 @@ span.newComments, form.state-button.approve-button {
   border: 0;
   border-radius: 0;
   padding: 10px;
-  background: #32383f
+  background: $bgColor2;
 }
 
 .nav-buttons {
-  border-top: 1px solid #434b55;
+  border-top: 1px solid $borderColor1;
   padding: 10px 0;
   font-size: 0
 }
@@ -1891,16 +1459,16 @@ span.newComments, form.state-button.approve-button {
   border: 0;
   border-radius: 0;
   padding: 10px;
-  background: #fff;
+  background: $bgButtonColor1;
   text-transform: uppercase;
   font-size: 11px;
-  color: #32383f;
+  color: $fontColor1;
   transition: .2s
 }
 
 .nextprev a:hover, .next-suggestions a:hover {
   border: 0;
-  background: rgba(255, 255, 255, .8)
+  background: $bgButtonColor3;
 }
 
 .res #progressIndicator, .res .NERPageMarker {
@@ -1908,11 +1476,11 @@ span.newComments, form.state-button.approve-button {
   width: 100%;
   height: auto;
   border: 0;
-  border-top: 1px solid #434b55;
+  border-top: 1px solid $borderColor1;
   border-radius: 0;
   padding: 10px;
   background: none;
-  color: #fff
+  color: $fontColor;
 }
 
 .res #progressIndicator p.NERWidgetText {
@@ -1933,20 +1501,12 @@ span.newComments, form.state-button.approve-button {
   border: 0;
   border-radius: 0;
   padding: 5px;
-  background: #c4918a;
+  background: $bgThemeColor1;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 12px
 }
 
-.footer-parent {
-  margin-top: 30px
-}
-
-.footer-parent, .footer-parent ~ .debuginfo {
-  width: 100%;
-  background: rgba(36, 42, 48, 0.9)
-}
 
 .footer, .footer .col {
   border: 0
@@ -1966,7 +1526,7 @@ span.newComments, form.state-button.approve-button {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
-  color: #fff
+  color: $fontColor;
 }
 
 .footer .col li {
@@ -1974,31 +1534,8 @@ span.newComments, form.state-button.approve-button {
   font-size: 12px
 }
 
-.footer-parent p.bottommenu {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 10px;
-  opacity: .4;
-  color: #fff
-}
-
-.footer-parent p.bottommenu:nth-of-type(1) {
-  border-top: solid 1px #434b55;
-  padding-top: 25px;
-  padding-bottom: 25px
-}
-
-.bottommenu a, .bottommenu .updated {
-  border-bottom: 1px dotted #fff;
-  color: #fff
-}
-
-.footer-parent + img#hsts_pixel {
-  display: none
-}
-
 .md {
-  color: #fff
+  color: $fontColor;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -2007,25 +1544,10 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-size: 11px !important;
   font-weight: 700 !important;
-  color: #fff !important
+  color: $fontColor !important
 }
 
-.res .RESNotificationHeader h3 {
-  margin-top: 0;
-  padding-top: 0
-}
 
-.res .RESNotificationHeader h3 .gearIcon {
-  display: inline-block;
-  margin-top: 12.5px;
-  height: 15px;
-  line-height: 15px
-}
-
-.res .RESNotificationHeader h3 + .RESCloseButton {
-  top: 0;
-  margin-top: 10px
-}
 
 .res .RESNotificationContent {
   padding-bottom: 10px
@@ -2045,56 +1567,67 @@ h2, .sidecontentbox .title h1 {
 }
 
 .sidecontentbox a.helplink + .title {
-  border-top: 1px solid #434b55
+  border-top: 1px solid $borderColor1;
 }
 
 .md del {
   text-decoration: line-through !important;
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .new-comment .md :not(pre) > code, .link .md :not(pre) > code, .usertext.border .md :not(pre) > code, .new-comment .md pre, .link .md pre, .usertext.border .md pre, .md code, .md pre {
   border: 0;
   padding: 5px;
-  background: #383F47;
+  background: $bgColor1;
   font-family: "Courier New", monospace
 }
 
 .md a, .search-result .search-result-body :link, .search-result .search-result-body :link > mark {
-  border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
-  color: #fff;
+  border-bottom: dotted 1px rgba(0, 0, 0, 0.25);
+  color: $fontColor;
   transition: .2s
 }
 
-.md a:hover {
+.md a:hover,
+#moderation_tools ul > li > a:hover,
+.comment.noncollapsed .buttons li a:hover,
+a.author:hover,
+body>.content a.author:hover,
+.side .flairselection .flairremove a:hover,
+.side a.flairselectbtn:hover,
+.side .subButtons > span.RESshortcut:hover,
+.side .subButtons > span.RESDashboardToggle:hover,
+.commentarea .menuarea .toggle .option a:hover,
+.bottommenu a:hover, .bottommenu .updated:hover
+{
   border-bottom-color: transparent;
-  color: #ffb6af
+  color: $fontThemeColor;
 }
 
 body .comment .md p > a:visited, body h2 a:visited {
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .md hr, .content hr {
   height: 1px;
   border: 0;
-  background: #434b55
+  background: $borderColor1;
 }
 
 .md blockquote {
-  border-left: solid 4px #434b55;
+  border-left: solid 4px $borderColor1;
   padding: 10px;
   padding-left: 30px;
   font-style: italic;
-  color: #fff
+  color: $fontColor;
 }
 
 .md table tr {
-  border-bottom: 1px solid #434b55
+  border-bottom: 1px solid $borderColor1;
 }
 
 .md table tr:nth-of-type(odd) {
-  background: #383F47
+  background: $tableRowOddBg;
 }
 
 .md table thead tr {
@@ -2109,12 +1642,12 @@ body .comment .md p > a:visited, body h2 a:visited {
 .md a[href$="/spoiler"], .md a[href$="#spoiler"], .md a[href$="/s"], .md a[href$="#s"] {
   border: 0;
   padding: 0 5px;
-  background: #262b31 !important;
-  color: #262b31 !important
+  background: $spoilerBg !important;
+  color: $spoilerFontColor !important
 }
 
 .md a[href$="/spoiler"]:hover, .md a[href$="#spoiler"]:hover, .md a[href$="/s"]:hover, .md a[href$="#s"]:hover {
-  color: #fff !important
+  color: $fontColor !important
 }
 
 .wiki-page > .content[role="main"] > span {
@@ -2145,17 +1678,17 @@ body .comment .md p > a:visited, body h2 a:visited {
 }
 
 .wiki-page .pageactions .wikiaction-current, .wiki-page .pageactions .wikiaction:hover {
-  background: #434b55
+  background: $bgColor3;
 }
 
 .wiki-page .wiki-page-content .wiki > .toc > ul {
-  border: 1px solid #434b55
+  border: 1px solid $borderColor1;
 }
 
 .searchpane {
   margin: 0;
   border: 0;
-  border-bottom: 1px solid #434b55;
+  border-bottom: 1px solid $borderColor1;
   padding: 0;
   padding-bottom: 10px;
   background: none
@@ -2165,7 +1698,7 @@ body .comment .md p > a:visited, body h2 a:visited {
   margin: 0;
   box-shadow: none;
   border: 0;
-  border-bottom: 1px solid #434b55;
+  border-bottom: 1px solid $borderColor1;
   background: none
 }
 
@@ -2181,7 +1714,7 @@ button.search-submit-button.c-btn.c-btn-primary {
   height: 40px;
   border: 0;
   border-radius: 0;
-  background: #c4918a
+  background: $bgThemeColor1;
 }
 
 .search-result-group {
@@ -2189,7 +1722,7 @@ button.search-submit-button.c-btn.c-btn-primary {
 }
 
 .search-result-group-header {
-  border-bottom: 1px solid #434b55
+  border-bottom: 1px solid $borderColor1;
 }
 
 .search-expando.collapsed:before {
@@ -2197,7 +1730,7 @@ button.search-submit-button.c-btn.c-btn-primary {
 }
 
 .search-result :link, .search-result :link > mark {
-  color: #fff
+  color: $fontColor;
 }
 
 .archived-infobar.with-icon:before {
@@ -2205,21 +1738,21 @@ button.search-submit-button.c-btn.c-btn-primary {
 }
 
 .panestack-title {
-  border-top: 1px solid #434b55
+  border-top: 1px solid $borderColor1;
 }
 
 .panestack-title, .menuarea {
   vertical-align: middle;
   margin: 0;
   padding: 9.5px;
-  border-bottom: 1px solid #434b55;
-  color: #fff
+  border-bottom: 1px solid $borderColor1;
+  color: $fontColor;
 }
 
 .panestack-title a.title-button.gold {
   border: 0;
   background: none;
-  color: #cd9930
+  color: $goldFontColor;
 }
 
 .commentarea .menuarea {
@@ -2230,7 +1763,7 @@ button.search-submit-button.c-btn.c-btn-primary {
 .commentarea .menuarea, .commentarea .menuarea .toggle a {
   font-size: 12px;
   font-weight: 400;
-  color: #fff
+  color: $fontColor;
 }
 
 .dropdown.lightdrop .selected {
@@ -2238,26 +1771,11 @@ button.search-submit-button.c-btn.c-btn-primary {
   text-transform: uppercase;
   font-size: 9px;
   font-weight: 400;
-  color: #fff
+  color: $fontColor;
 }
 
 .dropdown.lightdrop .selected:after {
   content: " ▾"
-}
-
-.res .RESSubscriptionButton, .res .RESSubscriptionButton:hover {
-  width: auto;
-  border: 0;
-  border-radius: 0;
-  padding: 5px;
-  background: #c4918a;
-  text-transform: uppercase;
-  color: #fff
-}
-
-.res .RESSubscriptionButton.unsubscribe {
-  background: #434b55;
-  color: #fff
 }
 
 .commentarea .commentNavSortType {
@@ -2276,15 +1794,15 @@ button.search-submit-button.c-btn.c-btn-primary {
   display: none
 }
 
-.gold-accent, .gold-accent.comment-visits-box {
+.gold-accent {
   border: 0;
   background: none;
-  color: #cd9930
+  color: $goldFontColor;
 }
 
 .new-comment .usertext-body, .usertext.border .usertext-body {
   border: 0;
-  background: #434b55
+  background: $bgColor3;
 }
 
 .infobar {
@@ -2306,7 +1824,7 @@ button.search-submit-button.c-btn.c-btn-primary {
 .res.res-commentBoxes .comment, .comment {
   overflow: hidden;
   margin-bottom: 0 !important;
-  border: 1px solid #434b55 !important;
+  border: 1px solid $borderColor1 !important;
   border-right: 0 !important;
   border-bottom: 0 !important;
   padding: 0 !important;
@@ -2327,7 +1845,7 @@ button.search-submit-button.c-btn.c-btn-primary {
 
 .morechildren, .deleted.comment {
   margin-left: 10px;
-  border: 1px solid #434b55;
+  border: 1px solid $borderColor1;
   border-right: 0;
   border-bottom: 0;
   padding-bottom: 8px
@@ -2358,7 +1876,7 @@ button.search-submit-button.c-btn.c-btn-primary {
 .morecomments a, .deepthread a {
   font-size: 11px !important;
   font-weight: 400 !important;
-  color: #999 !important
+  color: $fontColorLessDominant !important
 }
 
 .deepthread:after {
@@ -2424,7 +1942,7 @@ button.search-submit-button.c-btn.c-btn-primary {
 }
 
 .tabmenu.formtab .selected a {
-  color: #c4918a
+  color: $fontThemeColor2;
 }
 
 .formtabs-content .infobar, .content.submit .info-notice {
@@ -2438,7 +1956,7 @@ button.search-submit-button.c-btn.c-btn-primary {
   width: auto;
   border: 0;
   background: none;
-  color: #fff
+  color: $fontColor;
 }
 
 .roundfield span.title, .linefield .title {
@@ -2446,11 +1964,11 @@ button.search-submit-button.c-btn.c-btn-primary {
   letter-spacing: 1px;
   font-size: 11px;
   font-weight: 700;
-  color: #fff
+  color: $fontColor;
 }
 
 #newlink-with-image-upload div#new-link-preview, #newlink-with-image-upload span.clear-input-button {
-  background: #434b55
+  background: $bgColor3;
 }
 
 #newlink-with-image-upload div#suggest-title {
@@ -2472,7 +1990,7 @@ button.search-submit-button.c-btn.c-btn-primary {
   width: 25px;
   height: 25px;
   border: 12.5px solid transparent;
-  border-bottom-color: #434b55;
+  border-bottom-color: $borderColor1;
   content: ""
 }
 
@@ -2521,12 +2039,12 @@ body .markdownEditor-wrapper {
 }
 
 .commentingAs {
-  color: #fff
+  color: $fontColor;
 }
 
 body .markdownEditor .edit-btn:not(.btn-macro) {
   border: 0;
-  background-color: #434b55;
+  background-color: $bgColor3;
   background-image: url(%%editbuttons%%)
 }
 
@@ -2538,25 +2056,6 @@ a.edit-btn {
   display: inline-block
 }
 
-.usertext .help-toggle, .usertext .help-toggle a, .usertext a.reddiquette {
-  margin-left: 0;
-  border-right: 0 !important
-}
-
-body:not(.res) .usertext .help-toggle a {
-  border-right: 1px solid #fff !important
-}
-
-.content button.RESBigEditorPop {
-  margin-top: 5px;
-  margin-left: 0;
-  border-color: #fff;
-  padding: 5px 10px;
-  background: none;
-  text-indent: 0;
-  color: #fff
-}
-
 div.BEFoot button {
   margin-right: 10px
 }
@@ -2566,18 +2065,8 @@ div.BEFoot button {
 }
 
 .res .RESDialogSmall {
-  border: 1px solid #434b55;
+  border: 1px solid $borderColor1;
   border-radius: 0
-}
-
-.res .RESDialogSmall > h3, .res .RESNotificationHeader, .res #RESConsoleTopBar.RESDialogTopBar {
-  margin-bottom: 0;
-  height: 40px;
-  border-bottom: 1px solid #434b55;
-  padding-top: 0;
-  padding-bottom: 0;
-  line-height: 40px;
-  background: #434b55
 }
 
 .res #RESConsoleTopBar.RESDialogTopBar {
@@ -2587,11 +2076,11 @@ div.BEFoot button {
 body .livePreview .md {
   margin: 0;
   padding-top: 10px;
-  background: repeating-linear-gradient(-45deg, #32383f, #32383f 40px, #2e333a 40px, #2e333a 80px)
+  background: repeating-linear-gradient(-45deg, $bodyLivePreviewStripesBg1, $bodyLivePreviewStripesBg1 40px, $bodyLivePreviewStripesBg2 40px, $bodyLivePreviewStripesBg2 80px)
 }
 
 body .viewSource textarea[readonly] {
-  background: repeating-linear-gradient(-45deg, #32383f, #32383f 40px, #2e333a 40px, #2e333a 80px)
+  background: repeating-linear-gradient(-45deg, $bgColor2, $bgColor2 40px, $bgColor6 40px, $bgColor6 80px)
 }
 
 .pretty-form .save-button button, .submit.content button[type="submit"] {
@@ -2602,7 +2091,7 @@ body .viewSource textarea[readonly] {
   display: block;
   margin-bottom: 20px;
   font-size: 12px;
-  color: #999;
+  color: $fontColorLessDominant;
   content: "Thanks for choosing Apicem! Visit /r/Apicem to leave feedback and check for updates."
 }
 
@@ -2611,7 +2100,7 @@ body .viewSource textarea[readonly] {
   margin-bottom: 20px;
   width: 100%;
   border: 0;
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .res #RESStyleSheetTipPane * {
@@ -2635,14 +2124,14 @@ body .viewSource textarea[readonly] {
   height: 20px;
   border: 0;
   border-radius: 50%;
-  background: #383F47;
+  background: $bgColor1;
   line-height: 20px;
-  color: #fff
+  color: $fontColor;
 }
 
 .res .RESCloseButton:hover {
   border: 0;
-  background: #434b55
+  background: $bgColor3;
 }
 
 .sheets {
@@ -2650,7 +2139,7 @@ body .viewSource textarea[readonly] {
 }
 
 .stylesheet-customize-container #images {
-  color: #fff
+  color: $fontColor;
 }
 
 form#image-upload.image-upload {
@@ -2673,22 +2162,22 @@ ul.image-preview-list li {
   margin: 0;
   width: 50%;
   height: auto;
-  border-top: 1px solid #434b55;
+  border-top: 1px solid $borderColor1;
   padding: 10px;
-  background: #32383f
+  background: $bgColor2;
 }
 
 ul.image-preview-list li:nth-of-type(even) {
-  border-right: 1px solid #434b55
+  border-right: 1px solid $borderColor1;
 }
 
 ul.image-preview-list li:nth-of-type(odd) {
   margin-left: -1px;
-  border-left: 1px solid #434b55
+  border-left: 1px solid $borderColor1;
 }
 
 ul.image-preview-list .description pre {
-  color: #fff
+  color: $fontColor;
 }
 
 .subreddit-rules-page:before {
@@ -2701,60 +2190,56 @@ ul.image-preview-list .description pre {
 }
 
 .subreddit-rule-form .c-form-group .label.required:after {
-  color: #fff
+  color: $fontColor;
 }
 
 .subreddit-rule-form .form-buttons > button {
   margin-bottom: 12px
 }
 
-.subreddit-rule-item {
-  margin-left: 0
-}
-
 .subreddit-rules-page .md-container .md .subreddit-rule-description {
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .messages-page > .content {
-  color: #fff
+  color: $fontColor;
 }
 
 .message .subject .correspondent {
   border: 0;
   border-radius: 0;
   padding: 5px 8px;
-  background: #434b55
+  background: $bgColor3;
 }
 
 .flat-list li.selected a {
-  color: #c4918a
+  color: $fontThemeColor2;
 }
 
 .message .tagline, .message.message-parent > .entry, .message.message-reply > .entry {
-  color: #61c095
+  color: $fontGreenColor;
 }
 
 .message.recipient > .entry {
-  color: #fff
+  color: $fontColor;
 }
 
 .message.message-reply.recipient > .entry .head, .message.message-parent.recipient > .entry .head {
-  color: #999
+  color: $fontColorLessDominant;
 }
 
 .message.threaded .child {
-  border-left: 1px dashed #434b55
+  border-left: 1px dashed $borderColor1;
 }
 
 .thing.spam {
-  border-left: 3px solid #c4918a;
+  border-left: 3px solid $borderColor5;
   background: none
 }
 
 .message.new > .entry {
   border: 0;
-  background: #434b55
+  background: $bgColor3;
 }
 
 .flair-settings + .tabmenu {
@@ -2771,7 +2256,7 @@ ul.image-preview-list .description pre {
 
 .flair-settings + .tabmenu li.selected a {
   border: 0;
-  color: #ffb6af
+  color: $fontThemeColor;
 }
 
 .tabpane-content {
@@ -2796,41 +2281,16 @@ ul.image-preview-list .description pre {
 
 .res #RESShortcutsAddFormContainer {
   top: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 10px $RESShortcutAddFormContainerShadow;
   border: 0;
   border-radius: 0;
-  background: #32383f;
-  color: #fff
+  background: $bgColor2;
+  color: $fontColor;
 }
 
 .res #addSubreddit {
   border-radius: 0;
   background: none
-}
-
-.res .res #authorInfoToolTip:before, .res .res #authorInfoToolTip:after {
-  border-color: transparent #434b55
-}
-
-.res .RESDialogSmall .RESDialogContents {
-  padding-top: 12px
-}
-
-.res .res #RESHoverContainer:before, .res .RESHoverInfoCard:before {
-  border-color: transparent #434b55
-}
-
-.res .res #RESHoverContainer:after, .res .RESHoverInfoCard:after {
-  border-color: transparent #434b55
-}
-
-div.guider .guider_content p, .res .RESNotificationContent {
-  color: #999
-}
-
-.res .RESNotificationContent {
-  border-top: 1px solid #434b55;
-  border-bottom: 1px solid #434b55
 }
 
 input#disableDailyTipsCheckbox {
@@ -2840,7 +2300,7 @@ input#disableDailyTipsCheckbox {
 body .blueButton, a.guider_button {
   border: 0;
   border-radius: 0;
-  background: #6093c4
+  background: $bgThemeColor2;
 }
 
 .pageNavigator[href="#header"] {
@@ -2848,38 +2308,33 @@ body .blueButton, a.guider_button {
 }
 
 body.res-voteEnhancements-highlightScores span.score {
-  color: #fff
+  color: $fontColor;
 }
 
 .side .md > blockquote:nth-of-type(1) {
   display: none
 }
 
-@media ( max-width: 1100px) {
-  #header {
-    margin: 0;
-    height: 190px;
-    padding-top: 30px
-  }
+@media (max-width: $break-large) {
+  //#header {
+  //   margin: 0;
+  //   height: 190px;
+  //   padding-top: 30px
+  // }
 
-  #sr-header-area {
-    top: 0;
-    left: 0;
-    width: 100%
-  }
+  //#sr-header-area {
+  //  top: 0;
+  //  left: 0;
+  //  width: 100%
+  //}
 
-  #header .pagename, #header .tabmenu {
-    margin-top: 30px
-  }
+  //#header .pagename, #header .tabmenu {
+  //  margin-top: 30px
+  //}
 
-  body > .content {
-    margin: 0 !important;
-    max-width: calc(100vw - 320px) !important
-  }
-
-  .side {
-    margin-right: 0
-  }
+  //.side {
+  //  margin-right: 0
+  //}
 
   .side .md > blockquote:nth-of-type(1) {
     display: block;
@@ -2888,24 +2343,14 @@ body.res-voteEnhancements-highlightScores span.score {
     left: 90px;
     top: 20px;
     margin: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 10px $mobileFriendlyBoxShadow;
     width: 280px;
     border: 0;
     padding: 15px;
-    background: #fff;
+    background: $mobileFriendlyBoxBg;
     text-align: center;
     line-height: 15px;
     font-style: normal
-  }
-
-  .footer-parent {
-    margin-top: 0;
-    border-top: 1px solid #434b55;
-    background: #32383f
-  }
-
-  .footer-parent ~ .debuginfo {
-    background: #32383f
   }
 
   #header:target + .side .md > blockquote:nth-of-type(1) {
@@ -2916,7 +2361,7 @@ body.res-voteEnhancements-highlightScores span.score {
     display: block;
     margin-bottom: 10px;
     font-weight: 700;
-    color: #32383f;
+    color: $fontColor1;
     content: "Using a mobile device?"
   }
 
@@ -2924,10 +2369,10 @@ body.res-voteEnhancements-highlightScores span.score {
     position: absolute;
     left: 0;
     bottom: -20px;
-    border-top: 10px solid #fff;
+    border-top: 10px solid $borderGeneral;
     border-right: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 10px solid #fff;
+    border-left: 10px solid $borderGeneral;
     content: ""
   }
 

@@ -1,0 +1,61 @@
+@import "../partials/core";
+
+// "Navigate By" drop-down
+
+.res .res-commentNavToggle-choices {
+
+  background: $bgColor2;
+  border-radius: 0;
+  box-shadow: 0 0 10px $popupBoxesShadow;
+
+  .res-commentNavToggle-type {
+    line-height: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 9px;
+    padding: 0 10px !important;
+  }
+
+  .res-commentNavToggle-type:hover {
+    background: $bgColor3;
+  }
+
+}
+
+// Highlight comments gold feature by Reddit
+
+.gold-accent.comment-visits-box {
+  color: $fontColor;
+
+  .title {
+    font-weight: normal;
+  }
+}
+
+// RES Subscribe button
+.res .RESSubscriptionButton {
+  margin-top: -3px;
+}
+
+.res .RESSubscriptionButton, .res .RESSubscriptionButton:hover {
+  width: auto;
+  border: 0;
+  border-radius: 0;
+  padding: 5px;
+  background: $bgThemeColor1;
+  text-transform: uppercase;
+  color: $brightColorOnColorBgFont;
+}
+
+.res .RESSubscriptionButton.unsubscribe {
+  background: $bgColor3;
+  color: $fontColor;
+}
+
+// Archive icon
+
+.archived-infobar.with-icon:before {
+  background-image: url(%%spritesheet%%);
+  background-position: -235px -138px;
+}

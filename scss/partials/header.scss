@@ -1,3 +1,18 @@
+@import "../partials/core";
+
+// #header-bottom-right refactored in, rest is over-written currently 28/03/2017
+
+// Some toggle thing to hide some top-nav icons/links
+.res.res-accountSwitcher-dropDownStyle-alien #RESAccountSwitcherIconOverlay {
+  display: none !important;
+}
+
+// HIDING RES ANNOUNCEMENT UPDATE, SOME EXTENSION ORANGE CHAT ICON, AND BETA ICON IN NAV BAR
+#RESAnnouncementAlert, .ChatApp__reddit-icon, #header .beta-hint > a {
+  display: none;
+}
+
+
 #header {
   height: 250px;
   background-position: center center;
@@ -24,6 +39,7 @@
   .pagename a {
     border-bottom: 3px solid #FFFFFF;
     border-top: 3px solid #FFFFFF;
+    color: #fff;
     padding: 10px 0 10px 10px;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   }
@@ -55,12 +71,27 @@
   }
 
   #header-bottom-right {
-    bottom: -66px;
+    top: auto;
+    bottom: -50px;
+    height: 50px;
+    padding: 0;
+    line-height: 50px;
+    background: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: $fontColor;
 
     #mail, #modmail, #new_modmail, #openRESPrefs .gearIcon, .logout a, .pref-lang, .user > a, #RESAccountSwitcherIcon {
       width: 18px !important;
       height: 18px !important;
-      margin: 30px 35px 0 0 !important;
+      margin: 16px 35px 0 0 !important;
+      display: inline-block !important;
+      position: relative;
+      top: 0 !important;
+      overflow: visible;
+      vertical-align: top;
+      background: url(%%spritesheet%%);
+      font-size: 0 !important;
 
       &:before {
         position: absolute;
@@ -110,9 +141,21 @@
         top: -12px;
       }
     }
-    .logout a {
-      margin: 30px 24px 0 0 !important;
+
+    // Special edge-case
+    #openRESPrefs .gearIcon {
+      margin: 0 !important;
     }
+    #openRESPrefs {
+      margin: 16px 35px 0 0 !important;
+      width: 18px;
+      height: 30px; // so that transition to the menu is smooth and doesnt get interrupted
+    }
+    .logout a {
+      margin: 16px 24px 0 0 !important;
+    }
+
+    // ICON BACKGROUND SPRITE POSITIONS
     .user > a {
       background-position: -157px -204px;
     }
@@ -144,6 +187,35 @@
       width: 20px !important;
       height: 20px !important;
     }
+
+    // HOVER TEXTS
+    .user > a:before {
+      content: "User Page"
+    }
+    #RESAccountSwitcherIcon:before {
+      content: "Switch Accounts"
+    }
+    #mail:before {
+      content: "Mail"
+    }
+    #modmail:before {
+      content: "Mod Mail"
+    }
+    #new_modmail:before {
+      content: "New Mod Mail"
+    }
+    .pref-lang:before {
+      content: "Preferences"
+    }
+    #openRESPrefs .gearIcon:before {
+      content: "RES Settings"
+    }
+
+    .logout a:before {
+      content: "Logout"
+    }
+
+    // REST
     #mail.havemail:after, #modmail.havemail:after {
       top: -10px;
       left: -10px;
@@ -151,39 +223,41 @@
       height: 38px;
     }
     a.message-count {
+      position: absolute;
+      right: 10px;
       top: 0;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 25px;
+      font-size: 11px;
+      font-weight: 400;
+      background: $bgThemeColor1;
     }
+    .user, &.res-userbar-toggle > .user {
+      font-size: 0;
+      margin-left: 0;
+    }
+
+    #userbarToggle, .separator {
+      display: none !important
+    }
+
   }
 
 }
 
-/* ALWAYS VISIBLE USERBAR
--------------------------*/
-#header-bottom-right:after {
-  display: none;
-}
-
-#header-bottom-right .user > a,
-#header-bottom-right #mail,
-#header-bottom-right #modmail,
-.ChatApp__reddit-icon,
-#header-bottom-right .pref-lang,
-#header-bottom-right #openRESPrefs .gearIcon,
-#header-bottom-right .logout a {
-  -webkit-transform: none;
-  -moz-transform: none;
-  transform: none
-}
 
 @media (max-width: $break-large) {
-  #header {
-    &:before {
-      bottom: -220px;
-    }
-  }
-
-  body > .content {
-    margin: 10px 0 0 0 !important;
-    max-width: calc(100vw - 320px) !important;
-  }
+  //#header {
+  //  &:before {
+  //    bottom: -220px;
+  //  }
+  //}
+  //
+  //body > .content {
+  //  //margin: 10px 0 0 0 !important;
+  //  max-width: calc(100vw - 321px) !important;
+  //}
 }

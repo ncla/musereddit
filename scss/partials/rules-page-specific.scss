@@ -1,0 +1,27 @@
+@import "../partials/core";
+
+body.modtools-page {
+  .subreddit-rule {
+    .subreddit-rule-title {
+      font-size: 12px !important;
+      border-bottom: 1px solid darken($borderColor1, 4);
+    }
+  }
+}
+
+.subreddit-rules-page header, .subreddit-rules-page footer {
+  margin-left: 10px;
+}
+
+.subreddit-rule-item {
+  margin-left: 0;
+}
+
+.subreddit-rule-item:hover {
+  background-color: darken($bgColor2, 2);
+}
+
+.subreddit-rule-item .editable .subreddit-rule-buttons,
+.subreddit-rule-form .form-buttons {
+  flex: 0 0 25px;
+}
