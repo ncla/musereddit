@@ -77,9 +77,10 @@ select {
   box-shadow: none;
   border: 0;
   border-radius: 0;
-  padding: 5px 22px 5px 8px;
-  background: $bgColor1 url(%%spritesheet%%) no-repeat 0/105px 150px;
-  background-position: right -88px top -130px;
+  padding: 0px 22px 0px 8px;
+  height: 25px;
+  line-height: 25px;
+  background: url(%%spritesheet%%) right -257px top -248px no-repeat $inputsAndSelectBg;
   font-size: 13px;
   color: $fontColor;
 }

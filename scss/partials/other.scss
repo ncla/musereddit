@@ -169,10 +169,6 @@ body > .content .link.even.thing .midcol {
 
 /* SPRITESHEET BACKGROUND-SIZE FIX
 --------------------*/
-select {
-  background: url(%%spritesheet%%) right -257px top -248px no-repeat $inputsAndSelectBg;
-}
-
 .res .RESUserTagImage::after {
   background: url(%%spritesheet%%) -4px -30px no-repeat;
 }
