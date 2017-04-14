@@ -25,3 +25,8 @@ body.modtools-page {
 .subreddit-rule-form .form-buttons {
   flex: 0 0 25px;
 }
+
+// Hide + sign for "Add a rule" button on rules page
+.subreddit-rules-page .subreddit-rule-add-form-buttons button .mod-action-icon-add {
+  display: none;
+}

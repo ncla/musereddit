@@ -60,7 +60,8 @@ body > .content .link.even.thing .midcol {
   border-color: $borderColor1;
 }
 
-.res-searchHelper-searchPageTabs .combined-search-page #previoussearch .res-search-pane {
+.res-searchHelper-searchPageTabs .combined-search-page #previoussearch .res-search-pane,
+.res-searchHelper-searchPageTabs #previoussearch > div.res-search-options.res-search-pane.res-search-pane-open {
   background: $bgColor1;
   border-top: 1px solid $borderColor1;
 }

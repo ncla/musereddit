@@ -67,6 +67,8 @@ div.nav-buttons .nextprev a[rel="nofollow next"],
   }
 }
 
+//
+
 // RES Big Editor button + fix
 .content button.RESBigEditorPop {
   margin-top: 5px;
@@ -83,11 +85,6 @@ div.nav-buttons .nextprev a[rel="nofollow next"],
 
 body:not(.res) .usertext .help-toggle a, .res .usertext .bottom-area > :first-child  {
   border-right: 1px solid $specialSmallBtnsBorder !important
-}
-
-// Hide + sign for "Add a rule" button on rules page
-.subreddit-rules-page .subreddit-rule-add-form-buttons button .mod-action-icon-add {
-  display: none;
 }
 
 // Slightly less eye-catching colors on search page
