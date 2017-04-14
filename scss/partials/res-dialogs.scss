@@ -136,3 +136,19 @@ div.guider {
               linear-gradient(45deg,#4079a5 0%,#46a6b5 67%);
   color: $brightColorOnColorBgFont !important; // :((
 }
+
+.res .RESCloseButton {
+  width: 19px;
+  height: 19px;
+  border: 0;
+  border-radius: 50%;
+  background: $bgColor1 url(%%spritesheet%%) no-repeat -175px -221px;
+  font-size: 0;
+  line-height: 19px;
+  color: $fontColor;
+}
+
+.res .RESCloseButton:hover {
+  border: 0;
+  background: $bgColor3 url(%%spritesheet%%) no-repeat -175px -221px;
+}
