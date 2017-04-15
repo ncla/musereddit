@@ -337,3 +337,16 @@ body.messages-page .content > h1 {
 body > .content #classy-error img {
   display: none;
 }
+
+// Cookie usage box
+#eu-cookie-policy {
+  > div {
+    background: lighten($bgColor1, 12);
+    box-shadow: 0 0 1px $popupBoxesShadow;
+  }
+
+  .infobar-btn-container {
+    margin-top: -23px;
+  }
+
+}

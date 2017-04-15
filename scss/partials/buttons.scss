@@ -17,7 +17,8 @@ div.nav-buttons .nextprev a[rel="nofollow next"],
 .content button.RESBigEditorPop,
 body.submit-page #newlink-with-image-upload .file-upload-button,
 #report-action-form .c-submit-group button,
-.subreddit-rules-page .subreddit-rule-add-form-buttons button {
+.subreddit-rules-page .subreddit-rule-add-form-buttons button,
+#eu-cookie-policy button {
   border: 1px solid $specialSmallBtnsBorder;
   border-radius: 0;
   background: $specialSmallBtnsBg;
@@ -28,11 +29,7 @@ body.submit-page #newlink-with-image-upload .file-upload-button,
   font-family: inherit;
   color: $specialSmallBtnsFont;
   transition: .3s;
-
-  height: 24px;
-  line-height: 24px;
-  padding: 0px 10px;
-  vertical-align: middle;
+  padding: 5px 10px;
 
   &:hover {
     background-color: darken($specialSmallBtnsBg, 2);
@@ -67,7 +64,17 @@ div.nav-buttons .nextprev a[rel="nofollow next"],
   }
 }
 
-//
+// Specific heights for consistency
+.usertext a.reddiquette,
+.usertext .help-toggle a,
+.content button.RESBigEditorPop,
+.usertext button
+{
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  padding: 0px 10px;
+}
 
 // RES Big Editor button + fix
 .content button.RESBigEditorPop {
@@ -76,16 +83,24 @@ div.nav-buttons .nextprev a[rel="nofollow next"],
   margin-right: 0;
 }
 
-// Fix for the borders
+// Fix for the borders for buttons on user-submitted text editor (Content Policy, Formatting Help etc)
 
 .usertext .help-toggle, .usertext .help-toggle a, .usertext a.reddiquette {
   margin-left: 0;
-  border-right: 0 !important
+  border-right: 0;
 }
 
-body:not(.res) .usertext .help-toggle a, .res .usertext .bottom-area > :first-child  {
-  border-right: 1px solid $specialSmallBtnsBorder !important
+body:not(.res) .usertext .help-toggle a,
+.res .usertext .bottom-area > :first-child
+{
+  border-right: 1px solid $specialSmallBtnsBorder;
+
+  &:hover {
+    border-right: 1px solid darken($specialSmallBtnsBorder, 11);
+  }
 }
+
+
 
 // Slightly less eye-catching colors on search page
 .search-result-subreddit .search-result-footer span.search-result-icon + a {
