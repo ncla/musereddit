@@ -124,13 +124,17 @@ a.helplink.access-required + div.title + ul.content > li {
   }
 }
 
-@media (max-width: $break-large) {
-  //.side {
-  //  margin: 50px 0 0 0 !important;
-  //}
+// Short-link
 
-  //body > .content {
-  //  margin: 10px 0 0 0 !important;
-  //  max-width: calc(100vw - 320px) !important;
-  //}
+.side .linkinfo .shortlink input {
+  font-size: 11px;
+}
+
+// Moderation tools consistent line height
+#moderation_tools {
+  ul.flat-vert li {
+    line-height: 1.25em;
+    margin-top: 0.4166666666666667em;
+    margin-bottom: 0.4166666666666667em;
+  }
 }
