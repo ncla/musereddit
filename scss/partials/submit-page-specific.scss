@@ -31,6 +31,12 @@ body.submit-page {
     transform: initial;
   }
 
+  #new-link-image-preview {
+    img {
+      max-height: 500px;
+    }
+  }
+
   #suggested-reddits li {
     padding-right: 6px;
     font-size: 11px;
