@@ -45,6 +45,10 @@
     background: url(%%spritesheet%%) -2px -302px;
   }
 
+  &.spoiler {
+    background: url(%%spritesheet%%) -68px -367px;
+  }
+
   // Text for special posts ("self" etc.)
   &:after {
     position: absolute;

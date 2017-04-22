@@ -1239,7 +1239,11 @@ html body .content .expando-button {
   vertical-align: middle !important
 }
 
-.expando-button:before, .res-highlight-nsfw-expando .thing.over18 .expando-button:before, .res.res-showImages-highlightNSFWButton .thing.over18 .expando-button:before, .expando-button:after {
+.expando-button:before,
+.res-highlight-nsfw-expando .thing.over18 .expando-button:before,
+.res.res-showImages-highlightNSFWButton .thing.over18 .expando-button:before,
+.expando-button:after,
+.res-showImages-highlightSpoilerButton .thing.spoiler .expando-button::before {
   position: absolute;
   left: 8px;
   top: 13.5px;
