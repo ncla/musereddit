@@ -316,6 +316,103 @@ body > .content .link.thing .midcol {
     opacity: 1;
     transition: opacity 0.15s;
   }
+
+  &.upmod:focus:after, &.downmod:focus:after {
+    white-space: nowrap;
+  }
+
+  &.upmod:focus::after {
+    content: url(%%guitarupvote%%);
+    font-size: 14px;
+    margin-left: -18px;
+    position: relative;
+    color: #C2185B;
+    bottom: 18px;
+    opacity: 0.0;
+    z-index: 102;
+    animation-name: exAn;
+    animation-duration: 2.0s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+  }
+
+  &.downmod:focus::after {
+    content: url(%%guitardownvote%%);
+    font-size: 14px;
+    margin-left: -18px;
+    position: relative;
+    color: #9494FF;
+    bottom: -3px;
+    opacity: 0.0;
+    z-index: 102;
+    animation-name: exBn;
+    animation-duration: 2.0s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+  }
+}
+
+
+@keyframes exAn {
+  0% {
+    color: #FF8C69
+  }
+  8% {
+    bottom: 23px;
+    opacity: 1.0
+  }
+  15% {
+    bottom: 28px;
+  }
+  30% {
+    color: #FF0000
+  }
+  50% {
+    color: red;
+    bottom: 33px;
+  }
+  60% {
+    color: #FF4500
+  }
+  100% {
+    bottom: 38px;
+    opacity: 0.0;
+  }
+}
+
+@keyframes exBn {
+  0% {
+    color: #a8a8ff
+  }
+  8% {
+    bottom: -8px;
+    opacity: 1.0
+  }
+  15% {
+    bottom: -13px;
+  }
+  30% {
+    color: #bbbbff
+  }
+  50% {
+    color: red;
+    bottom: -18px;
+  }
+  60% {
+    color: #cfcfff
+  }
+  100% {
+    bottom: -23px;
+    opacity: 0.0
+  }
+}
+
+// So that the guitar is visible
+
+.midcol {
+  overflow: visible;
 }
 
 // Compose page specific
