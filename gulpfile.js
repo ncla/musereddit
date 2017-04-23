@@ -17,6 +17,7 @@ gulp.task('build', function() {
         .pipe(gulpif((argv.production !== true), replace('url(%%editbuttons%%)', 'url("https://localhost:4443/images/editbuttons.png")')))
         .pipe(gulpif((argv.production !== true), replace('url(%%spritesheet%%)', 'url("https://localhost:4443/images/spritesheet.png")')))
         .pipe(gulpif((argv.production !== true), replace('url(%%flairsheet%%)', 'url("https://localhost:4443/images/flairsheet.png")')))
+        .pipe(gulpif((argv.production !== true), replace('url(%%header_hype%%)', 'url("https://localhost:4443/images/header_hype.jpg")')))
         .pipe(concatCss('stylesheet.css'))
         .pipe(cleanCSS({
             debug: true,

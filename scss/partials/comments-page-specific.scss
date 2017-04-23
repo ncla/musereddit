@@ -59,3 +59,26 @@
   background-image: url(%%spritesheet%%);
   background-position: -235px -138px;
 }
+
+// Hype threads
+
+body.comments-page.post-linkflair-hype-train-post {
+
+  #header {
+    background-image: url(%%header_hype%%);
+    height: 350px;
+
+    &:before {
+      bottom: -350px;
+    }
+
+    .pagename {
+      top: 163px;
+    }
+
+    .tabmenu {
+      top: 350px;
+    }
+  }
+
+}
