@@ -6,9 +6,6 @@ var argv = require('yargs').argv;
 var concatCss = require('gulp-concat-css');
 var sass = require('gulp-sass');
 var size = require('gulp-size');
-// https://github.com/Microsoft/BashOnWindows/issues/216#issuecomment-242501733
-// Remove this implementation when the fs watcher is fixed on Windows 10 in stable branch
-var watch = require('gulp-watch');
 
 gulp.task('build', function() {
     var stream = gulp.src('./scss/main.scss')
