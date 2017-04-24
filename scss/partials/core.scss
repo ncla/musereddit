@@ -16,10 +16,11 @@ $borderGeneral: #fff;
 $borderFocus: #94b2d6;
 
 // TEXT
-$fontColor: #878787;
-$fontColorEvenMoreDominant: #636363;
-$fontColorMoreDominant: #6e6e6e;
-$fontColorLessDominant: #949494;
+// Use http://colorsafe.co/
+$fontColor: #696969;
+$fontColorEvenMoreDominant: darken($fontColor, 15);
+$fontColorMoreDominant: darken($fontColor, 10);
+$fontColorLessDominant: lighten($fontColor, 15);
 $fontColorOpposite: #000; // Mainly seen used in report-reasons on light background
 $fontColor1: #32383f;
 $spoilerFontColor: #262b31;
