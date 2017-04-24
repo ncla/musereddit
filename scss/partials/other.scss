@@ -317,11 +317,11 @@ body > .content .link.thing .midcol {
     transition: opacity 0.15s;
   }
 
-  &.upmod:focus:after, &.downmod:focus:after {
+  .link &.upmod:focus:after, &.downmod:focus:after {
     white-space: nowrap;
   }
 
-  &.upmod:focus::after {
+  .link &.upmod:focus::after {
     content: url(%%guitarupvote%%);
     font-size: 14px;
     margin-left: -18px;
@@ -337,7 +337,7 @@ body > .content .link.thing .midcol {
     animation-play-state: running;
   }
 
-  &.downmod:focus::after {
+  .link &.downmod:focus::after {
     content: url(%%guitardownvote%%);
     font-size: 14px;
     margin-left: -18px;
