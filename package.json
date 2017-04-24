@@ -22,9 +22,9 @@
     "gulp-clean-css": "^2.0.12",
     "gulp-concat-css": "^2.3.0",
     "gulp-if": "^2.0.1",
-    "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.3.2",
     "gulp-size": "^2.1.0",
+    "gulp-string-replace": "^0.4.0",
     "reddit-oauth-helper": "^0.3.0",
     "serve-static": "^1.11.1",
     "yargs": "^5.0.0"
