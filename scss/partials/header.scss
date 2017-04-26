@@ -14,10 +14,17 @@
 
 
 #header {
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  order: -1;
+  margin: 60px 30px 0;
+  width: 100%;
   height: 250px;
   background-position: center center;
+  background-color: $headerBg;
   border-bottom: 0;
   background-image: url(%%header%%);
+  background-size: cover;
 
   .pagename {
     top: 113px;
@@ -25,23 +32,27 @@
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     transform: translateX(-50%);
+    position: absolute;
+    margin: 0;
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: -10px;
+    text-transform: uppercase;
+    font-size: 0;
+    font-weight: 700;
 
-    // Page-name sub-title
-    &:after {
-      display: block;
-      margin-top: 40px;
-      margin-left: 0;
-      content: '';
+    a {
+      font-size: 24px;
+      letter-spacing: 10px;
+      border-bottom: 3px solid #FFFFFF;
+      border-top: 3px solid #FFFFFF;
+      color: #fff;
+      padding: 10px 0 10px 10px;
+      text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     }
 
-  }
-
-  .pagename a {
-    border-bottom: 3px solid #FFFFFF;
-    border-top: 3px solid #FFFFFF;
-    color: #fff;
-    padding: 10px 0 10px 10px;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   }
 
   &:before {
@@ -63,11 +74,17 @@
     content: "";
   }
 
+  // Back to front-page Reddit icon
   #header-img {
+    position: absolute;
+    left: 25px;
     bottom: -37px;
     width: 22px;
     height: 22px;
     background: url(%%spritesheet%%) -146px -148px;
+    margin: 0;
+    padding-left: 30px;
+    opacity: .8;
   }
 
   #header-bottom-right {

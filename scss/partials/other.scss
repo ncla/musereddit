@@ -251,17 +251,6 @@ span#RESSettingsButton:hover {
   display: none;
 }
 
-
-/* RES SUB-REDDIT LIST
----------------*/
-.res #srList tbody {
-  overflow: auto;
-}
-
-.res #srList tr td:last-child {
-  padding-right: 10px;
-}
-
 /* RECENTLY VIEWED LINKS
    .gadget seems to be correct class to target it, according to Reddits source code
 -----------------*/

@@ -1,0 +1,350 @@
+@import "../partials/core";
+
+#sr-header-area {
+  position: absolute;
+  top: -60px;
+  left: -30px;
+  width: calc(100% - -60px);
+  height: 30px;
+  border: 0;
+  background: $srListTopAreaBg;
+  white-space: nowrap;
+  font-size: 9px;
+  color: $fontColor1;
+
+  // Click-able links
+  a {
+    display: inline-block;
+    height: 20px;
+    padding: 0 6px;
+    line-height: 20px;
+    letter-spacing: .5px;
+    color: $fontColor1;
+  }
+
+  #srLeftContainer {
+
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    float: none;
+  }
+
+  // All containers
+  #srLeftContainer,
+  #RESShortcutsViewport,
+  #RESShortcutsEditContainer {
+    max-height: none;
+  }
+
+  #RESShortcutsViewport {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+  }
+
+  #RESShortcuts {
+    padding: 0;
+  }
+
+  .separator, .srSep, .sr-bar .separator {
+    display: none;
+  }
+
+  // Reddit's Subreddit list
+  .sr-list {
+    height: 30px;
+  }
+
+  .drop-choices.srdrop {
+    top: 30px !important;
+  }
+
+  // Button for opening the SR list (non-RES)
+  .dropdown.srdrop {
+    padding: 0;
+
+    .selected {
+      margin-top: 5px;
+      margin-right: 0;
+      height: 20px;
+      padding: 0 6px;
+      background: none;
+      line-height: 20px;
+    }
+  }
+
+  // Button for opening the SR list (both)
+  .dropdown.srdrop .selected,
+  #srDropdown {
+    margin-left: 12px;
+    font-size: 0 !important;
+    vertical-align: top;
+  }
+
+  .dropdown.srdrop .selected:after,
+  #srDropdown #srDropdownContainer a:after {
+    vertical-align: middle;
+    font-size: 18px;
+    content: "≡";
+  }
+}
+
+
+.res #srList {
+  padding: 10px 20px !important;
+
+  tbody {
+    display: block;
+  }
+
+  thead {
+    display: block;
+    height: 40px;
+  }
+
+  thead {
+    .sortAsc, .sortDesc {
+      float: none;
+      display: inline-block;
+      margin: inherit !important;
+      line-height: inherit !important;
+
+      &:after {
+        width: 10px;
+        line-height: 10px;
+        font-size: 10px;
+        color: $bgButtonColor1;
+      }
+    }
+  }
+
+  thead tr {
+    height: 30px;
+    line-height: 30px;
+    white-space: nowrap;
+
+    td {
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+
+  tbody tr:first-child {
+    border-top: 0;
+  }
+
+  td {
+    padding: 0;
+  }
+
+  tr td:nth-of-type(1) {
+    width: 300px;
+  }
+
+  td.RESvisited {
+    width: 120px;
+  }
+
+  td.RESshortcut {
+    width: 60px;
+  }
+
+  td.RESvisited,
+  td.RESshortcut {
+    text-transform: uppercase;
+  }
+
+}
+
+
+
+#sr-header-area ul.flat-list.sr-bar,
+#sr-header-area #srLeftContainer {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  height: 20px;
+  line-height: 20px;
+}
+
+#sr-header-area ul.flat-list.sr-bar:nth-of-type(1),
+#sr-header-area #srLeftContainer {
+  margin-right: 12px;
+  border-right: $srListTopAreaSeperator;
+  padding-right: 12px
+}
+
+#sr-header-area #srDropdown #srDropdownContainer a {
+  letter-spacing: inherit;
+}
+
+// Hover effect for click-ables
+#sr-header-area a:not(#sr-more-link):hover,
+#sr-header-area .dropdown.srdrop .selected:hover,
+#header #sr-header-area .selected a,
+.res #sr-header-area a.RESShortcutsCurrentSub {
+  background: $bgHoverColor1;
+  font-weight: 400;
+  color: $fontColor1 !important
+}
+
+#header #sr-header-area .sr-bar a.gold:hover {
+  font-weight: 700;
+}
+
+body #editShortcutDialog {
+  top: 30px;
+}
+
+@keyframes fadeIn {
+  from {
+    left: -30px;
+    opacity: 0;
+  }
+  to {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+// Sub-reddit list box
+#sr-header-area .drop-choices.srdrop,
+.res #srList,
+.res #RESSubredditGroupDropdown {
+  top: 30px !important;
+  margin-left: 0;
+  border: 1px solid $borderColor1;
+  border-left: 0;
+  box-shadow: none;
+  padding: 10px;
+  background: $srListTopAreaBg;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: 9px;
+}
+
+// Show up animation
+.res #srList[style="display: block;"],
+#sr-header-area .drop-choices.srdrop.inuse {
+  animation: fadeIn 0.5s;
+}
+
+// Pop-up box: Subreddit choice
+#sr-header-area .drop-choices.srdrop a,
+.res #srList tr,
+.res #RESSubredditGroupDropdown li a {
+  height: 20px;
+  padding: 0 10px;
+  border-top: solid 1px lighten($borderColor1, 5);
+  border-bottom: 0;
+  line-height: 20px;
+  color: $fontColor;
+}
+
+#sr-header-area .drop-choices.srdrop {
+  top: 30px !important;
+}
+
+.res #RESSubredditGroupDropdown {
+  transition: .2s;
+}
+
+#sr-header-area .drop-choices.srdrop:before,
+.res #srList thead td:nth-of-type(1) {
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  color: $fontColor;
+  letter-spacing: 2px;
+  content: "YOUR SUBREDDITS";
+}
+
+#sr-header-area .drop-choices.srdrop:before {
+  padding: 0 50px 0 10px;
+}
+
+#sr-header-area .drop-choices.srdrop a,
+.res #RESSubredditGroupDropdown li a {
+  display: block;
+  min-width: 50%;
+}
+
+.res #srList thead tr,
+.res #RESSubredditGroupDropdown li:nth-of-type(1) a,
+.res #RESSubredditGroupDropdown a.res-icon {
+  border: 0;
+}
+
+.res #RESSubredditGroupDropdown ul {
+  padding: 0;
+  border: 0;
+}
+
+.res #RESSubredditGroupDropdown li + .RESShortcutsEditButtons,
+.res #RESSubredditGroupDropdown > .RESShortcutsEditButtons {
+  margin: 0;
+  border-top: solid 1px $borderColor1;
+  padding: 0;
+}
+
+.res #RESSubredditGroupDropdown .RESShortcutsEditButtons {
+  white-space: nowrap
+}
+
+.res #RESSubredditGroupDropdown .RESShortcutsEditButtons .res-icon {
+  display: inline-block;
+  margin: 0;
+  color: $fontColor;
+}
+
+.res #RESSubredditGroupDropdown li + .RESShortcutsEditButtons a.delete {
+  text-align: right;
+}
+
+.res #RESSubredditGroupDropdown li {
+  margin: 0;
+  padding: 0;
+}
+
+.res #srList tr:hover,
+.res #RESSubredditGroupDropdown li:hover {
+  background: none;
+}
+
+.res #RESSubredditGroupDropdown li a:hover,
+#autocomplete_dropdown .selectedItem {
+  background: none;
+}
+
+a#sr-more-link,
+.res #RESShortcutsEditContainer {
+  display: flex;
+  margin-top: 5px;
+  width: auto;
+  height: 20px;
+  border-left: 1px solid $borderColor3;
+  padding-left: 12px;
+  background: $bgColor5;
+}
+
+.res #RESShortcutsEditContainer div {
+  position: static;
+  display: inline-block;
+  margin-right: 12px;
+  width: auto;
+  background: none;
+  line-height: 18px;
+  font-weight: 400;
+  color: $fontColor1;
+}
+
+#RESShortcutsRight {
+  order: 2;
+}
+
+#sort-menu p {
+  margin-bottom: 5px;
+  color: $fontColor;
+}
