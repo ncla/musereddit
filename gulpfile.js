@@ -21,6 +21,17 @@ var cleanCSSoptions = {
         properties: {
             zeroUnits: false
         }
+    },
+    level: {
+        1: {
+            cleanupCharsets: false,
+            tidyAtRules: false
+        }
+    },
+    format: {
+        breaks: {
+            afterAtRule: true
+        }
     }
 };
 
@@ -34,14 +45,7 @@ gulp.task('build', function() {
             return `https://localhost:4443/images/${file}.${extension}`;
         }, replaceOptions)))
         .pipe(concatCss('stylesheet.css'))
-        .pipe(cleanCSS({
-            debug: true,
-            compatibility: {
-                properties: {
-                    zeroUnits: false
-                }
-            }
-        }))
+        .pipe(cleanCSS(cleanCSSoptions))
         .pipe(size({
             title: 'Total sub-reddit stylesheet size',
             pretty: true,
