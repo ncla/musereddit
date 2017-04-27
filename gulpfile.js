@@ -21,17 +21,6 @@ var cleanCSSoptions = {
         properties: {
             zeroUnits: false
         }
-    },
-    level: {
-        1: {
-            cleanupCharsets: false,
-            tidyAtRules: false
-        }
-    },
-    format: {
-        breaks: {
-            afterAtRule: true
-        }
     }
 };
 
@@ -46,6 +35,7 @@ gulp.task('build', function() {
         }, replaceOptions)))
         .pipe(concatCss('stylesheet.css'))
         .pipe(cleanCSS(cleanCSSoptions))
+        .pipe(replace('@charset "UTF-8";', '', replaceOptions))
         .pipe(size({
             title: 'Total sub-reddit stylesheet size',
             pretty: true,
