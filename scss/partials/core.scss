@@ -20,7 +20,7 @@ $borderFocus: #94b2d6;
 $fontColor: #696969;
 $fontColorEvenMoreDominant: darken($fontColor, 15);
 $fontColorMoreDominant: darken($fontColor, 10);
-$fontColorLessDominant: lighten($fontColor, 15);
+$fontColorLessDominant: lighten($fontColor, 11);
 $fontColorOpposite: #000; // Mainly seen used in report-reasons on light background
 $fontColor1: #32383f;
 $spoilerFontColor: #262b31;
@@ -36,6 +36,7 @@ $fontUpvote: #FF8A52;
 $fontDownvote: #6093c4;
 $mobileFriendlyLinkFont: #6093c4;
 $fontGreenColor: #61c095;
+$fontNewComments: #CF000F;
 
 $goldFontColor: #cd9930;
 

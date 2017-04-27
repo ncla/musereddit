@@ -784,7 +784,7 @@ body > .content .link.thing .midcol {
 
 .thing a.title, .search-result-header > a {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: $postEntryNotVisitedLink;
 }
@@ -989,7 +989,7 @@ body .thing .tagline .author.admin, body .thing .tagline .author.admin:hover, .t
   color: $fontThemeColor;
 }
 
-span.newComments, form.state-button.approve-button {
+form.state-button.approve-button {
   font-size: 11px;
   color: $fontColorLessDominant;
 }
@@ -1145,13 +1145,18 @@ h2, .sidecontentbox .title h1 {
   font-family: "Courier New", monospace
 }
 
-.md a, .search-result .search-result-body :link, .search-result .search-result-body :link > mark {
-  border-bottom: dotted 1px rgba(0, 0, 0, 0.25);
-  color: $fontColor;
-  transition: .2s
+.md a,
+.search-result .search-result-body :link,
+.search-result .search-result-body :link > mark {
+  //border-bottom: dotted 1px $fontColor;
+  color: desaturate($fontThemeColor, 10);
+  font-weight: 500;
+  transition: .3s;
 }
 
 .md a:hover,
+.side .md a:hover,
+.side blockquote:nth-of-type(2) p a:hover,
 #moderation_tools ul > li > a:hover,
 .comment.noncollapsed .buttons li a:hover,
 a.author:hover,
@@ -1163,11 +1168,12 @@ body>.content a.author:hover,
 .commentarea .menuarea .toggle .option a:hover,
 .bottommenu a:hover, .bottommenu .updated:hover
 {
-  border-bottom-color: transparent;
+  //border-bottom-color: transparent;
   color: $fontThemeColor;
 }
 
-body .comment .md p > a:visited, body h2 a:visited {
+body .comment .md p > a:visited,
+body h2 a:visited {
   color: $fontColorLessDominant;
 }
 

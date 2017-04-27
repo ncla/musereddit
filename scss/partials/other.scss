@@ -3,31 +3,8 @@
                           ADD ADDONS/CUSTOMIZATIONS BELOW
 ==============================================================================*/
 
-/* 100% WIDTH POST ENTRIES
----------------------------*/
-.link, .link.last-clicked {
-  width: 100%;
-}
-
-.link.odd {
-  padding-right: 0;
-  border-right: 0;
-}
-
-.link.even {
-  border-left: 0;
-}
-
-body > .content .link.even.thing .midcol {
-  margin-left: -3px;
-}
-
-.link.even .entry {
-  margin-left: 130px;
-}
-
-
-.modtools-page > div.content, .res.res-commentBoxes body > .content, body > .content {
+.modtools-page > div.content,
+.res.res-commentBoxes body > .content, body > .content {
   margin: 10px 0 0 30px;
 }
 
