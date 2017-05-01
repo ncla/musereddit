@@ -198,6 +198,10 @@
     }
     #new_modmail {
       background-position: -179px -204px;
+
+      &.havemail {
+        background-position: -179px -184px;
+      }
     }
     #RESAccountSwitcherIcon {
       background-position: -199px -204px;
@@ -254,7 +258,6 @@
     #userbarToggle, .separator {
       display: none !important;
     }
-
   }
 
 }
