@@ -152,3 +152,11 @@ div.guider {
   border: 0;
   background: $bgColor3 url(%%spritesheet%%) no-repeat -175px -221px;
 }
+
+#quickMessageDialog #quickMessageDialogSend {
+  bottom: initial;
+}
+
+#quickMessageDialog select {
+  width: calc(100% - 70px);
+}

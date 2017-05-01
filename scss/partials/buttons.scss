@@ -18,7 +18,9 @@ div.nav-buttons .nextprev a[rel="nofollow next"],
 body.submit-page #newlink-with-image-upload .file-upload-button,
 #report-action-form .c-submit-group button,
 .subreddit-rules-page .subreddit-rule-add-form-buttons button,
-#eu-cookie-policy button {
+#eu-cookie-policy button,
+#quickMessageDialog .fullMessageForm.blueButton,
+#quickMessageDialog #quickMessageDialogSend {
   border: 1px solid $specialSmallBtnsBorder;
   border-radius: 0;
   background: $specialSmallBtnsBg;
@@ -68,12 +70,19 @@ div.nav-buttons .nextprev a[rel="nofollow next"],
 .usertext a.reddiquette,
 .usertext .help-toggle a,
 .content button.RESBigEditorPop,
-.usertext button
+.usertext button,
+#quickMessageDialog #quickMessageDialogSend,
+#quickMessageDialog .fullMessageForm.blueButton
 {
   height: 24px;
   line-height: 24px;
   vertical-align: middle;
   padding: 0px 10px;
+}
+
+// Display Inline-block
+#quickMessageDialog .fullMessageForm.blueButton {
+  display: inline-block;
 }
 
 // RES Big Editor button + fix

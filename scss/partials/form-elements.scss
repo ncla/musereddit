@@ -71,7 +71,7 @@ input[type="checkbox"][name="sendreplies"] {
   margin-right: 5px;
 }
 
-select {
+select, #quickMessageDialog select {
   -webkit-appearance: none;
   -moz-appearance: none;
   box-shadow: none;
