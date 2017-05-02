@@ -774,7 +774,13 @@ body > .content .link.thing .midcol {
   background-color: $RESCommentOrPostSelectedBg !important;
 }
 
-.res .commentarea .RES-keyNav-activeElement .md, .res .RES-keyNav-activeElement .md-container {
+.comment .entry.RES-keyNav-activeElement {
+  border: 1px dashed darken($borderColor1, 5) !important;
+  padding: 4px;
+}
+
+.res .commentarea .RES-keyNav-activeElement .md,
+.res .RES-keyNav-activeElement .md-container {
   background-color: transparent !important
 }
 
@@ -1369,9 +1375,11 @@ button.search-submit-button.c-btn.c-btn-primary {
   color: $goldFontColor;
 }
 
-.new-comment .usertext-body, .usertext.border .usertext-body {
+.new-comment .usertext-body,
+.usertext.border .usertext-body {
   border: 0;
-  background: $bgColor3;
+  border-left: 2px solid #77c599;
+  background: none;
 }
 
 .infobar {
