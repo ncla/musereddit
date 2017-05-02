@@ -852,6 +852,12 @@ html body .content .expando-button {
   transition: .2s
 }
 
+html body .content .comment .expando-button {
+  width: 17px;
+  height: 17px;
+  border-radius: 17px;
+}
+
 .usertext-body .md .expando-button, .wiki-page .expando-button, .messages-page .expando-button {
   margin-top: 0;
   margin-bottom: 0;
@@ -870,7 +876,13 @@ html body .content .expando-button {
   height: 1px;
   background: $expandoButtonLinesColor;
   content: "";
-  transition: .3s
+  transition: .3s;
+
+  .comment & {
+    top: 8px;
+    left: 5px;
+    width: 7px;
+  }
 }
 
 .expando-button:after {
