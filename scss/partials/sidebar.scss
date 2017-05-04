@@ -46,6 +46,40 @@
   }
 }
 
+// ProCSS
+.side a[href$="#procss"] {
+  background: url(%%procss%%); /* Change to name of icon */
+  height: 70px !important;
+  width: 100% !important;
+  display: inline-block;
+  font-size: 0px !important;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  margin-top: 8px;
+  margin-bottom: 18px;
+  opacity: 0.8;
+  transition: 0.3s;
+  position: relative;
+
+  &:hover {
+    opacity: 1;
+    color: $fontColor;
+  }
+
+  &:after {
+    content: '/r/muse is ProCSS';
+    left: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    position: absolute;
+    font-size: 11px;
+    text-align: center;
+    top: 70px;
+  }
+}
+
 // Login form in side-bar
 
 .login-form-side {
