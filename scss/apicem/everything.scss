@@ -771,17 +771,26 @@ body > .content .link.thing .midcol {
 }
 
 .res .RES-keyNav-activeElement {
-  background-color: $RESCommentOrPostSelectedBg !important;
+  background-color: $RESPostSelectedBg !important;
 }
 
-.comment .entry.RES-keyNav-activeElement {
-  border: 1px dashed darken($borderColor1, 5) !important;
-  padding: 4px;
+.res .comment .entry.RES-keyNav-activeElement {
+  background-color: inherit !important;
+  border-left: 3px solid $RESCommentSelectedBg;
+  padding: 5px 5px 5px 8px;
 }
 
-.res .commentarea .RES-keyNav-activeElement .md,
+.res .RES-keyNav-activeElement {
+  background-color: $RESPostSelectedBg !important;
+}
+
 .res .RES-keyNav-activeElement .md-container {
-  background-color: transparent !important
+  background-color: inherit !important
+}
+
+.res .comment.new-comment .RES-keyNav-activeElement .md-container {
+  background-color: $newCommentCommentsPageActiveBg !important;
+  border: 1px solid darken($newCommentCommentsPageActiveBg, 6)
 }
 
 .thing p.title {
@@ -825,15 +834,15 @@ body.mod-toolbox .tb-general-button, body.mod-toolbox li a.tb-general-button, bo
   background: $bgColor1;
 }
 
-.md h1:after {
-  display: block;
-  margin: 7px 0;
-  width: 50px;
-  height: 1px;
-  background: $borderColor1;
-  content: "";
-  transition: .2s
-}
+//.md h1:after {
+//  display: block;
+//  margin: 7px 0;
+//  width: 50px;
+//  height: 1px;
+//  background: $borderColor1;
+//  content: "";
+//  transition: .2s
+//}
 
 .title + .expando-button + .expando-button {
   display: none
@@ -1389,9 +1398,8 @@ button.search-submit-button.c-btn.c-btn-primary {
 
 .new-comment .usertext-body,
 .usertext.border .usertext-body {
-  border: 0;
-  border-left: 2px solid #77c599;
-  background: none;
+  background: $newCommentCommentsPageBg;
+  border: 1px solid darken($newCommentCommentsPageBg, 6);
 }
 
 .infobar {
@@ -1429,7 +1437,9 @@ button.search-submit-button.c-btn.c-btn-primary {
 }
 
 .comment .entry {
-  padding: 5px
+  padding: 5px;
+  transition: border .15s ease,
+              padding .15s ease;
 }
 
 .morechildren, .deleted.comment {
