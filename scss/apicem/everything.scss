@@ -34,7 +34,8 @@ body {
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  background: url(%%body%%) fixed center top/cover
+  background: url(%%body%%) fixed center top/cover;
+  overflow-x: hidden; // Horrible fix for scroll that is getting caused by header menu icons
 }
 
 body,
