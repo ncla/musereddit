@@ -422,6 +422,7 @@ body:not(.res) .usertext .help-toggle a,
   line-height: 40px;
   color: $specialBtnsFont2;
   transition: color 0.4s, text-indent 0.4s;
+  text-indent: 0px;
 
   z-index: 1;
 
