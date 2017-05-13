@@ -99,52 +99,6 @@ body #header #sr-header-area .srdrop + .drop-choices.srdrop a.choice:hover,
   display: none !important
 }
 
-.res .RESDropdownList {
-  margin-top: 10px !important;
-  right: 45px !important;
-  width: auto;
-  box-shadow: 0 0 10px $RESDRopdownListShadow;
-  border: 0;
-  border-radius: 0;
-  padding: 10px;
-  background: $RESDropdownBg1;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 11px
-}
-
-.res .RESDropdownList li {
-  height: 40px;
-  border-bottom: 1px solid $borderColor3;
-  line-height: 39px;
-  font-weight: 400;
-  color: $fontColor1;
-}
-
-.RESDropdownList li:last-of-type {
-  border: 0
-}
-
-.res .RESDropdownList li:hover {
-  background: $RESDropdownMenuItemBg1;
-  color: $fontColor1;
-}
-
-.RESDropdownList li:first-of-type, #RESAnnouncementMenuItem {
-  padding: 0
-}
-
-.RESDropdownList #DashboardLink a {
-  background: none;
-  color: $fontColor1;
-}
-
-.RESDropdownList #SettingsConsole, #RESAnnouncementMenuItem a {
-  padding-left: 10px;
-  background: none;
-  color: #32383f
-}
-
 .res #RESSearchMenuItem {
   position: static;
   margin: 9px;

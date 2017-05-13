@@ -4,7 +4,7 @@
 // See: https://github.com/sass/sass/issues/1442
 
 @mixin tabmenu-hover($activeMenuItemSelector) {
-  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  box-shadow: $dropDownMenuBoxShadow;
 
   li {
     opacity: 1;
@@ -13,7 +13,7 @@
       background: #fff;
 
       a {
-        color: #32383f;
+        color: $dropDownMenuFont;
         border: 0 !important;
 
         &:after {
@@ -22,15 +22,15 @@
         }
 
         &:hover {
-          background: rgba(50, 58, 71, .1);
+          background: $dropDownMenuItemHoverBg;
         }
       }
 
     }
 
     a {
-      border-top: 1px solid rgba(0, 0, 0, .1);
-      color: #32383f;
+      border-top: 1px solid $dropDownMenuBorderSeperator;
+      color: $dropDownMenuFont;
       height: 32px;
       line-height: 32px;
     }
@@ -56,7 +56,7 @@
       display: block;
       margin: 0;
       padding: 0 10px;
-      background: #fff;
+      background: $dropDownMenuBg;
       font-weight: 400;
       opacity: 0;
       transition: 0.3s;
@@ -68,7 +68,7 @@
         border: 0;
         padding: 0 10px;
         line-height: 0px;
-        background: #fff;
+        background: $dropDownMenuBg;
         color: transparent;
         -webkit-transition: 0.3s;
         transition: 0.3s;
@@ -77,7 +77,7 @@
 
         // Different hover from .tabmenu:hover
         &:hover {
-          background: rgba(50, 58, 71, .1);
+          background: $dropDownMenuItemHoverBg;
         }
 
       }
@@ -233,12 +233,12 @@ body.search-page #header, body.messages-page #header, body.modtools-page #header
 
     > a {
       padding: 0 10px;
-      color: #32383f !important;
+      color: $dropDownMenuFont !important;
     }
 
     &:hover, a:hover {
-      background: rgba(50,58,71,.1);
-      color: #32383f;
+      background: $dropDownMenuItemHoverBg;
+      color: $dropDownMenuFont;
     }
 
   }
@@ -270,18 +270,6 @@ body.search-page #header, body.messages-page #header, body.modtools-page #header
     transform: translateX(21px);
   }
 
-  //#nsfwSwitchToggleContainer span, #nightSwitchToggleContainer span {
-  //  padding: 0 1px;
-  //  width: 30px;
-  //  font-size: 10px;
-  //}
-  //
-  //#nightSwitchToggleContainer, #nsfwSwitchToggleContainer, #nightSwitchToggleContainer, #nsfwSwitchToggleContainer {
-  //  &.toggleButton .toggleOn, &.toggleButton .toggleOff {
-  //    border-radius: 0;
-  //  }
-  //}
-
   // Dirty hack to get rid of the stupid up-arrow for donate button
   .RES-donate {
     font-size: 0;
@@ -295,4 +283,50 @@ body.search-page #header, body.messages-page #header, body.modtools-page #header
 
   }
 
+}
+
+.res .RESDropdownList {
+  margin-top: 10px !important;
+  right: 45px !important;
+  width: auto;
+  box-shadow: $dropDownMenuBoxShadow;
+  border: 0;
+  border-radius: 0;
+  padding: 10px;
+  background: $dropDownMenuBg;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px
+}
+
+.res .RESDropdownList li {
+  height: 40px;
+  border-bottom: 1px solid $dropDownMenuBorderSeperator;
+  line-height: 39px;
+  font-weight: 400;
+  color: $dropDownMenuFont;
+}
+
+.RESDropdownList li:last-of-type {
+  border: 0
+}
+
+.res .RESDropdownList li:hover {
+  background: $dropDownMenuItemHoverBg;
+  color: $fontColor;
+}
+
+.RESDropdownList li:first-of-type, #RESAnnouncementMenuItem {
+  padding: 0
+}
+
+.RESDropdownList #DashboardLink a {
+  background: none;
+  color: $fontColor;
+}
+
+.RESDropdownList #SettingsConsole, #RESAnnouncementMenuItem a {
+  padding-left: 10px;
+  background: none;
+  color: $fontColor;
 }

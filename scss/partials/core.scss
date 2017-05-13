@@ -105,6 +105,13 @@ $specialSmallBtnsHoverBg: rgba(255, 255, 255, 0.15);
 $sideBarGigListOddRowBgColor: #e4e4e4;
 $sideBarGigListBorderColor: #d4d4d4;
 
+// DROP DOWN MENU
+$dropDownMenuBg: darken(#fff, 1);
+$dropDownMenuBorderSeperator: rgba(0, 0, 0, .07);
+$dropDownMenuItemHoverBg: rgba(156, 156, 156, 0.1);
+$dropDownMenuFont: $fontColor;
+$dropDownMenuBoxShadow: 0 0 10px rgba(0, 0, 0, .38);
+
 // Specific elements stylings
 
 // #header
