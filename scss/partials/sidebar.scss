@@ -42,43 +42,10 @@
   }
 
   .users-online .word:after {
-    content: 'endlessly waiting for the new EP'
+    content: 'frantically checking /new page every minute'
   }
 }
 
-// ProCSS
-.side a[href$="#procss"] {
-  background: url(%%procss%%); /* Change to name of icon */
-  height: 70px !important;
-  width: 100% !important;
-  display: inline-block;
-  font-size: 0px !important;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  margin-top: 8px;
-  margin-bottom: 18px;
-  opacity: 0.8;
-  transition: 0.3s;
-  position: relative;
-
-  &:hover {
-    opacity: 1;
-    color: $fontColor;
-  }
-
-  &:after {
-    content: '/r/muse is ProCSS';
-    left: 0;
-    right: 0;
-    display: block;
-    width: 100%;
-    position: absolute;
-    font-size: 11px;
-    text-align: center;
-    top: 70px;
-  }
-}
 
 // Login form in side-bar
 
@@ -201,4 +168,76 @@ a.helplink.access-required + div.title + ul.content > li {
     margin-top: 0.4166666666666667em;
     margin-bottom: 0.4166666666666667em;
   }
+}
+
+$postStatsNumberSize: 18px;
+$postStatsSubTextSize: 11px;
+
+// Remove these when the view-count is live for everybody
+// Also please optimize, too much bits wasted
+body.comments-page.post-submitter, body.comments-page.moderator {
+
+  .side {
+
+    .linkinfo {
+      padding: 0;
+      display: block;
+
+      div.score, div.views {
+        width: 50%;
+        height: 35px;
+        overflow: hidden;
+        display: block;
+        text-align: center;
+        margin: 8px 0;
+        font-size: $postStatsSubTextSize;
+
+        .view-count, .number {
+          font-size: $postStatsNumberSize;
+
+        }
+
+        .unit {
+          font-size: $postStatsSubTextSize;
+          font-weight: normal;
+          margin-left: 0;
+        }
+
+        .word {
+          display: none;
+        }
+
+        .number, .view-count {
+          display: block;
+        }
+      }
+
+      div.score {
+        border-right: 1px solid $borderColor1;
+        float: left;
+      }
+
+      div.views {
+        float: right;
+      }
+
+      .date {
+        width: 100%;
+        border-bottom: 1px solid $borderColor1;
+        padding: 10px 0;
+        text-align: center;
+        font-size: 11px;
+      }
+
+      .shortlink {
+        width: 100%;
+        border-top: 1px solid $borderColor1;
+        padding: 10px;
+        clear: both;
+      }
+
+    }
+
+  }
+
 }
