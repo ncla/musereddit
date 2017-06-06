@@ -207,10 +207,12 @@ body:not(.res) .usertext .help-toggle a,
     right: calc(50% - 12.5px);
     top: auto;
     bottom: -26px;
+    opacity: 0;
   }
 
   &:hover:after {
     bottom: calc(50% - 12.5px);
+    opacity: 1;
   }
 
   strong {
