@@ -789,15 +789,6 @@ body.mod-toolbox .tb-general-button, body.mod-toolbox li a.tb-general-button, bo
   background: $bgColor1;
 }
 
-//.md h1:after {
-//  display: block;
-//  margin: 7px 0;
-//  width: 50px;
-//  height: 1px;
-//  background: $borderColor1;
-//  content: "";
-//  transition: .2s
-//}
 
 .title + .expando-button + .expando-button {
   display: none
@@ -806,47 +797,58 @@ body.mod-toolbox .tb-general-button, body.mod-toolbox li a.tb-general-button, bo
 html body .content .expando-button {
   position: relative;
   margin-right: 4px;
-  width: 28px;
-  height: 28px;
+  width: 17px;
+  height: 17px;
+  border-radius: 17px;
   max-width: none;
   max-height: none;
   border: 0;
-  border-radius: 20px;
   background: $expandoButtonBg !important;
   transition: .2s
 }
 
-html body .content .comment .expando-button {
-  width: 17px;
-  height: 17px;
-  border-radius: 17px;
+div.thing > .entry > .expando-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 28px;
 }
 
-.usertext-body .md .expando-button, .wiki-page .expando-button, .messages-page .expando-button {
+.usertext-body .md .expando-button,
+.wiki-page .expando-button,
+.messages-page .expando-button {
   margin-top: 0;
   margin-bottom: 0;
   vertical-align: middle !important
 }
 
 .expando-button:before,
+.expando-button:after,
 .res-highlight-nsfw-expando .thing.over18 .expando-button:before,
 .res.res-showImages-highlightNSFWButton .thing.over18 .expando-button:before,
-.expando-button:after,
 .res-showImages-highlightSpoilerButton .thing.spoiler .expando-button::before {
   position: absolute;
-  left: 8px;
-  top: 13.5px;
-  width: 12px;
+
+  top: 8px;
+  left: 5px;
+  width: 7px;
   height: 1px;
   background: $expandoButtonLinesColor;
   content: "";
   transition: .3s;
 
-  .comment & {
-    top: 8px;
-    left: 5px;
-    width: 7px;
+  div.thing > .entry > & {
+    left: 8px;
+    top: 13.5px;
+    width: 12px;
   }
+}
+
+.res-highlight-nsfw-expando .thing.over18 > .entry > .expando-button:before,
+.res.res-showImages-highlightNSFWButton .thing.over18 > .entry > .expando-button:before,
+.res-showImages-highlightSpoilerButton .thing.spoiler > .entry > .expando-button::before {
+  left: 8px;
+  top: 13.5px;
+  width: 12px;
 }
 
 .expando-button:after {

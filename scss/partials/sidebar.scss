@@ -31,7 +31,7 @@
       font-size: 0;
 
       &:after {
-        display: inline-block;
+        display: inline;
         font-size: 12px;
       }
     }
@@ -42,7 +42,7 @@
   }
 
   .users-online .word:after {
-    content: 'frantically checking /new page every minute'
+    content: "questioning Soldier's Poem place in the albums";
   }
 }
 
