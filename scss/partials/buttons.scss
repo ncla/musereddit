@@ -204,23 +204,25 @@ body:not(.res) .usertext .help-toggle a,
 .side .md a[href="#bigbutton"] + a[href$="#sotw"] {
   &:after {
     transition: .4s;
-    right: calc(50% - 20px);
+    right: calc(50% - 12.5px);
     top: auto;
     bottom: -26px;
   }
 
   &:hover:after {
-    bottom: 7px;
+    bottom: calc(50% - 12.5px);
   }
 
   strong {
     position: relative;
     transition: 0.4s;
     bottom: 0px;
+    opacity: 1;
   }
 
   &:hover strong {
     bottom: 30px;
+    opacity: 0;
   }
 }
 
