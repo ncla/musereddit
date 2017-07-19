@@ -24,12 +24,13 @@
   &.flair-abs-vinyl-art, &.flair-deadinside-eyes, &.flair-animals-video, &.flair-is-video, &.flair-madness-video,
   &.flair-unsustainable-video, &.flair-nsc-video, &.flair-koc-video-lady, &.flair-koc-video-owl,
   &.flair-koc-video-gent, &.flair-sfa-matt, &.flair-pib-girl, &.flair-newborn-vid, &.flair-bliss-vid,
-  &.flair-uno-vid, &.flair-sunburn-vid, &.flair-unintended-vid, &.flair-charles, &.flair-lightbulb {
+  &.flair-uno-vid, &.flair-sunburn-vid, &.flair-unintended-vid, &.flair-charles, &.flair-lightbulb,
+  &.flair-digdown-cd, &.flair-matt-digdown, &.flair-digdown-lauren {
     min-width: 58px;
     text-indent: 62px;
     height: 28px;
   }
-
+  
   &.flair-ChrisFlair {
     background-position: 0 0;
   }
@@ -296,6 +297,18 @@
 
   &.flair-lightbulb {
     background-position: 0 -1981px;
+  }
+
+  &.flair-digdown-cd {
+    background-position: 0 -2011px;
+  }
+
+  &.flair-matt-digdown {
+    background-position: 0 -2042px;
+  }
+
+  &.flair-digdown-lauren {
+    background-position: 0 -2072px
   }
 
 }
