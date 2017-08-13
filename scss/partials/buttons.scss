@@ -177,8 +177,8 @@ body:not(.res) .usertext .help-toggle a,
 
 .side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"],
 .side .md a[href="#button"] + a[href*="://discord.gg/"],
-.side .md a[href="#bigbutton"] + a[href$="#gigthread"],
-.side .md a[href="#bigbutton"] + a[href$="#sotw"] {
+.side .md a[href="#gigthread"] + a[href="#bigbutton"] + a,
+.side .md a[href="#sotw"] + a[href="#bigbutton"] + a {
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -200,8 +200,8 @@ body:not(.res) .usertext .help-toggle a,
   }
 }
 
-.side .md a[href="#bigbutton"] + a[href$="#gigthread"],
-.side .md a[href="#bigbutton"] + a[href$="#sotw"] {
+.side .md a[href="#gigthread"] + a[href="#bigbutton"] + a,
+.side .md a[href="#sotw"] + a[href="#bigbutton"] + a {
   &:after {
     transition: .4s;
     right: calc(50% - 12.5px);
@@ -232,11 +232,11 @@ body:not(.res) .usertext .help-toggle a,
   background: url(%%spritesheet%%) no-repeat -35px -3px;
 }
 
-.side .md a[href="#bigbutton"] + a[href$="#gigthread"]:after {
+.side .md a[href="#gigthread"] + a[href="#bigbutton"] + a:after {
   background: url(%%spritesheet%%) no-repeat -151px -3px;
 }
 
-.side .md a[href="#bigbutton"] + a[href$="#sotw"]:after {
+.side .md a[href="#sotw"] + a[href="#bigbutton"] + a:after {
   background: url(%%spritesheet%%) no-repeat -122px -3px;
 }
 
