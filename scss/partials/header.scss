@@ -98,7 +98,7 @@
     font-size: 11px;
     color: $fontColor;
 
-    #mail, #modmail, #new_modmail, #openRESPrefs .gearIcon, .logout a, .pref-lang, .user > a, #RESAccountSwitcherIcon {
+    #mail, #modmail, #new_modmail, #openRESPrefs .gearIcon, .logout a, .pref-lang, .user > a, #RESAccountSwitcherIcon, #chat {
       width: 18px !important;
       height: 18px !important;
       margin: 16px 35px 0 0 !important;
@@ -208,6 +208,10 @@
       width: 20px !important;
       height: 20px !important;
     }
+    #chat {
+      background-position: -199px -225px;
+      width: 19px !important;
+    }
 
     // HOVER TEXTS
     .user > a:before {
@@ -231,9 +235,11 @@
     #openRESPrefs .gearIcon:before {
       content: "RES Settings"
     }
-
     .logout a:before {
       content: "Logout"
+    }
+    #chat:before {
+      content: "Reddit Chat"
     }
 
     // REST

@@ -26,7 +26,7 @@ I would like to ask not use this theme on any other sub-reddits apart from Muse 
   2. Fill out all the information (or leave everything blank) for the certificates
   3. Install all the `node` dependencies with `npm install`
   4. Run `node server/server.js` or `forever start server/server.js` to just launch it
-  5. Navigate to `https://localhost:4443/` through browser and allow this self-signed certificate to run, otherwise style-sheet and images won't load, and we need HTTPS because of browser security standards
+  5. Allow Chrome to load self-signed localhost SSL certificates in `chrome://flags/#allow-insecure-localhost` and restart Chrome, otherwise style-sheet won't load
 3. `gulp build` or `gulp watch` to constantly build the stylesheet
 4. Install the user-script to get local changes applied to the sub-reddit
   1. Download TamperMonkey (for Chrome) or GreaseMonkey (for Firefox)
