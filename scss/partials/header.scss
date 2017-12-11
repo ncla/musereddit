@@ -57,7 +57,7 @@
 
   &:before {
     padding: 0 20px;
-    background: url(%%overlay%%), linear-gradient(45deg, #6093c4 20%, #46a6b5 80%);
+    background: url(%%overlay%%), linear-gradient(45deg, $headerGradientColor1 20%, $headerGradientColor2 80%);
     display: block;
     overflow: hidden;
     position: relative;

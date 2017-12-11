@@ -257,10 +257,11 @@ body:not(.res) .usertext .help-toggle a,
   margin: 0
 }
 
+// Subscribe button
 .side .fancy-toggle-button a.option.active.add {
   color: $brightColorOnColorBgFont;
   background: url(%%overlay%%),
-              linear-gradient(45deg,#5c9bc0 0%,#46a6b5 67%);
+              linear-gradient(45deg, $subscribeGradientButtonColor1 0%, $subscribeGradientButtonColor2 67%);
 }
 
 .side .fancy-toggle-button a.option.active {
@@ -383,7 +384,7 @@ body:not(.res) .usertext .help-toggle a,
 .side {
   .submit {
     .morelink a {
-      background: url(%%overlay%%), linear-gradient(45deg, #4079a5 0%,#46a6b5 67%);
+      background: url(%%overlay%%), linear-gradient(45deg, $bigGradientButtonColor1 0%,$bigGradientButtonColor2 67%);
       border: 0;
       color: #f0f7ff;
       width: 300px;
