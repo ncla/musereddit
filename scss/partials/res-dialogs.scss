@@ -16,7 +16,7 @@
 
   .RESHoverTitle {
     background: url(%%overlay%%),
-                linear-gradient(45deg,#4079a5 0%,#46a6b5 67%);
+                linear-gradient(45deg, $headerGradientColor2 0%, $headerGradientColor1 67%);
     color: $brightColorOnColorBgFont !important;
     letter-spacing: 1px;
     text-transform: none;
@@ -42,10 +42,10 @@
   }
 
   &:before, &:after {
-    border-color: transparent #4079a5;
+    border-color: transparent $headerGradientColor2;
   }
   &.right:before, &.right:after {
-    border-color: transparent #46a6b5;
+    border-color: transparent $headerGradientColor1;
   }
 }
 
@@ -133,7 +133,7 @@ div.guider {
   padding-bottom: 0;
   line-height: 40px;
   background: url(%%overlay%%),
-              linear-gradient(45deg,#4079a5 0%,#46a6b5 67%);
+              linear-gradient(45deg, $headerGradientColor2 0%, $headerGradientColor1 67%);
   color: $brightColorOnColorBgFont !important; // :((
 }
 
