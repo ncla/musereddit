@@ -175,8 +175,7 @@ body:not(.res) .usertext .help-toggle a,
   padding: 11.5px 10px
 }
 
-.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"],
-.side .md a[href="#button"] + a[href*="://discord.gg/"],
+.side .md a[href="#bigbutton"] + a[href*="://discord.gg/"],
 .side .md a[href="#gigthread"] + a[href="#bigbutton"] + a,
 .side .md a[href="#sotw"] + a[href="#bigbutton"] + a {
   position: relative;
@@ -199,7 +198,7 @@ body:not(.res) .usertext .help-toggle a,
     color: $specialBtnsFontHover2 !important; // pls no
   }
 }
-
+.side .md a[href="#bigbutton"] + a[href*="://discord.gg/"],
 .side .md a[href="#gigthread"] + a[href="#bigbutton"] + a,
 .side .md a[href="#sotw"] + a[href="#bigbutton"] + a {
   &:after {
@@ -228,7 +227,7 @@ body:not(.res) .usertext .help-toggle a,
   }
 }
 
-.side .md a[href="#button"] + a[href*="://discord.gg/"]:after {
+.side .md a[href="#bigbutton"] + a[href*="://discord.gg/"]:after {
   background: url(%%spritesheet%%) no-repeat -35px -3px;
 }
 
@@ -238,16 +237,6 @@ body:not(.res) .usertext .help-toggle a,
 
 .side .md a[href="#sotw"] + a[href="#bigbutton"] + a:after {
   background: url(%%spritesheet%%) no-repeat -122px -3px;
-}
-
-.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:hover,
-.side .md a[href="#button"] + a[href*="://discord.gg/"]:hover {
-  text-indent: -10px;
-}
-
-.side .md a[href="#button"] + a[href*="://telegram.me/joinchat/"]:hover:after,
-.side .md a[href="#button"] + a[href*="://discord.gg/"]:hover:after {
-  right: 6px;
 }
 
 // Subscribe/unsubscribe, RES user info pop-up buttons
