@@ -231,7 +231,7 @@ body.search-page #header, body.messages-page #header, body.modtools-page #header
     line-height: 32px;
     padding: 0;
 
-    > a {
+    > a, > span {
       padding: 0 10px;
       color: $dropDownMenuFont !important;
     }

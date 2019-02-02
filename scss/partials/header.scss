@@ -99,7 +99,7 @@ $headerHeight: 300px;
     font-size: 11px;
     color: $fontColor;
 
-    #mail, #modmail, #new_modmail, #openRESPrefs .gearIcon, .logout a, .pref-lang, .user > a, #RESAccountSwitcherIcon, #chat {
+    #mail, #modmail, #new_modmail, #RESSettingsButton, .logout a, .pref-lang, .user > a, #RESAccountSwitcherIcon, #chat {
       width: 18px !important;
       height: 18px !important;
       margin: 16px 35px 0 0 !important;
@@ -160,10 +160,6 @@ $headerHeight: 300px;
       }
     }
 
-    // Special edge-case
-    #openRESPrefs .gearIcon {
-      margin: 0 !important;
-    }
     #openRESPrefs {
       margin: 16px 35px 0 0 !important;
       width: 18px;
@@ -191,7 +187,7 @@ $headerHeight: 300px;
     .pref-lang {
       background-position: -116px -205px;
     }
-    #openRESPrefs .gearIcon {
+    #RESSettingsButton {
       background-position: -76px -225px;
     }
     .logout a {
@@ -233,7 +229,7 @@ $headerHeight: 300px;
     .pref-lang:before {
       content: "Preferences"
     }
-    #openRESPrefs .gearIcon:before {
+    #RESSettingsButton:before {
       content: "RES Settings"
     }
     .logout a:before {
